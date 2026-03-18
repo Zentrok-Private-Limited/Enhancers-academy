@@ -1,60 +1,62 @@
 <!-- Navbar -->
-<nav class="sticky top-0 z-50 bg-white shadow-md rounded-full mx-4 md:mx-10 my-4 px-4 md:px-6 h-16 flex items-center justify-between">
-
+<nav
+  class="sticky top-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20 px-4 md:px-6 h-18 flex items-center justify-between text-white"
+>
   <!-- Logo -->
-  <div class="text-xl md:text-2xl font-bold text-blue-600">
-    <a routerLink="/">Enhancers</a>
+  <div class="text-xl md:text-2xl font-bold">
+    <a routerLink="/" class="text-black hover:text-yellow-300 transition">
+      <img src="/logo.png" class="h-15" alt="">
+    </a>
   </div>
 
   <!-- Desktop Nav -->
-  <ul class="hidden lg:flex space-x-6 xl:space-x-8 font-medium text-sm">
-    <li><a routerLink="/" class="hover:text-blue-600 transition">Home</a></li>
-    <li><a href="#" class="hover:text-blue-600 transition">About</a></li>
-    <li><a href="#" class="hover:text-blue-600 transition">Courses</a></li>
-    <li><a href="#" class="hover:text-blue-600 transition">Faculty</a></li>
-    <li><a href="#" class="hover:text-blue-600 transition">Results</a></li>
-    <li><a href="#" class="hover:text-blue-600 transition">Gallery</a></li>
-    <li><a href="#" class="hover:text-blue-600 transition">Admission</a></li>
-    <li><a href="#" class="hover:text-blue-600 transition">Blog</a></li>
-    <li><a href="#" class="hover:text-blue-600 transition">Contact</a></li>
+  <ul class="hidden lg:flex text-black space-x-6 xl:space-x-8 font-medium text-md">
+    <li><a routerLink="/" class="hover:text-yellow-300 transition">Home</a></li>
+    <li><a routerLink="/about" class="hover:text-yellow-300 transition">About</a></li>
+    <li><a href="#" class="hover:text-yellow-300 transition">Courses</a></li>
+    <li><a href="#" class="hover:text-yellow-300 transition">Faculty</a></li>
+    <li><a href="#" class="hover:text-yellow-300 transition">Results</a></li>
+    <li><a href="#" class="hover:text-yellow-300 transition">Gallery</a></li>
+    <li><a href="#" class="hover:text-yellow-300 transition">Admission</a></li>
+    <li><a href="#" class="hover:text-yellow-300 transition">Blog</a></li>
+    <li><a href="#" class="hover:text-yellow-300 transition">Contact</a></li>
   </ul>
 
   <!-- Right Section -->
   <div class="hidden lg:flex items-center space-x-4 text-sm">
-    <span class="text-gray-600">📞 9599127878</span>
-    <button class="bg-blue-600 text-white px-4 py-1.5 rounded-full hover:bg-blue-700 transition">
+    <span class="text-black/90 font-semibold">📞 9599127878</span>
+    <button
+      class="bg-[#FBBF24] text-[#1F2937] px-4 py-1.5 rounded-full font-semibold hover:scale-105 transition"
+    >
       Enroll Now
     </button>
   </div>
 
   <!-- Mobile Menu Button -->
-  <button (click)="toggleMenu()" class="lg:hidden text-2xl">
+  <button (click)="toggleMenu()" class="lg:hidden text-2xl text-white">
     ☰
   </button>
-
 </nav>
 
 <!-- Mobile Menu -->
 @if (isMenuOpen) {
-  <div class="mx-4 mt-2 bg-white shadow-lg rounded-xl p-4 space-y-3 lg:hidden">
+  <div class="mx-4 mt-2 bg-white/95 backdrop-blur-md shadow-lg rounded-2xl p-4 space-y-3 lg:hidden">
+    <a routerLink="/" class="block text-gray-800 hover:text-blue-600">Home</a>
+    <a routerLink="/about" class="block text-gray-800 hover:text-blue-600">About</a>
+    <a href="#" class="block text-gray-800 hover:text-blue-600">Courses</a>
+    <a href="#" class="block text-gray-800 hover:text-blue-600">Faculty</a>
+    <a href="#" class="block text-gray-800 hover:text-blue-600">Results</a>
+    <a href="#" class="block text-gray-800 hover:text-blue-600">Gallery</a>
+    <a href="#" class="block text-gray-800 hover:text-blue-600">Admission</a>
+    <a href="#" class="block text-gray-800 hover:text-blue-600">Blog</a>
+    <a href="#" class="block text-gray-800 hover:text-blue-600">Contact</a>
 
-    <a href="#" class="block hover:text-blue-600">Home</a>
-    <a href="#" class="block hover:text-blue-600">About</a>
-    <a href="#" class="block hover:text-blue-600">Courses</a>
-    <a href="#" class="block hover:text-blue-600">Faculty</a>
-    <a href="#" class="block hover:text-blue-600">Results</a>
-    <a href="#" class="block hover:text-blue-600">Gallery</a>
-    <a href="#" class="block hover:text-blue-600">Admission</a>
-    <a href="#" class="block hover:text-blue-600">Blog</a>
-    <a href="#" class="block hover:text-blue-600">Contact</a>
+    <hr class="border-gray-200">
 
-    <hr>
+    <span class="text-gray-700 text-black block">📞 9599127878</span>
 
-    <span class="text-gray-600 block">📞 9599127878</span>
-
-    <button class="w-full bg-blue-600 text-white py-2 rounded-full hover:bg-blue-700">
+    <button class="w-full bg-blue-600 text-white py-2 rounded-full hover:bg-blue-700 transition">
       Enroll Now
     </button>
-
   </div>
 }
