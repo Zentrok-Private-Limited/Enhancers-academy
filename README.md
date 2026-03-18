@@ -43,15 +43,33 @@ The main purpose of this project is to build a professional coaching institute w
 ```bash
 git clone https://github.com/Zentrok-Private-Limited/Enhancers-academy
 
+```
+## 2. Navigate to the project folder
+```bash
+cd Enhancers-academy
 
-cd enhancers-academy
+```
+## 3. Install dependencies
 
-
+```bash
 npm install
 
+```
+## 4. Run the development server
+
+```bash
 ng serve
 
+```
+## 5. Open in browser
+
+```bash
 
 http://localhost:4200/
+
+```
+## Build
+
+```bash
 
 ng build
