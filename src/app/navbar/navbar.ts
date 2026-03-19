@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -10,9 +10,27 @@ import { RouterLink } from "@angular/router";
   styleUrl: './navbar.css',
 })
 export class Navbar {
-isMenuOpen = false;
+  isMenuOpen = false;
+  isCoursesDropdownOpen = false;
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+
+    if (!this.isMenuOpen) {
+      this.isCoursesDropdownOpen = false;
+    }
+  }
+
+  toggleCoursesDropdown() {
+    this.isCoursesDropdownOpen = !this.isCoursesDropdownOpen;
+  }
+
+  closeCoursesDropdown() {
+    this.isCoursesDropdownOpen = false;
+  }
+
+  closeAllMenus() {
+    this.isMenuOpen = false;
+    this.isCoursesDropdownOpen = false;
   }
 }

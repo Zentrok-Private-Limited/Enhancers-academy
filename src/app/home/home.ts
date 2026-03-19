@@ -17,7 +17,7 @@ export class Home implements OnInit, OnDestroy {
 
 banners = [
   {
-    tag: 'Admissions Open • Enhancers Academy',
+    // tag: 'Admissions Open • Enhancers Academy',
     title1: 'Classes XI & XII',
     title2: 'Accountancy',
     title3: 'Economics',

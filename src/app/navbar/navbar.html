@@ -1,62 +1,128 @@
-<!-- Navbar -->
 <nav
-  class="sticky top-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20 px-4 md:px-6 h-18 flex items-center justify-between text-white"
->
+  class="sticky top-0 z-[9999] bg-white border-b border-gray-200 px-4 md:px-6 h-[72px] flex items-center justify-between relative">
   <!-- Logo -->
   <div class="text-xl md:text-2xl font-bold">
-    <a routerLink="/" class="text-black hover:text-yellow-300 transition">
-      <img src="/logo.png" class="h-15" alt="">
+    <a routerLink="/" class="text-black hover:text-yellow-400 transition">
+      <img src="/logo.png" class="h-12" alt="Logo" />
     </a>
   </div>
 
   <!-- Desktop Nav -->
-  <ul class="hidden lg:flex text-black space-x-6 xl:space-x-8 font-medium text-md">
-    <li><a routerLink="/" class="hover:text-yellow-300 transition">Home</a></li>
-    <li><a routerLink="/about" class="hover:text-yellow-300 transition">About</a></li>
-    <li><a href="#" class="hover:text-yellow-300 transition">Courses</a></li>
-    <li><a href="#" class="hover:text-yellow-300 transition">Faculty</a></li>
-    <li><a href="#" class="hover:text-yellow-300 transition">Results</a></li>
-    <li><a href="#" class="hover:text-yellow-300 transition">Gallery</a></li>
-    <li><a href="#" class="hover:text-yellow-300 transition">Admission</a></li>
-    <li><a href="#" class="hover:text-yellow-300 transition">Blog</a></li>
-    <li><a href="#" class="hover:text-yellow-300 transition">Contact</a></li>
+  <ul class="hidden lg:flex text-black space-x-6 xl:space-x-8 font-medium text-md items-center">
+    <li><a routerLink="/" class="hover:text-yellow-400 transition">Home</a></li>
+    <li><a routerLink="/about" class="hover:text-yellow-400 transition">About</a></li>
+    <!-- Courses Dropdown -->
+    <li class="relative">
+      <button type="button" (click)="toggleCoursesDropdown()"
+        class="flex items-center gap-2 hover:text-yellow-400 transition">
+        Courses
+        <span class="text-sm transition-transform duration-300" [class.rotate-180]="isCoursesDropdownOpen"><i class="fa-solid fa-angle-down"></i></span>
+      </button>
+
+      <div *ngIf="isCoursesDropdownOpen"
+        class="absolute left-0 top-full mt-3 w-72 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50">
+        <a routerLink="/courses/class-1-8" fragment="class-1-8" (click)="closeCoursesDropdown()"
+          class="block px-5 py-4 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition border-b border-gray-100">
+          <span class="block font-semibold">Classes I - VIII</span>
+          <span class="text-sm text-gray-500">All Subjects</span>
+        </a>
+
+        <a routerLink="/courses/class-9-10" fragment="class-9-10" (click)="closeCoursesDropdown()"
+          class="block px-5 py-4 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition border-b border-gray-100">
+          <span class="block font-semibold">Classes IX - X</span>
+          <span class="text-sm text-gray-500">Maths, Science, English</span>
+        </a>
+
+        <a routerLink="/courses/class-11-12" fragment="class-11-12" (click)="closeCoursesDropdown()"
+          class="block px-5 py-4 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition border-b border-gray-100">
+          <span class="block font-semibold">Classes XI - XII</span>
+          <span class="text-sm text-gray-500">Accountancy, Economics</span>
+        </a>
+
+        <a routerLink="/courses/cuet" fragment="cuet" (click)="closeCoursesDropdown()"
+          class="block px-5 py-4 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition">
+          <span class="block font-semibold">CUET Preparation</span>
+          <span class="text-sm text-gray-500">Entrance Exam Preparation</span>
+        </a>
+      </div>
+    </li>
+    <!-- <li><a href="#" class="hover:text-yellow-400 transition">Faculty</a></li>
+    <li><a href="#" class="hover:text-yellow-400 transition">Results</a></li>
+    <li><a href="#" class="hover:text-yellow-400 transition">Gallery</a></li> -->
+    <!-- <li><a href="#" class="hover:text-yellow-400 transition">Admission</a></li> -->
+    <li><a href="#" class="hover:text-yellow-400 transition">Blog</a></li>
+    <li><a href="#" class="hover:text-yellow-400 transition">Contact</a></li>
   </ul>
 
   <!-- Right Section -->
   <div class="hidden lg:flex items-center space-x-4 text-sm">
-    <span class="text-black/90 font-semibold"><i class="fa-solid fa-phone"></i> 9599127878</span>
-    <button
-      class="bg-[#FBBF24] text-[#1F2937] px-4 py-1.5 rounded-full font-semibold hover:scale-105 transition"
-    >
+    <span class="text-black/90 font-semibold">
+      <i class="fa-solid fa-phone"></i> 9599127878
+    </span>
+    <button class="bg-[#FBBF24] text-[#1F2937] px-4 py-1.5 rounded-full font-semibold hover:scale-105 transition">
       Enroll Now
     </button>
   </div>
 
   <!-- Mobile Menu Button -->
-  <button (click)="toggleMenu()" class="lg:hidden text-2xl text-white">
-    ☰
+  <button type="button" (click)="toggleMenu()"
+    class="lg:hidden text-3xl text-blue-950 ">
+    <i class="fa-solid fa-bars"></i>
   </button>
 </nav>
 
-<!-- Mobile Menu -->
-@if (isMenuOpen) {
-  <div class="mx-4 mt-2 bg-white/95 backdrop-blur-md shadow-lg rounded-2xl p-4 space-y-3 lg:hidden">
-    <a routerLink="/" class="block text-gray-800 hover:text-blue-600">Home</a>
-    <a routerLink="/about" class="block text-gray-800 hover:text-blue-600">About</a>
-    <a href="#" class="block text-gray-800 hover:text-blue-600">Courses</a>
-    <a href="#" class="block text-gray-800 hover:text-blue-600">Faculty</a>
+<!-- Mobile Menu Overlay -->
+<div *ngIf="isMenuOpen" class="fixed inset-0 z-[9998] bg-black/30 lg:hidden" (click)="closeAllMenus()"></div>
+
+<!-- Mobile Menu Panel -->
+<div *ngIf="isMenuOpen" class="fixed top-[72px] left-0 right-0 z-[9999] lg:hidden px-4 pt-3">
+  <div class="bg-white rounded-2xl shadow-2xl p-4 space-y-3 border border-gray-200">
+    <a routerLink="/" (click)="closeAllMenus()" class="block text-gray-800 hover:text-blue-600">Home</a>
+    <a routerLink="/about" (click)="closeAllMenus()" class="block text-gray-800 hover:text-blue-600">About</a>
+
+    <!-- Mobile Courses Dropdown -->
+    <div class="overflow-hidden">
+      <button type="button" (click)="toggleCoursesDropdown()"
+        class="w-full flex items-center justify-between  text-gray-800 hover:bg-blue-50">
+        <span>Courses</span>
+        <span class="transition-transform duration-300" [class.rotate-180]="isCoursesDropdownOpen"><i class="fa-solid fa-angle-down"></i></span>
+      </button>
+
+      <div *ngIf="isCoursesDropdownOpen" class="bg-gray-50 border-t">
+        <a routerLink="/courses" fragment="class-1-8" (click)="closeAllMenus()"
+          class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50">
+          Classes I - VIII
+        </a>
+        <a routerLink="/courses" fragment="class-9-10" (click)="closeAllMenus()"
+          class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50">
+          Classes IX - X
+        </a>
+        <a routerLink="/courses" fragment="class-11-12" (click)="closeAllMenus()"
+          class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50">
+          Classes XI - XII
+        </a>
+        <a routerLink="/courses" fragment="cuet" (click)="closeAllMenus()"
+          class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50">
+          CUET Preparation
+        </a>
+      </div>
+    </div>
+
+    <!-- <a href="#" class="block text-gray-800 hover:text-blue-600">Faculty</a>
     <a href="#" class="block text-gray-800 hover:text-blue-600">Results</a>
-    <a href="#" class="block text-gray-800 hover:text-blue-600">Gallery</a>
-    <a href="#" class="block text-gray-800 hover:text-blue-600">Admission</a>
+    <a href="#" class="block text-gray-800 hover:text-blue-600">Gallery</a> -->
+    <!-- <a href="#" class="block text-gray-800 hover:text-blue-600">Admission</a> -->
     <a href="#" class="block text-gray-800 hover:text-blue-600">Blog</a>
     <a href="#" class="block text-gray-800 hover:text-blue-600">Contact</a>
 
-    <hr class="border-gray-200">
+    <hr class="border-gray-200" />
 
-    <span class="text-gray-700 text-black block"><i class="fa-solid fa-phone"></i> 9599127878</span>
+    <span class="text-gray-700 block">
+      <i class="fa-solid fa-phone"></i> 9599127878
+    </span>
 
-    <button class="w-full bg-blue-600 text-white py-2 rounded-full hover:bg-blue-700 transition">
+    <button class="w-full bg-[#FBBF24] text-[#1F2937] py-2 rounded-full hover:bg-blue-700 transition">
       Enroll Now
     </button>
   </div>
-}
+</div>
