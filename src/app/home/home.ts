@@ -35,7 +35,7 @@ banners = [
       { icon: '<i class="fa-solid fa-chalkboard-user"></i>', title: 'CS Nitin Gupta', text: 'Dedicated faculty for Accountancy & Economics.' },
       { icon: '<i class="fa-solid fa-square-root-variable"></i>', title: 'Maths by Ashutosh Shukla', text: 'Focused learning with clear concept support.' }
     ],
-    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
+    image: '/2.png',
     badgeTopLabel: 'Branch 1',
     badgeTopValue: 'F-10, Prashant Vihar',
     badgeBottomLabel: 'Branch 2',
@@ -60,7 +60,7 @@ banners = [
       { icon: '<i class="fa-solid fa-flask"></i>', title: 'Science', text: 'Strong fundamentals with guided preparation.' },
       { icon: '<i class="fa-solid fa-pen-nib"></i>', title: 'English', text: 'Grammar, writing and comprehension improvement.' }
     ],
-    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80',
+    image: '/5.png',
     badgeTopLabel: 'Call Now',
     badgeTopValue: '95991 27878',
     badgeBottomLabel: 'Also Call',
@@ -85,7 +85,7 @@ banners = [
       { icon: '<i class="fa-solid fa-chalkboard-user"></i>', title: 'Expert Guidance', text: 'Mentorship by experienced faculty members.' },
       { icon: '<i class="fa-solid fa-rocket"></i>', title: 'Confidence Building', text: 'Prepare with strategy and exam readiness.' }
     ],
-    image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80',
+    image: '/6.png',
     badgeTopLabel: 'Main Contact',
     badgeTopValue: '95991 27878',
     badgeBottomLabel: 'Support Contact',

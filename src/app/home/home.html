@@ -1,128 +1,127 @@
-<section class="bg-white">
-  <div class="">
-    <div class="relative overflow-hidden rounded-[30px] bg-[#1D4ED8] shadow-2xl" (mouseenter)="stopBannerAutoPlay()"
-      (mouseleave)="startBannerAutoPlay()">
-      <!-- decorative shapes -->
-      <div class="absolute -top-16 -left-16 w-56 h-56 bg-[#FBBF24]/20 rounded-full blur-3xl"></div>
-      <div class="absolute top-8 right-8 w-32 h-32 border border-white/20 rounded-full"></div>
-      <div class="absolute bottom-0 left-1/3 w-56 h-56 bg-white/10 rounded-full blur-3xl"></div>
+<div
+  class="relative overflow-hidden rounded-[36px] bg-gradient-to-br from-[#1D4ED8] via-[#2563EB] to-[#1E40AF] shadow-[0_20px_80px_rgba(0,0,0,0.25)]"
+  (mouseenter)="stopBannerAutoPlay()" (mouseleave)="startBannerAutoPlay()">
 
-      <div class="relative grid lg:grid-cols-12 gap-4 items-center p-4 md:p-6 lg:p-8">
-        <!-- Left content -->
-        <div class="lg:col-span-5 text-white">
-          <span
-            class="inline-flex items-center gap-2 bg-white/15 border border-white/20 px-3 py-1.5 rounded-full text-xs md:text-sm font-medium backdrop-blur">
-            <span class="w-2 h-2 rounded-full bg-[#FBBF24]"></span>
-            <!-- {{ banners[currentBanner].tag }} -->
-          </span>
+  <!-- premium glow -->
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.2),transparent)]"></div>
 
-          <h1 class="mt-4 text-3xl md:text-5xl font-extrabold leading-tight">
-            {{ banners[currentBanner].title1 }}
-            <span class="block text-[#FBBF24]">{{ banners[currentBanner].title2 }}</span>
-            <span class="block text-white">{{ banners[currentBanner].title3 }}</span>
-          </h1>
+  <!-- shapes -->
+  <div class="absolute -top-20 -left-20 w-72 h-72 bg-[#FBBF24]/20 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
 
-          <p class="mt-4 max-w-xl text-white/90 text-sm md:text-base leading-6">
-            {{ banners[currentBanner].desc }}
-          </p>
+  <div class="relative grid lg:grid-cols-12 gap-6 items-center p-6 md:p-10">
 
-          <div class="mt-5 grid grid-cols-3 gap-2 max-w-md">
-            <div class="bg-white rounded-xl px-3 py-3 text-center shadow-lg">
-              <p class="text-xl font-extrabold text-[#1D4ED8]">{{ banners[currentBanner].stat1 }}</p>
-              <p class="text-[11px] md:text-xs font-medium text-[#1F2937]">{{ banners[currentBanner].stat1Label }}</p>
-            </div>
-            <div class="bg-white rounded-xl px-3 py-3 text-center shadow-lg">
-              <p class="text-xl font-extrabold text-[#1D4ED8]">{{ banners[currentBanner].stat2 }}</p>
-              <p class="text-[11px] md:text-xs font-medium text-[#1F2937]">{{ banners[currentBanner].stat2Label }}</p>
-            </div>
-            <div class="bg-white rounded-xl px-3 py-3 text-center shadow-lg">
-              <p class="text-xl font-extrabold text-[#1D4ED8]">{{ banners[currentBanner].stat3 }}</p>
-              <p class="text-[11px] md:text-xs font-medium text-[#1F2937]">{{ banners[currentBanner].stat3Label }}</p>
-            </div>
-          </div>
+    <!-- LEFT -->
+    <div class="lg:col-span-5 text-white">
 
-          <div class="mt-5 flex flex-wrap gap-3">
-            <button class="bg-[#FBBF24] text-[#1F2937] px-5 py-2.5 rounded-full font-bold hover:scale-105 transition">
-              Enroll Now
-            </button>
-            <button class="bg-white text-[#1D4ED8] px-5 py-2.5 rounded-full font-bold hover:scale-105 transition">
-              View Syllabus
-            </button>
-          </div>
+      <span
+        class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm backdrop-blur-md shadow">
+        <span class="w-2 h-2 rounded-full bg-[#FBBF24]"></span>
+        Premium Learning
+      </span>
+
+      <h1 class="mt-5 text-4xl md:text-6xl font-extrabold leading-tight">
+        {{ banners[currentBanner].title1 }}
+        <span class="block text-[#FBBF24] drop-shadow-lg">{{ banners[currentBanner].title2 }}</span>
+        <span class="block text-white/90">{{ banners[currentBanner].title3 }}</span>
+      </h1>
+
+      <p class="mt-5 text-white/80 text-lg max-w-xl">
+        {{ banners[currentBanner].desc }}
+      </p>
+
+      <!-- stats -->
+      <div class="mt-6 grid grid-cols-3 gap-4 max-w-md">
+        <div
+          class="bg-white/10 backdrop-blur-md rounded-xl px-4 py-4 text-center border border-white/20 hover:scale-105 transition">
+          <p class="text-xl font-bold text-[#FBBF24]">{{ banners[currentBanner].stat1 }}</p>
+          <p class="text-xs text-white/70">{{ banners[currentBanner].stat1Label }}</p>
         </div>
 
-        <!-- Right visual block -->
-        <div class="lg:col-span-7">
-          <div class="relative">
-            <div class="bg-white rounded-[24px] p-4 md:p-5 shadow-2xl">
-              <div class="grid md:grid-cols-2 gap-4 items-stretch">
-                <!-- feature list -->
-                <div class="bg-[#F9FAFB] rounded-[20px] p-4 border border-slate-100">
-                  <div class="inline-block bg-[#FBBF24] text-[#1F2937] px-3 py-2 rounded-xl text-base font-bold mb-4">
-                    {{ banners[currentBanner].featureTitle }}
-                  </div>
+        <div
+          class="bg-white/10 backdrop-blur-md rounded-xl px-4 py-4 text-center border border-white/20 hover:scale-105 transition">
+          <p class="text-xl font-bold text-[#FBBF24]">{{ banners[currentBanner].stat2 }}</p>
+          <p class="text-xs text-white/70">{{ banners[currentBanner].stat2Label }}</p>
+        </div>
 
-                  <div class="space-y-3">
-                    @for (feature of banners[currentBanner].features; track $index) {
-                    <div class="flex gap-3 items-start">
-                      <div
-                        class="w-9 h-9 rounded-lg bg-[#1D4ED8] text-white flex items-center justify-center text-base shrink-0">
-                        <span [innerHTML]="feature.icon"></span>
-                      </div>
-                      <div>
-                        <p class="font-bold text-sm text-[#1F2937]">{{ feature.title }}</p>
-                        <p class="text-xs text-slate-600">{{ feature.text }}</p>
-                      </div>
-                    </div>
-                    }
-                  </div>
+        <div
+          class="bg-white/10 backdrop-blur-md rounded-xl px-4 py-4 text-center border border-white/20 hover:scale-105 transition">
+          <p class="text-xl font-bold text-[#FBBF24]">{{ banners[currentBanner].stat3 }}</p>
+          <p class="text-xs text-white/70">{{ banners[currentBanner].stat3Label }}</p>
+        </div>
+      </div>
+
+      <!-- buttons -->
+      <div class="mt-7 flex flex-wrap gap-4">
+        <button
+          class="bg-gradient-to-r from-[#FBBF24] to-yellow-300 text-black px-6 py-3 rounded-full font-bold shadow-xl hover:scale-105 transition">
+          Enroll Now
+        </button>
+
+        <button
+          class="border border-white/30 backdrop-blur px-6 py-3 rounded-full hover:bg-white hover:text-black transition">
+          View Syllabus
+        </button>
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="lg:col-span-7">
+      <div class="relative">
+
+        <!-- glass card -->
+        <div
+          class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-[28px] p-5 shadow-2xl hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition">
+
+          <div class="grid md:grid-cols-2 gap-4">
+
+            <!-- features -->
+            <div class="bg-white/10 backdrop-blur rounded-xl p-4 border border-white/20">
+              <div class="bg-[#FBBF24] text-black px-3 py-2 rounded-lg font-bold mb-4 inline-block">
+                {{ banners[currentBanner].featureTitle }}
+              </div>
+
+              @for (feature of banners[currentBanner].features; track $index) {
+              <div class="flex gap-3 mb-3">
+                <div class="w-10 h-10 bg-[#1D4ED8] text-white flex items-center justify-center rounded-lg shadow">
+                  <span [innerHTML]="feature.icon"></span>
                 </div>
-
-                <!-- image + floating cards -->
-                <div class="relative">
-                  <div class="h-full min-h-[240px] rounded-[20px] overflow-hidden bg-[#E5EDFF]">
-                    <img [src]="banners[currentBanner].image" alt="Banner image" class="w-full h-full object-cover" />
-                  </div>
-
-                  <div class="absolute top-3 left-3 bg-white rounded-xl px-3 py-2 shadow-lg">
-                    <p class="text-[10px] font-semibold text-slate-500">{{ banners[currentBanner].badgeTopLabel }}</p>
-                    <p class="text-sm font-extrabold text-[#1D4ED8]">{{ banners[currentBanner].badgeTopValue }}</p>
-                  </div>
-
-                  <div class="absolute bottom-3 right-3 bg-[#FBBF24] rounded-xl px-4 py-2 shadow-lg">
-                    <p class="text-[10px] font-semibold text-[#1F2937]/80">{{ banners[currentBanner].badgeBottomLabel }}
-                    </p>
-                    <p class="text-sm font-extrabold text-[#1F2937]">{{ banners[currentBanner].badgeBottomValue }}</p>
-                  </div>
+                <div>
+                  <p class="font-semibold text-sm">{{ feature.title }}</p>
+                  <p class="text-xs text-white/70">{{ feature.text }}</p>
                 </div>
+              </div>
+              }
+            </div>
+
+            <!-- image -->
+            <div class="relative">
+              <div class="rounded-xl overflow-hidden">
+                <img [src]="banners[currentBanner].image"
+                  class="w-full h-full object-cover scale-105 hover:scale-110 transition duration-700" />
+              </div>
+
+              <!-- badges -->
+              <div class="absolute top-3 left-3 bg-white px-3 py-2 rounded-lg shadow">
+                <p class="text-xs text-gray-500">{{ banners[currentBanner].badgeTopLabel }}</p>
+                <p class="font-bold text-[#1D4ED8]">{{ banners[currentBanner].badgeTopValue }}</p>
+              </div>
+
+              <div class="absolute bottom-3 right-3 bg-[#FBBF24] px-3 py-2 rounded-lg shadow">
+                <p class="text-xs">{{ banners[currentBanner].badgeBottomLabel }}</p>
+                <p class="font-bold">{{ banners[currentBanner].badgeBottomValue }}</p>
               </div>
             </div>
 
-            <!-- arrows -->
-            <button type="button" (click)="prevBanner()"
-              class="hidden lg:flex absolute -left-5 top-1/2 -translate-y-1/2 bg-white text-[#1D4ED8] w-10 h-10 rounded-full items-center justify-center shadow-xl text-xl hover:scale-110 transition">
-              <i class="fa-solid fa-angle-left"></i>
-            </button>
-
-            <button type="button" (click)="nextBanner()"
-              class="hidden lg:flex absolute -right-5 top-1/2 -translate-y-1/2 bg-white text-[#1D4ED8] w-10 h-10 rounded-full items-center justify-center shadow-xl text-xl hover:scale-110 transition">
-              <i class="fa-solid fa-angle-right"></i>
-            </button>
           </div>
         </div>
-      </div>
 
-      <!-- dots -->
-      <div class="pb-4 flex justify-center gap-2">
-        @for (item of banners; track $index) {
-        <button type="button" (click)="goToBanner($index)" class="h-2.5 rounded-full transition-all duration-300"
-          [class.bg-white]="$index === currentBanner" [class.w-7]="$index === currentBanner"
-          [class.w-2.5]="$index !== currentBanner" [class.bg-white/40]="$index !== currentBanner"></button>
-        }
       </div>
     </div>
+
   </div>
-</section>
+</div>
 <!-- ========================choose your goal======================== -->
 <section class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-4 md:px-6">
@@ -155,90 +154,96 @@
         <div class="grid md:grid-cols-2 gap-6">
 
           <!-- Card 1 -->
-          <div
-            class="bg-[#F8FAFC] border border-gray-100 rounded-[24px] p-6 shadow-sm hover:shadow-xl transition duration-300">
-            <div class="flex items-start justify-between">
-              <div>
-                <p class="text-sm font-medium text-[#1D4ED8] mb-2">Foundation Path</p>
-                <h3 class="text-2xl font-bold text-[#1F2937]">Class 6 – 10</h3>
-              </div>
-              <div class="w-12 h-12 rounded-2xl bg-[#1D4ED8] text-white flex items-center justify-center text-xl">
-                <i class="fa-solid fa-book"></i>
-              </div>
-            </div>
+          <div class="bg-[#F8FAFC] rounded-[24px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition duration-300">
+            
+            <img src="/9.png"
+              class="w-full h-40 object-cover" />
 
-            <p class="mt-4 text-gray-600 leading-6">
-              Build strong basics, improve subject understanding, and develop confidence step by step.
-            </p>
+            <div class="p-6">
+              <div class="flex items-start justify-between">
+                <div>
+                  <p class="text-sm font-medium text-[#1D4ED8] mb-2">Learning Path</p>
+                  <h3 class="text-2xl font-bold text-[#1F2937]">Class 6 – 10</h3>
+                </div>
+                <div class="w-12 h-12 rounded-2xl bg-[#1D4ED8] text-white flex items-center justify-center text-xl">
+                  <i class="fa-solid fa-book"></i>
+                </div>
+              </div>
 
-            <div class="mt-6">
-              <span class="inline-block bg-blue-50 text-[#1D4ED8] text-sm font-medium px-4 py-2 rounded-full">
-                Strong Foundation
-              </span>
+              <p class="mt-4 text-gray-600 leading-6">
+                Build strong basics, improve subject understanding, and develop confidence step by step.
+              </p>
+
+              <div class="mt-6">
+                <span class="bg-blue-50 text-[#1D4ED8] text-sm px-4 py-2 rounded-full">
+                  Strong Learning
+                </span>
+              </div>
             </div>
           </div>
 
           <!-- Card 2 -->
-          <div
-            class="bg-[#1D4ED8] rounded-[24px] p-6 shadow-sm hover:shadow-xl transition duration-300 text-white md:translate-y-8">
-            <div class="flex items-start justify-between">
-              <div>
-                <p class="text-sm font-medium text-white/80 mb-2">Senior Secondary</p>
-                <h3 class="text-2xl font-bold">Class 11 – 12</h3>
-              </div>
-              <div class="w-12 h-12 rounded-2xl bg-[#FBBF24] text-[#1F2937] flex items-center justify-center text-xl">
-                <i class="fa-solid fa-graduation-cap"></i>
-              </div>
-            </div>
+          <div class="bg-[#1D4ED8] text-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition duration-300 md:translate-y-8">
 
-            <p class="mt-4 text-white/85 leading-6">
-              Get subject-focused preparation with expert guidance for board exams and academic growth.
-            </p>
+            <img src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b"
+              class="w-full h-40 object-cover opacity-80" />
 
-            <div class="mt-6">
-              <span class="inline-block bg-white/15 text-white text-sm font-medium px-4 py-2 rounded-full">
-                Expert Mentorship
-              </span>
+            <div class="p-6">
+              <div class="flex items-start justify-between">
+                <div>
+                  <p class="text-sm font-medium text-white/80 mb-2">Senior Secondary</p>
+                  <h3 class="text-2xl font-bold">Class 11 – 12</h3>
+                </div>
+                <div class="w-12 h-12 rounded-2xl bg-[#FBBF24] text-[#1F2937] flex items-center justify-center text-xl">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+              </div>
+
+              <p class="mt-4 text-white/85 leading-6">
+                Accountancy, Economics & Biology (Gaurav Arora) with NEET, CUET & entrance prep.
+              </p>
+
+              <div class="mt-6">
+                <span class="bg-white/15 text-white text-sm px-4 py-2 rounded-full">
+                  Expert Mentorship
+                </span>
+              </div>
             </div>
           </div>
 
           <!-- Card 3 -->
-          <div
-            class="md:col-span-2 bg-[#FFF8E7] border border-yellow-100 rounded-[24px] p-6 md:p-8 shadow-sm hover:shadow-xl transition duration-300">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-              <div>
-                <p class="text-sm font-medium text-[#1D4ED8] mb-2">Competitive Preparation</p>
-                <h3 class="text-2xl md:text-3xl font-bold text-[#1F2937]">CUET Preparation</h3>
-                <p class="mt-3 text-gray-600 leading-7 max-w-2xl">
-                  Prepare strategically with practice, revision, concept clarity, and guidance that helps you stay
-                  exam-ready.
-                </p>
+          <div class="md:col-span-2 bg-[#FFF8E7] rounded-[24px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition duration-300">
+
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"
+              class="w-full h-44 object-cover" />
+
+            <div class="p-6 md:p-8">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                  <p class="text-sm font-medium text-[#1D4ED8] mb-2">Competitive Preparation</p>
+                  <h3 class="text-2xl md:text-3xl font-bold text-[#1F2937]">CUET Preparation</h3>
+                  <p class="mt-3 text-gray-600 leading-7 max-w-2xl">
+                    Prepare strategically with practice, revision, concept clarity, and expert guidance.
+                  </p>
+                </div>
+
+                <div class="flex gap-3">
+                  <div class="w-14 h-14 bg-[#FBBF24] rounded-2xl flex items-center justify-center text-2xl">
+                    <i class="fa-solid fa-rocket"></i>
+                  </div>
+                  <div class="w-14 h-14 bg-[#1D4ED8] text-white rounded-2xl flex items-center justify-center text-2xl">
+                    <i class="fa-solid fa-bullseye"></i>
+                  </div>
+                </div>
               </div>
 
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-14 h-14 rounded-2xl bg-[#FBBF24] text-[#1F2937] flex items-center justify-center text-2xl shadow-md">
-                  <i class="fa-solid fa-rocket"></i>
-                </div>
-
-                <div
-                  class="w-14 h-14 rounded-2xl bg-[#1D4ED8] text-white flex items-center justify-center text-2xl shadow-md">
-                  <i class="fa-solid fa-bullseye"></i>
-                </div>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <span class="bg-white px-4 py-2 rounded-full text-sm border">Exam Strategy</span>
+                <span class="bg-white px-4 py-2 rounded-full text-sm border">Mock Practice</span>
+                <span class="bg-white px-4 py-2 rounded-full text-sm border">Guided Learning</span>
               </div>
             </div>
 
-            <div class="mt-6 flex flex-wrap gap-3">
-              <span class="bg-white text-[#1D4ED8] px-4 py-2 rounded-full text-sm font-medium border border-blue-100">
-                Exam Strategy
-              </span>
-              <span class="bg-white text-[#1F2937] px-4 py-2 rounded-full text-sm font-medium border border-yellow-100">
-                Mock Practice
-              </span>
-              <span class="bg-white text-[#1F2937] px-4 py-2 rounded-full text-sm font-medium border border-yellow-100">
-                Guided Learning
-              </span>
-            </div>
           </div>
 
         </div>
@@ -247,19 +252,19 @@
     </div>
   </div>
 </section>
-<!-- =============================our courses=========================== -->
-<section class="pb-10 bg-white">
+
+<section class="pb-16 bg-white">
   <div class="max-w-6xl mx-auto px-4 md:px-6">
 
     <!-- Heading -->
     <div class="text-center mb-14">
-      <span class="inline-block px-4 py-2 rounded-full bg-blue-50 text-[#1D4ED8] text-sm font-semibold">
+      <span class="px-4 py-2 rounded-full bg-blue-50 text-[#1D4ED8] text-sm font-semibold">
         Programs We Offer
       </span>
       <h2 class="text-3xl md:text-5xl font-bold text-[#1F2937] mt-4">
         Our Courses
       </h2>
-      <p class="text-gray-600 mt-3 max-w-2xl mx-auto text-base md:text-lg">
+      <p class="text-gray-600 mt-3 max-w-2xl mx-auto">
         Choose the right course for your academic stage and grow with expert guidance.
       </p>
     </div>
@@ -268,360 +273,492 @@
     <div class="grid md:grid-cols-2 gap-7">
 
       <!-- Card 1 -->
-      <div
-        class="group bg-white border border-gray-200 rounded-[28px] p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
-        <div class="flex items-start justify-between mb-6">
-          <div class="w-14 h-14 rounded-2xl bg-blue-50 text-[#1D4ED8] flex items-center justify-center text-2xl">
-            <i class="fa-solid fa-book"></i>
-          </div>
-          <span class="text-xs font-semibold text-[#1D4ED8] bg-blue-50 px-3 py-1 rounded-full">
-            Foundation
-          </span>
+      <div class="group rounded-[28px] overflow-hidden shadow hover:shadow-2xl hover:-translate-y-2 transition">
+
+        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350"
+          class="w-full h-44 object-cover" />
+
+        <div class="p-6">
+          <h3 class="text-2xl font-bold">Class 1 – 8</h3>
+          <p class="text-gray-600 mt-3">
+            Classes 1–5 guided by <b>Kiran Chawla</b> with strong foundation building.
+          </p>
+
+          <button class="mt-5 text-[#1D4ED8] font-semibold">
+            Learn More →
+          </button>
         </div>
-
-        <h3 class="text-2xl font-bold text-[#1F2937]">Class 1 – 8</h3>
-        <p class="text-gray-600 mt-3 leading-7">
-          All subjects with strong foundation building, concept clarity, and regular guidance.
-        </p>
-
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span class="text-sm bg-gray-50 text-gray-700 px-3 py-1 rounded-full">All Subjects</span>
-          <span class="text-sm bg-gray-50 text-gray-700 px-3 py-1 rounded-full">Basics</span>
-          <span class="text-sm bg-gray-50 text-gray-700 px-3 py-1 rounded-full">Concept Clarity</span>
-        </div>
-
-        <button class="mt-7 text-[#1D4ED8] font-semibold hover:text-[#163fb3] transition">
-          Learn More →
-        </button>
       </div>
 
       <!-- Card 2 -->
-      <div
-        class="group bg-[#1D4ED8] rounded-[28px] p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 text-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+      <div class="group rounded-[28px] overflow-hidden shadow hover:shadow-2xl hover:-translate-y-2 transition">
 
-        <div class="flex items-start justify-between mb-6 relative z-10">
-          <div class="w-14 h-14 rounded-2xl bg-[#FBBF24] text-[#1F2937] flex items-center justify-center text-2xl">
-            <i class="fa-solid fa-flask"></i>
-          </div>
-          <span class="text-xs font-semibold text-white bg-white/15 px-3 py-1 rounded-full">
-            Core Subjects
-          </span>
+        <img src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b"
+          class="w-full h-44 object-cover" />
+
+        <div class="p-6 bg-[#1D4ED8] text-white">
+          <h3 class="text-2xl font-bold">Class 9 – 10</h3>
+          <p class="mt-3 text-white/85">
+            Maths, Science & English with strong conceptual clarity.
+          </p>
+
+          <button class="mt-5 text-[#FBBF24] font-semibold">
+            Learn More →
+          </button>
         </div>
-
-        <h3 class="text-2xl font-bold relative z-10">Class 9 – 10</h3>
-        <p class="text-white/85 mt-3 leading-7 relative z-10">
-          Maths, Science and English with exam-focused preparation and subject-wise improvement.
-        </p>
-
-        <div class="mt-6 flex flex-wrap gap-2 relative z-10">
-          <span class="text-sm bg-white/10 text-white px-3 py-1 rounded-full">Maths</span>
-          <span class="text-sm bg-white/10 text-white px-3 py-1 rounded-full">Science</span>
-          <span class="text-sm bg-white/10 text-white px-3 py-1 rounded-full">English</span>
-        </div>
-
-        <button class="mt-7 text-[#FBBF24] font-semibold hover:text-yellow-300 transition relative z-10">
-          Learn More →
-        </button>
       </div>
 
       <!-- Card 3 -->
-      <div
-        class="group bg-[#FFF8E7] border border-yellow-100 rounded-[28px] p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
-        <div class="flex items-start justify-between mb-6">
-          <div class="w-14 h-14 rounded-2xl bg-[#FBBF24] text-[#1F2937] flex items-center justify-center text-2xl">
-            <i class="fa-solid fa-graduation-cap"></i>
-          </div>
-          <span class="text-xs font-semibold text-[#1F2937] bg-white px-3 py-1 rounded-full border border-yellow-100">
-            Senior Secondary
-          </span>
+      <div class="group rounded-[28px] overflow-hidden shadow hover:shadow-2xl hover:-translate-y-2 transition">
+
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
+          class="w-full h-44 object-cover" />
+
+        <div class="p-6 bg-[#FFF8E7]">
+          <h3 class="text-2xl font-bold">Class 11 – 12</h3>
+          <p class="text-gray-700 mt-3">
+            Accountancy, Economics & Biology by <b>Gaurav Arora</b> + NEET, CUET prep.
+          </p>
+
+          <button class="mt-5 text-[#1D4ED8] font-semibold">
+            Learn More →
+          </button>
         </div>
-
-        <h3 class="text-2xl font-bold text-[#1F2937]">Class 11 – 12</h3>
-        <p class="text-gray-600 mt-3 leading-7">
-          Accountancy and Economics with expert faculty guidance and focused exam preparation.
-        </p>
-
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span
-            class="text-sm bg-white text-gray-700 px-3 py-1 rounded-full border border-yellow-100">Accountancy</span>
-          <span class="text-sm bg-white text-gray-700 px-3 py-1 rounded-full border border-yellow-100">Economics</span>
-          <span class="text-sm bg-white text-gray-700 px-3 py-1 rounded-full border border-yellow-100">Expert
-            Faculty</span>
-        </div>
-
-        <button class="mt-7 text-[#1D4ED8] font-semibold hover:text-[#163fb3] transition">
-          Learn More →
-        </button>
       </div>
 
       <!-- Card 4 -->
-      <div
-        class="group bg-white border border-gray-200 rounded-[28px] p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
-        <div class="flex items-start justify-between mb-6">
-          <div class="w-14 h-14 rounded-2xl bg-blue-50 text-[#1D4ED8] flex items-center justify-center text-2xl">
-            <i class="fa-solid fa-rocket"></i>
-          </div>
-          <span class="text-xs font-semibold text-[#1D4ED8] bg-blue-50 px-3 py-1 rounded-full">
-            Competitive Prep
-          </span>
+      <div class="group rounded-[28px] overflow-hidden shadow hover:shadow-2xl hover:-translate-y-2 transition">
+
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"
+          class="w-full h-44 object-cover" />
+
+        <div class="p-6">
+          <h3 class="text-2xl font-bold">CUET & Entrance Exams</h3>
+          <p class="text-gray-600 mt-3">
+            Complete preparation with mock tests, strategy, and guidance.
+          </p>
+
+          <button class="mt-5 text-[#1D4ED8] font-semibold">
+            Learn More →
+          </button>
         </div>
-
-        <h3 class="text-2xl font-bold text-[#1F2937]">CUET & Entrance Exams</h3>
-        <p class="text-gray-600 mt-3 leading-7">
-          Complete preparation with mock tests, strategy sessions, revision support, and mentoring.
-        </p>
-
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span class="text-sm bg-gray-50 text-gray-700 px-3 py-1 rounded-full">Mock Tests</span>
-          <span class="text-sm bg-gray-50 text-gray-700 px-3 py-1 rounded-full">Strategy</span>
-          <span class="text-sm bg-gray-50 text-gray-700 px-3 py-1 rounded-full">Guidance</span>
-        </div>
-
-        <button class="mt-7 text-[#1D4ED8] font-semibold hover:text-[#163fb3] transition">
-          Learn More →
-        </button>
       </div>
 
     </div>
   </div>
 </section>
+<section class="relative min-h-[520px] flex items-center overflow-hidden">
 
-<!-- ================================Student journey================================== -->
-<section class="py-24 bg-white overflow-hidden">
+  <!-- BACKGROUND IMAGE -->
+  <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"
+    class="absolute inset-0 w-full h-full object-cover scale-105" />
+
+  <!-- DARK + GRADIENT OVERLAY -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
+
+  <!-- GLOW EFFECT -->
+  <div class="absolute -top-20 -left-20 w-72 h-72 bg-[#1D4ED8]/30 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#FBBF24]/20 rounded-full blur-3xl"></div>
+
+  <!-- CONTENT -->
+  <div class="relative max-w-7xl mx-auto w-full px-4 md:px-6">
+
+    <div class="grid lg:grid-cols-2 items-center gap-10">
+
+      <!-- LEFT TEXT -->
+      <div class="text-white pr-6">
+
+        <p class="text-xs uppercase tracking-widest text-white/70 mb-3">
+          Take the First Step Towards Success
+        </p>
+
+        <h2 class="text-4xl md:text-6xl font-extrabold leading-tight">
+          Start Your Learning Journey Today
+        </h2>
+
+        <div class="w-20 h-[3px] bg-[#FBBF24] mt-5 mb-6"></div>
+
+        <p class="text-white/80 max-w-md leading-7 text-base">
+          Join a learning environment where concepts are clear, doubts are solved, and results improve.
+          Take the first step towards your success today.
+        </p>
+
+        <!-- TRUST POINTS -->
+        <div class="mt-6 flex flex-wrap gap-4 text-sm text-white/80">
+          <span>✔ Expert Faculty</span>
+          <span>✔ Regular Tests</span>
+          <span>✔ Personal Attention</span>
+        </div>
+
+      </div>
+
+      <!-- RIGHT FORM -->
+      <div class="mt-8 lg:mt-0 flex justify-end">
+
+        <div
+          class="w-full max-w-md bg-white/90 backdrop-blur-xl rounded-[20px] p-7 shadow-[0_20px_60px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_80px_rgba(0,0,0,0.4)] transition">
+
+          <h3 class="text-2xl font-bold text-[#1F2937] text-center">
+            Get Your Free Demo Class
+          </h3>
+
+          <p class="text-center text-gray-500 text-sm mt-1 mb-6">
+            Expert Teachers. Proven Results.
+          </p>
+
+          <form class="space-y-4">
+
+            <input type="text" placeholder="Name"
+              class="w-full border-b border-gray-300 py-2 text-sm outline-none focus:border-[#1D4ED8] focus:scale-[1.02] transition">
+
+            <input type="email" placeholder="Email"
+              class="w-full border-b border-gray-300 py-2 text-sm outline-none focus:border-[#1D4ED8] focus:scale-[1.02] transition">
+
+            <input type="tel" placeholder="Phone No."
+              class="w-full border-b border-gray-300 py-2 text-sm outline-none focus:border-[#1D4ED8] focus:scale-[1.02] transition">
+
+            <input type="text" placeholder="Class"
+              class="w-full border-b border-gray-300 py-2 text-sm outline-none focus:border-[#1D4ED8] focus:scale-[1.02] transition">
+
+            <textarea rows="2" placeholder="Message"
+              class="w-full border-b border-gray-300 py-2 text-sm outline-none focus:border-[#1D4ED8] focus:scale-[1.02] transition"></textarea>
+
+            <button
+              class="w-full bg-gradient-to-r from-[#1D4ED8] to-[#2563EB] text-white py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition">
+              Submit
+            </button>
+
+            <!-- TRUST LINE -->
+            <p class="text-xs text-gray-400 text-center">
+              🔒 No spam. Your details are safe with us.
+            </p>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<section class="py-24 bg-gradient-to-b from-white to-blue-50 overflow-hidden">
   <div class="max-w-6xl mx-auto px-4 md:px-6">
+
+    <!-- Heading -->
     <div class="text-center max-w-3xl mx-auto">
       <p class="text-sm uppercase tracking-[0.25em] text-[#1D4ED8] font-semibold">Roadmap</p>
-      <h2 class="mt-4 text-4xl md:text-6xl font-bold text-[#1F2937]">Your Journey to Success</h2>
+      <h2 class="mt-4 text-4xl md:text-6xl font-bold text-[#1F2937]">
+        Your Journey to Success
+      </h2>
       <p class="mt-5 text-gray-600 text-lg leading-8">
         A clear, student-first process that keeps learning simple and outcomes strong.
       </p>
     </div>
 
+    <!-- Timeline -->
     <div class="relative mt-20">
-      <div
-        class="hidden lg:block absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-[#1D4ED8]/20 via-[#FBBF24]/30 to-[#1D4ED8]/20">
-      </div>
 
-      <div class="space-y-10">
-        <div class="grid lg:grid-cols-2 gap-8 items-center">
+      <!-- center line -->
+      <div class="hidden lg:block absolute left-1/2 top-0 h-full w-[2px] bg-gradient-to-b from-[#1D4ED8]/30 via-[#FBBF24]/40 to-[#1D4ED8]/30"></div>
+
+      <div class="space-y-12">
+
+        <!-- Step 1 -->
+        <div class="grid lg:grid-cols-2 gap-8 items-center group">
           <div class="lg:text-right lg:pr-12">
-            <span class="text-[#1D4ED8] font-semibold">01</span>
-            <h3 class="mt-2 text-2xl font-bold text-[#1F2937]">Guidance & Planning</h3>
-            <p class="mt-3 text-gray-600 leading-7">We begin with the right direction and academic clarity.</p>
+            <span class="text-[#1D4ED8] font-bold text-lg">01</span>
+            <h3 class="mt-2 text-2xl font-bold">Guidance & Planning</h3>
+            <p class="mt-3 text-gray-600">We begin with the right direction and academic clarity.</p>
           </div>
-          <div class="lg:pl-12">
-            <div class="rounded-[28px] bg-[#F8FAFC] border border-gray-200 p-6">Right start matters most.</div>
-          </div>
-        </div>
 
-        <div class="grid lg:grid-cols-2 gap-8 items-center">
-          <div class="order-2 lg:order-1 lg:pr-12">
-            <div class="rounded-[28px] bg-[#FFF8E7] border border-yellow-100 p-6">Smart resources make study easier.
+          <div class="lg:pl-12">
+            <div class="overflow-hidden rounded-[28px] shadow-lg group-hover:shadow-2xl transition">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+                class="w-full h-48 object-cover group-hover:scale-105 transition duration-500" />
             </div>
           </div>
-          <div class="order-1 lg:order-2 lg:pl-12">
-            <span class="text-[#1D4ED8] font-semibold">02</span>
-            <h3 class="mt-2 text-2xl font-bold text-[#1F2937]">Study Material</h3>
-            <p class="mt-3 text-gray-600 leading-7">Notes, worksheets, and practice tools support stronger
-              understanding.</p>
-          </div>
         </div>
 
-        <div class="grid lg:grid-cols-2 gap-8 items-center">
-          <div class="lg:text-right lg:pr-12">
-            <span class="text-[#1D4ED8] font-semibold">03</span>
-            <h3 class="mt-2 text-2xl font-bold text-[#1F2937]">Interactive Classes</h3>
-            <p class="mt-3 text-gray-600 leading-7">Students learn through engaging teaching and active support.</p>
-          </div>
-          <div class="lg:pl-12">
-            <div class="rounded-[28px] bg-[#1D4ED8] text-white p-6">Live learning keeps students involved.</div>
-          </div>
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <!-- Step 2 -->
+        <div class="grid lg:grid-cols-2 gap-8 items-center group">
           <div class="order-2 lg:order-1 lg:pr-12">
-            <div class="rounded-[28px] bg-[#F8FAFC] border border-gray-200 p-6">Review, improve, and repeat.</div>
+            <div class="overflow-hidden rounded-[28px] shadow-lg group-hover:shadow-2xl transition">
+              <img src="https://images.unsplash.com/photo-1584697964358-3e14ca57658b"
+                class="w-full h-48 object-cover group-hover:scale-105 transition duration-500" />
+            </div>
           </div>
-          <div class="order-1 lg:order-2 lg:pl-12">
-            <span class="text-[#1D4ED8] font-semibold">04</span>
-            <h3 class="mt-2 text-2xl font-bold text-[#1F2937]">Tests & Tracking</h3>
-            <p class="mt-3 text-gray-600 leading-7">Performance checks help identify weak areas and boost growth.</p>
-          </div>
-        </div>
 
-        <div class="grid lg:grid-cols-2 gap-8 items-center">
-          <div class="lg:text-right lg:pr-12">
-            <span class="text-[#1D4ED8] font-semibold">05</span>
-            <h3 class="mt-2 text-2xl font-bold text-[#1F2937]">Results with Confidence</h3>
-            <p class="mt-3 text-gray-600 leading-7">The final goal is strong performance backed by steady preparation.
+          <div class="order-1 lg:order-2 lg:pl-12">
+            <span class="text-[#1D4ED8] font-bold text-lg">02</span>
+            <h3 class="mt-2 text-2xl font-bold">Study Material</h3>
+            <p class="mt-3 text-gray-600">
+              Notes, worksheets, and practice tools support stronger understanding.
             </p>
           </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="grid lg:grid-cols-2 gap-8 items-center group">
+          <div class="lg:text-right lg:pr-12">
+            <span class="text-[#1D4ED8] font-bold text-lg">03</span>
+            <h3 class="mt-2 text-2xl font-bold">Interactive Classes</h3>
+            <p class="mt-3 text-gray-600">
+              Students learn through engaging teaching and active support.
+            </p>
+          </div>
+
           <div class="lg:pl-12">
-            <div class="rounded-[28px] bg-[#FFF8E7] border border-yellow-100 p-6">Confidence is built step by step.
+            <div class="overflow-hidden rounded-[28px] shadow-lg group-hover:shadow-2xl transition">
+              <img src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b"
+                class="w-full h-48 object-cover group-hover:scale-105 transition duration-500" />
             </div>
           </div>
         </div>
+
+        <!-- Step 4 -->
+        <div class="grid lg:grid-cols-2 gap-8 items-center group">
+          <div class="order-2 lg:order-1 lg:pr-12">
+            <div class="overflow-hidden rounded-[28px] shadow-lg group-hover:shadow-2xl transition">
+              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c"
+                class="w-full h-48 object-cover group-hover:scale-105 transition duration-500" />
+            </div>
+          </div>
+
+          <div class="order-1 lg:order-2 lg:pl-12">
+            <span class="text-[#1D4ED8] font-bold text-lg">04</span>
+            <h3 class="mt-2 text-2xl font-bold">Tests & Tracking</h3>
+            <p class="mt-3 text-gray-600">
+              Performance checks help identify weak areas and boost growth.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="grid lg:grid-cols-2 gap-8 items-center group">
+          <div class="lg:text-right lg:pr-12">
+            <span class="text-[#1D4ED8] font-bold text-lg">05</span>
+            <h3 class="mt-2 text-2xl font-bold">Results with Confidence</h3>
+            <p class="mt-3 text-gray-600">
+              The final goal is strong performance backed by steady preparation.
+            </p>
+          </div>
+
+          <div class="lg:pl-12">
+            <div class="overflow-hidden rounded-[28px] shadow-lg group-hover:shadow-2xl transition">
+              <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0"
+                class="w-full h-48 object-cover group-hover:scale-105 transition duration-500" />
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
+
   </div>
 </section>
-<!-- ==============what our students say========================= -->
-<section class="pb-10 bg-white" (mouseenter)="stopTestimonialAuto()" (mouseleave)="startTestimonialAuto()">
-  <div class="max-w-7xl mx-auto px-4 md:px-6">
-    <div class="grid lg:grid-cols-12 gap-10 items-center">
+
+
+<section class="relative py-20 overflow-hidden"
+  (mouseenter)="stopTestimonialAuto()" (mouseleave)="startTestimonialAuto()">
+
+  <!-- BACKGROUND IMAGE -->
+  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+    class="absolute inset-0 w-full h-full object-cover scale-105" />
+
+  <!-- OVERLAY -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/60"></div>
+
+  <!-- CONTENT -->
+  <div class="relative max-w-7xl mx-auto px-4 md:px-6">
+    <div class="grid lg:grid-cols-12 gap-12 items-center text-white">
 
       <!-- Left -->
       <div class="lg:col-span-4">
-        <span class="inline-block px-4 py-2 rounded-full bg-blue-50 text-[#1D4ED8] text-sm font-semibold">
+
+        <span class="px-4 py-2 rounded-full bg-white/10 backdrop-blur text-sm font-semibold">
           Testimonials
         </span>
 
-        <h2 class="mt-5 text-3xl md:text-5xl font-bold text-[#1F2937] leading-tight">
-          What Our Students & Parents Say
+        <h2 class="mt-5 text-4xl md:text-5xl font-bold leading-tight">
+          What Our Students
+          <span class="text-[#FBBF24]">& Parents Say</span>
         </h2>
 
-        <p class="mt-4 text-gray-600 text-lg leading-8">
+        <p class="mt-4 text-white/80 text-lg leading-8">
           Real stories, honest experiences, and the trust that families place in our teaching.
         </p>
 
+        <!-- Stats -->
         <div class="mt-8 grid grid-cols-2 gap-4">
-          <div class="rounded-2xl border border-gray-200 p-5">
-            <p class="text-2xl font-bold text-[#1D4ED8]">500+</p>
-            <p class="text-sm text-gray-600">Happy Learners</p>
+
+          <div class="rounded-2xl bg-white/10 backdrop-blur p-5 border border-white/20">
+            <p class="text-2xl font-bold text-[#FBBF24]">500+</p>
+            <p class="text-sm text-white/70">Happy Learners</p>
           </div>
-          <div class="rounded-2xl border border-gray-200 p-5">
-            <p class="text-2xl font-bold text-[#1D4ED8]">4.9/5</p>
-            <p class="text-sm text-gray-600">Parent Trust</p>
+
+          <div class="rounded-2xl bg-white/10 backdrop-blur p-5 border border-white/20">
+            <p class="text-2xl font-bold text-[#FBBF24]">4.9/5</p>
+            <p class="text-sm text-white/70">Parent Trust</p>
           </div>
+
         </div>
+
       </div>
 
       <!-- Right -->
       <div class="lg:col-span-8">
-        <div class="rounded-[36px] bg-[#F8FAFC] border border-gray-200 p-8 md:p-12 shadow-sm">
+
+        <div
+          class="rounded-[36px] bg-white/90 backdrop-blur-xl p-8 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
+
           <div class="flex flex-col md:flex-row md:items-center gap-6">
+
             <img [src]="testimonials[testimonialIndex].img"
-              class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md" alt="testimonial">
+              class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg"
+              alt="testimonial">
 
             <div>
-              <div class="text-[#FBBF24] text-xl">★ ★ ★ ★ ★</div>
-              <h4 class="mt-3 text-2xl font-bold text-[#1F2937]">
+              <div class="text-[#FBBF24] text-xl">★★★★★</div>
+
+              <h4 class="mt-2 text-2xl font-bold text-[#1F2937]">
                 {{ testimonials[testimonialIndex].name }}
               </h4>
+
               <p class="text-sm text-gray-500">
                 {{ testimonials[testimonialIndex].role }}
               </p>
             </div>
+
           </div>
 
-          <p class="mt-8 text-xl md:text-3xl leading-10 font-medium text-[#1F2937] max-w-4xl">
+          <!-- Quote -->
+          <p class="mt-8 text-xl md:text-2xl leading-9 font-medium text-[#1F2937] max-w-3xl">
             “{{ testimonials[testimonialIndex].text }}”
           </p>
 
+          <!-- Controls -->
           <div class="mt-10 flex items-center justify-between flex-wrap gap-4">
+
             <div class="flex gap-3">
               <button (click)="prevTestimonial()"
-                class="w-11 h-11 rounded-full border border-gray-300 hover:bg-white transition">
+                class="w-11 h-11 rounded-full border border-gray-300 hover:bg-gray-100 text-black transition">
                 ←
               </button>
+
               <button (click)="nextTestimonial()"
-                class="w-11 h-11 rounded-full bg-[#1D4ED8] text-white hover:bg-blue-700 transition">
+                class="w-11 h-11 rounded-full bg-[#1D4ED8] text-black hover:bg-blue-700 transition">
                 →
               </button>
             </div>
 
+            <!-- Dots -->
             <div class="flex gap-2">
               @for (item of testimonials; track $index) {
-              <button (click)="testimonialIndex = $index" class="w-3 h-3 rounded-full transition-all"
-                [class.bg-[#1D4ED8]]="$index === testimonialIndex" [class.w-8]="$index === testimonialIndex"
-                [class.bg-gray-300]="$index !== testimonialIndex"></button>
+              <button (click)="testimonialIndex = $index"
+                class="h-2 rounded-full transition-all duration-300"
+                [class.w-8]="$index === testimonialIndex"
+                [class.bg-[#1D4ED8]]="$index === testimonialIndex"
+                [class.w-2]="$index !== testimonialIndex"
+                [class.bg-gray-300]="$index !== testimonialIndex">
+              </button>
               }
             </div>
+
           </div>
+
         </div>
+
       </div>
 
     </div>
   </div>
 </section>
-<section class="pb-10 bg-white">
+
+<section class="py-12 bg-gradient-to-b from-white to-blue-50">
   <div class="max-w-6xl mx-auto px-4 md:px-6">
 
     <!-- heading -->
-    <div class="text-center max-w-2xl mx-auto mb-14">
+    <div class="text-center max-w-2xl mx-auto mb-12">
       <p class="text-sm font-semibold tracking-[0.2em] uppercase text-[#1D4ED8]">
         Need Help
       </p>
-      <h2 class="mt-3 text-3xl md:text-5xl font-bold text-[#1F2937] leading-tight">
-        We’re here to guide you.
+      <h2 class="mt-3 text-3xl md:text-5xl font-bold text-[#1F2937]">
+        We’re here to guide you
       </h2>
-      <p class="mt-4 text-gray-600 text-base md:text-lg leading-7">
+      <p class="mt-4 text-gray-600">
         Get quick answers or connect with our team for personal guidance.
       </p>
     </div>
 
-    <!-- action row -->
-    <div class="grid md:grid-cols-2 border border-gray-200 rounded-[32px] overflow-hidden">
+    <!-- main box -->
+    <div class="grid md:grid-cols-3 rounded-[32px] overflow-hidden shadow-lg">
 
-      <!-- faq -->
-      <div class="p-8 md:p-10 bg-[#F8FAFC] md:border-r border-gray-200">
+      <!-- IMAGE SIDE -->
+      <div class="hidden md:block relative">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+          class="w-full h-full object-cover" />
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+
+        <div class="absolute bottom-6 left-6 text-white">
+          <h3 class="text-xl font-bold">Need Guidance?</h3>
+          <p class="text-sm text-white/80">We’re here to help you choose the right path.</p>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="p-8 bg-[#F8FAFC] border-t md:border-t-0 md:border-l border-gray-200 hover:shadow-xl transition">
         <div class="flex items-start justify-between gap-4">
           <div>
-            <p class="text-sm font-semibold text-[#1D4ED8] uppercase tracking-wider">
-              FAQs
-            </p>
-            <h3 class="mt-3 text-2xl md:text-3xl font-bold text-[#1F2937]">
-              Frequently asked questions
-            </h3>
-            <p class="mt-4 text-gray-600 leading-7">
+            <p class="text-sm font-semibold text-[#1D4ED8] uppercase">FAQs</p>
+            <h3 class="mt-2 text-xl font-bold">Frequently Asked Questions</h3>
+            <p class="mt-3 text-gray-600 text-sm">
               Find answers about courses, demo classes, study material, admissions, and more.
             </p>
           </div>
 
-          <div class="w-14 h-14 rounded-2xl bg-white border border-gray-200 flex items-center justify-center text-2xl">
+          <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow">
             ?
           </div>
         </div>
 
-        <button type="button" (click)="openFAQ()"
-          class="mt-8 text-[#1D4ED8] font-semibold text-lg hover:translate-x-1 transition">
+        <button (click)="openFAQ()"
+          class="mt-6 text-[#1D4ED8] font-semibold hover:translate-x-1 transition">
           Open FAQs →
         </button>
       </div>
 
-      <!-- expert -->
-      <div class="p-8 md:p-10 bg-white">
+      <!-- EXPERT -->
+      <div class="p-8 bg-white border-t md:border-t-0 md:border-l border-gray-200 hover:shadow-xl transition">
         <div class="flex items-start justify-between gap-4">
           <div>
-            <p class="text-sm font-semibold text-[#1D4ED8] uppercase tracking-wider">
-              Guidance
-            </p>
-            <h3 class="mt-3 text-2xl md:text-3xl font-bold text-[#1F2937]">
-              Talk to an expert
-            </h3>
-            <p class="mt-4 text-gray-600 leading-7">
-              Connect with our team for help in choosing the right course and academic path.
+            <p class="text-sm font-semibold text-[#1D4ED8] uppercase">Guidance</p>
+            <h3 class="mt-2 text-xl font-bold">Talk to an Expert</h3>
+            <p class="mt-3 text-gray-600 text-sm">
+              Get help in choosing the right course and academic path.
             </p>
           </div>
 
-          <div
-            class="w-14 h-14 rounded-2xl bg-[#FFF8E7] border border-yellow-100 flex items-center justify-center text-2xl">
+          <div class="w-12 h-12 bg-[#FFF8E7] rounded-xl flex items-center justify-center shadow">
             ✦
           </div>
         </div>
 
-        <button type="button" (click)="openForm()"
-          class="mt-8 text-[#1D4ED8] font-semibold text-lg hover:translate-x-1 transition">
+        <button (click)="openForm()"
+          class="mt-6 text-[#1D4ED8] font-semibold hover:translate-x-1 transition">
           Get expert help →
         </button>
       </div>
+
     </div>
+
   </div>
 </section>
 
 @if (showFAQ) {
-<div class="fixed inset-0 z-50 bg-black/40 flex items-center justify-center px-4">
+<div class="fixed inset-0 z-[9999] bg-black/40 flex items-center justify-center px-4">
   <div class="w-full max-w-2xl bg-white rounded-[28px] shadow-2xl p-6 md:p-8 relative">
     <button type="button" (click)="closeFAQ()"
       class="absolute top-4 right-4 w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 transition">
@@ -659,7 +796,7 @@
 }
 
 @if (showForm) {
-<div class="fixed inset-0 z-50 bg-black/40 flex items-center justify-center px-4">
+<div class="fixed inset-0 z-[9999] bg-black/40 flex items-center justify-center px-4">
   <div class="w-full max-w-xl bg-white rounded-[28px] shadow-2xl p-6 md:p-8 relative">
     <button type="button" (click)="closeForm()"
       class="absolute top-4 right-4 w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 transition">
@@ -692,3 +829,29 @@
   </div>
 </div>
 }
+<section class="py-10 bg-[#1D4ED8] text-white">
+  <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+
+    <!-- text -->
+    <div>
+      <h3 class="text-xl md:text-2xl font-bold">
+        Stay Updated with New Batches
+      </h3>
+      <p class="text-white/80 text-sm">
+        Get updates, tips & offers directly.
+      </p>
+    </div>
+
+    <!-- form -->
+    <div class="flex w-full md:w-auto gap-2">
+      <input type="email" placeholder="Your email"
+        class="px-4 py-2 rounded-md text-black text-sm outline-none bg-white w-full md:w-[220px]" />
+
+      <button
+        class="bg-[#FBBF24] text-black px-4 py-2 rounded-md font-semibold hover:scale-105 transition">
+        Subscribe
+      </button>
+    </div>
+
+  </div>
+</section>
