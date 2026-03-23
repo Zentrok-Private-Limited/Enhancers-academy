@@ -5,6 +5,9 @@ import { Class18 } from './course/class-1-8/class-1-8';
 import { Class910 } from './course/class-9-10/class-9-10';
 import { Class1112 } from './course/class-11-12/class-11-12';
 import { Cuet } from './course/cuet/cuet';
+import { Blog } from './blog/blog';
+import { BlogDetail } from './blog-detail/blog-detail';
+import { Contact } from './contact/contact';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,4 +17,7 @@ export const routes: Routes = [
     { path: 'courses/class-9-10', component: Class910 },
     { path: 'courses/class-11-12', component: Class1112 },
     { path: 'courses/cuet', component: Cuet },
+    { path: 'blog', component: Blog },
+    { path: 'blog/:id', component: BlogDetail },
+    { path: 'contact', component: Contact}
 ];
