@@ -20,12 +20,12 @@
       </p>
 
       <div class="mt-8 flex flex-wrap gap-4">
-        <button class="bg-[#1D4ED8] text-white px-7 py-3 rounded-full font-semibold hover:bg-blue-700 transition">
+        <button (click)="openForm()" class="bg-[#1D4ED8] text-white px-7 py-3 rounded-full font-semibold hover:bg-blue-700 transition">
           Enroll Now
         </button>
-        <button class="border border-[#1D4ED8] text-[#1D4ED8] px-7 py-3 rounded-full font-semibold hover:bg-blue-50 transition">
+        <!-- <button class="border border-[#1D4ED8] text-[#1D4ED8] px-7 py-3 rounded-full font-semibold hover:bg-blue-50 transition">
           Explore Courses
-        </button>
+        </button> -->
       </div>
     </div>
 
@@ -45,7 +45,40 @@
 
   </div>
 </section>
+@if (showForm) {
+<div class="fixed inset-0 z-[9999] bg-black/40 flex items-center justify-center px-4">
+  <div class="w-full max-w-xl bg-white rounded-[28px] shadow-2xl p-6 md:p-8 relative">
+    <button type="button" (click)="closeForm()"
+      class="absolute top-4 right-4 w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 transition">
+      ✕
+    </button>
 
+    <p class="text-sm font-semibold uppercase tracking-wider text-[#1D4ED8]">Expert Support</p>
+    <h2 class="mt-2 text-2xl md:text-3xl font-bold text-[#1F2937]">
+      Talk to an Expert
+    </h2>
+
+    <form class="mt-8 space-y-5">
+      <input type="text" placeholder="Your Name"
+        class="w-full border-b border-gray-300 px-1 py-3 outline-none focus:border-[#1D4ED8]">
+
+      <input type="tel" placeholder="Phone Number"
+        class="w-full border-b border-gray-300 px-1 py-3 outline-none focus:border-[#1D4ED8]">
+
+      <input type="email" placeholder="Email Address"
+        class="w-full border-b border-gray-300 px-1 py-3 outline-none focus:border-[#1D4ED8]">
+
+      <textarea rows="4" placeholder="How can we help you?"
+        class="w-full border-b border-gray-300 px-1 py-3 outline-none focus:border-[#1D4ED8]"></textarea>
+
+      <button type="submit"
+        class="mt-4 bg-[#1D4ED8] text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+}
 <!-- WHO WE ARE -->
 <section class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center">

@@ -24,4 +24,13 @@ export class About {
       });
     }
   }
+  
+  showForm = false;
+  openForm(): void {
+    this.showForm = true;
+  }
+
+  closeForm(): void {
+    this.showForm = false;
+  }
 }
