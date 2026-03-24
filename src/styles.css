@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'aos/dist/aos.css';
 * {
   transition: all 0.3s ease;
 }
 html {
   scroll-behavior: smooth;
-}
+} 

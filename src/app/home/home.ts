@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 })
 export class Home implements OnInit, OnDestroy {
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
   // ================= BANNER SLIDER =================
   currentBanner = 0;
  bannerInterval: ReturnType<typeof setInterval> | null = null;
@@ -193,10 +194,24 @@ stopBannerAutoPlay(): void {
   }
 
   // ================= LIFECYCLE =================
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+
+    // ✅ AOS fix (only browser)
+    if (isPlatformBrowser(this.platformId)) {
+      const AOS = (await import('aos')).default;
+
+      AOS.init({
+        duration: 1200,
+        easing: 'ease-in-out',
+        once: true,
+      });
+    }
+
+    // ✅ tumhare existing functions
     this.startBannerAutoPlay();
     this.startTestimonialAuto();
   }
+
 
   ngOnDestroy(): void {
     this.stopBannerAutoPlay();
