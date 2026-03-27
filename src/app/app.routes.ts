@@ -8,6 +8,7 @@ import { Cuet } from './course/cuet/cuet';
 import { Blog } from './blog/blog';
 import { BlogDetail } from './blog-detail/blog-detail';
 import { Contact } from './contact/contact';
+import { Class1112Commerce } from './course/class-11-12-commerce/class-11-12-commerce';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,6 +17,7 @@ export const routes: Routes = [
     { path: 'courses/class-1-8', component: Class18 },
     { path: 'courses/class-9-10', component: Class910 },
     { path: 'courses/class-11-12', component: Class1112 },
+    { path: 'courses/class-11-12-commerce', component: Class1112Commerce },
     { path: 'courses/cuet', component: Cuet },
     { path: 'blog', component: Blog },
     { path: 'blog/:id', component: BlogDetail },

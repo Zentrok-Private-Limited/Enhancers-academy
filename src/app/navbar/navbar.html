@@ -36,7 +36,13 @@
         <a routerLink="/courses/class-11-12" fragment="class-11-12" (click)="closeCoursesDropdown()"
           class="block px-5 py-4 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition border-b border-gray-100">
           <span class="block font-semibold">Classes XI - XII</span>
-          <span class="text-sm text-gray-500">Accountancy, Economics</span>
+          <span class="text-sm text-gray-500">Science</span>
+        </a>
+
+        <a routerLink="/courses/class-11-12-commerce" fragment="class-11-12" (click)="closeCoursesDropdown()"
+          class="block px-5 py-4 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition border-b border-gray-100">
+          <span class="block font-semibold">Classes XI - XII</span>
+          <span class="text-sm text-gray-500">Commerce</span>
         </a>
 
         <a routerLink="/courses/cuet" fragment="cuet" (click)="closeCoursesDropdown()"
@@ -90,20 +96,29 @@
 
       <div *ngIf="isCoursesDropdownOpen" class="bg-gray-50 border-t">
         <a routerLink="/courses" fragment="class-1-8" (click)="closeAllMenus()"
-          class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50">
-          Classes I - VIII
+          class="block py-2 px-2 text-sm text-gray-700 hover:bg-blue-50">
+          <span class="block font-semibold">Classes I - VIII</span>
+          <span class="text-sm text-gray-500">All Subjects</span>
         </a>
         <a routerLink="/courses" fragment="class-9-10" (click)="closeAllMenus()"
-          class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50">
-          Classes IX - X
+          class="block py-2 px-2 text-sm text-gray-700 hover:bg-blue-50">
+          <span class="block font-semibold">Classes IX - X</span>
+          <span class="text-sm text-gray-500">Maths, Science, English</span>
         </a>
-        <a routerLink="/courses" fragment="class-11-12" (click)="closeAllMenus()"
-          class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50">
-          Classes XI - XII
+        <a routerLink="/courses/class-11-12" fragment="class-11-12" (click)="closeAllMenus()"
+          class="block py-2 px-2 text-sm text-gray-700 hover:bg-blue-50">
+          <span class="block font-semibold">Classes XI - XII</span>
+          <span class="text-sm text-gray-500">Science</span>
+        </a>
+        <a routerLink="/courses/class-11-12-commerce" fragment="class-11-12" (click)="closeAllMenus()"
+          class="block py-2 px-2 text-sm text-gray-700 hover:bg-blue-50">
+          <span class="block font-semibold">Classes XI - XII</span>
+          <span class="text-sm text-gray-500">Commerce</span>
         </a>
         <a routerLink="/courses" fragment="cuet" (click)="closeAllMenus()"
-          class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50">
-          CUET Preparation
+          class="block py-2 px-2 text-sm text-gray-700 hover:bg-blue-50">
+          <span class="block font-semibold">CUET Preparation</span>
+          <span class="text-sm text-gray-500">Entrance Exam Preparation</span>
         </a>
       </div>
     </div>
