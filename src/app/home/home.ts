@@ -112,7 +112,7 @@ export class Home implements OnInit, OnDestroy {
       { icon: '<i class="fa-solid fa-lightbulb"></i>', title: 'Concept Clarity', text: 'Deep understanding of subjects.' },
       { icon: '<i class="fa-solid fa-chart-line"></i>', title: 'Performance Tracking', text: 'Regular tests and feedback.' }
     ],
-    image: '/teacher.png',
+    image: '/7.png',
     badgeTopLabel: 'Top Faculty',
     badgeTopValue: 'Experienced Team',
     badgeBottomLabel: 'Join Now',
@@ -138,7 +138,7 @@ export class Home implements OnInit, OnDestroy {
       { icon: '<i class="fa-solid fa-star"></i>', title: 'Excellent Growth', text: 'Improvement in every student.' },
       { icon: '<i class="fa-solid fa-graduation-cap"></i>', title: 'Success Stories', text: 'Real student achievements.' }
     ],
-    image: '/student.png',
+    image: '/8.png',
     badgeTopLabel: 'Top Score',
     badgeTopValue: '95%+',
     badgeBottomLabel: 'Join Achievers',
@@ -180,7 +180,7 @@ topStudents = [
     score: '99.99%ile',
     exam: 'JEE Main',
     rank: '1',
-    image: 'assets/students/s1.jpg'
+    image: '/s1.jpg'
   },
   {
     name: 'Sanjay Kumar',
@@ -188,7 +188,7 @@ topStudents = [
     score: '99.95%ile',
     exam: 'JEE Main',
     rank: '24',
-    image: 'assets/students/s2.jpg'
+    image: '/s2.jpg'
   },
   {
     name: 'Priya Sharma',
@@ -196,7 +196,7 @@ topStudents = [
     score: '98.87%',
     exam: 'Boards',
     rank: 'Topper',
-    image: 'assets/students/s3.jpg'
+    image: '/s3.jpg'
   },
   {
     name: 'Aman Verma',
@@ -204,7 +204,7 @@ topStudents = [
     score: '97.45%',
     exam: 'School Topper',
     rank: 'Top 5',
-    image: 'assets/students/s4.jpg'
+    image: '/s4.jpg'
   },
 
   // 🔥 NEW 8 STUDENTS
@@ -215,7 +215,7 @@ topStudents = [
     score: '99.92%ile',
     exam: 'JEE Main',
     rank: '56',
-    image: 'assets/students/s5.jpg'
+    image: '/s5.jpg'
   },
   {
     name: 'Neha Gupta',
@@ -223,7 +223,7 @@ topStudents = [
     score: '98.75%',
     exam: 'Boards',
     rank: 'School Rank 1',
-    image: 'assets/students/s6.jpg'
+    image: '/s6.jpg'
   },
   {
     name: 'Rahul Mehta',
@@ -231,7 +231,7 @@ topStudents = [
     score: '99.10%ile',
     exam: 'NEET',
     rank: 'Top 100',
-    image: 'assets/students/s7.jpg'
+    image: '/s7.jpg'
   },
   {
     name: 'Sneha Jain',
@@ -239,7 +239,7 @@ topStudents = [
     score: '96.80%',
     exam: 'School Exams',
     rank: 'Topper',
-    image: 'assets/students/s8.jpg'
+    image: '/s8.jpg'
   },
   {
     name: 'Karan Patel',
@@ -247,7 +247,7 @@ topStudents = [
     score: '99.01%ile',
     exam: 'JEE Main',
     rank: '89',
-    image: 'assets/students/s9.jpg'
+    image: '/s9.jpg'
   },
   {
     name: 'Pooja Verma',
@@ -255,7 +255,7 @@ topStudents = [
     score: '97.95%',
     exam: 'Boards',
     rank: 'Top 3',
-    image: 'assets/students/s10.jpg'
+    image: '/s10.jpg'
   },
   {
     name: 'Vikas Yadav',
@@ -263,7 +263,7 @@ topStudents = [
     score: '98.60%ile',
     exam: 'CUET',
     rank: 'Top 50',
-    image: 'assets/students/s11.jpg'
+    image: '/s11.jpg'
   },
   {
     name: 'Isha Kapoor',
@@ -271,7 +271,7 @@ topStudents = [
     score: '95.40%',
     exam: 'School Exams',
     rank: 'Top 5',
-    image: 'assets/students/s12.jpg'
+    image: '/s12.jpg'
   }
 ];
   // ================= TESTIMONIAL SLIDER =================
