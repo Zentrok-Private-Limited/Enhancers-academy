@@ -12,4 +12,11 @@ import { Footer } from './footer/footer';
 })
 export class App {
   protected readonly title = signal('enhancers-academy');
+  isLoading = true;
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 3000); // time change kar sakti ho
+  }
 }

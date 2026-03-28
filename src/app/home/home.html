@@ -1,117 +1,123 @@
 <div
-  class="relative overflow-hidden rounded-[36px] bg-gradient-to-br from-[#1D4ED8] via-[#2563EB] to-[#1E40AF] shadow-[0_20px_80px_rgba(0,0,0,0.25)]"
+  class="relative overflow-hidden rounded-[36px] bg-gradient-to-br from-[#010b33] via-[#023dbf] to-[#021452] shadow-[0_20px_80px_rgba(0,0,0,0.25)]"
   (mouseenter)="stopBannerAutoPlay()" (mouseleave)="startBannerAutoPlay()">
 
-  <!-- premium glow -->
+  <!-- GLOBAL GLOW (ONLY ONCE) -->
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.2),transparent)]"></div>
-
-  <!-- shapes -->
   <div class="absolute -top-20 -left-20 w-72 h-72 bg-[#FBBF24]/20 rounded-full blur-3xl"></div>
   <div class="absolute bottom-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
 
-  <div class="relative grid lg:grid-cols-12 gap-3 items-center p-6 md:p-10">
+  <!-- ================= SLIDER ================= -->
+  <div class="flex transition-all duration-700 ease-in-out will-change-transform"
+    [style.transform]="'translateX(-' + currentBanner * 100 + '%)'">
 
-    <!-- LEFT -->
-    <div class="lg:col-span-5 text-white">
+    @for (banner of banners; track $index) {
+    <div class="w-full flex-shrink-0">
 
-      <span
-        class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm backdrop-blur-md shadow">
-        <span class="w-2 h-2 rounded-full bg-[#FBBF24]"></span>
-        Premium Learning
-      </span>
+      <div class="grid lg:grid-cols-12 gap-3 items-center p-6 md:p-10 text-white">
 
-      <h1 class="text-3xl md:text-6xl font-extrabold leading-tight">
-        {{ banners[currentBanner].title1 }}
-        <span class="block text-[#FBBF24] drop-shadow-lg">{{ banners[currentBanner].title2 }}</span>
-        <span class="block text-white/90">{{ banners[currentBanner].title3 }}</span>
-      </h1>
+        <!-- LEFT -->
+        <div class="lg:col-span-5">
 
-      <p class="text-white/80 max-w-xl">
-        {{ banners[currentBanner].desc }}
-      </p>
+          <span
+            class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm">
+            <span class="w-2 h-2 rounded-full bg-[#FBBF24]"></span>
+            Premium Learning
+          </span>
 
-      <!-- stats -->
-      <div class="mt-4 grid grid-cols-3 gap-4 max-w-md">
-        <div
-          class="bg-white/10 backdrop-blur-md rounded-xl px-4 py-4 text-center border border-white/20 hover:scale-105 transition">
-          <p class="text-xl font-bold text-[#FBBF24]">{{ banners[currentBanner].stat1 }}</p>
-          <p class="text-xs text-white/70">{{ banners[currentBanner].stat1Label }}</p>
-        </div>
+          <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
+            {{ banner.title1 }}
+            <span class="block text-[#FBBF24]">{{ banner.title2 }}</span>
+            <span class="block text-white/90">{{ banner.title3 }}</span>
+          </h1>
 
-        <div
-          class="bg-white/10 backdrop-blur-md rounded-xl px-4 py-4 text-center border border-white/20 hover:scale-105 transition">
-          <p class="text-xl font-bold text-[#FBBF24]">{{ banners[currentBanner].stat2 }}</p>
-          <p class="text-xs text-white/70">{{ banners[currentBanner].stat2Label }}</p>
-        </div>
+          <p class="text-white/80">
+            {{ banner.desc }}
+          </p>
 
-        <div
-          class="bg-white/10 backdrop-blur-md rounded-xl px-4 py-4 text-center border border-white/20 hover:scale-105 transition">
-          <p class="text-xl font-bold text-[#FBBF24]">{{ banners[currentBanner].stat3 }}</p>
-          <p class="text-xs text-white/70">{{ banners[currentBanner].stat3Label }}</p>
-        </div>
-      </div>
+          <!-- stats -->
+          <div class="mt-2 grid grid-cols-3 gap-2 max-w-sm">
 
-      <!-- buttons -->
-      <div (click)="openForm()" class="mt-3 flex flex-wrap gap-4">
-        <button
-          class="bg-gradient-to-r from-[#FBBF24] to-yellow-300 text-black px-6 py-3 rounded-full font-bold shadow-xl hover:scale-105 transition">
-          Enroll Now
-        </button>
-
-        <!-- <button
-          class="border border-white/30 backdrop-blur px-6 py-3 rounded-full hover:bg-white hover:text-black transition">
-          View Syllabus
-        </button> -->
-      </div>
-
-    </div>
-
-    <!-- RIGHT -->
-    <div class="lg:col-span-7">
-      <div class="relative">
-
-        <!-- glass card -->
-        <div
-          class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-[28px] p-5 shadow-2xl hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition">
-
-          <div class="grid md:grid-cols-2 gap-4">
-
-            <!-- features -->
-            <div class="bg-white/10 backdrop-blur rounded-xl p-4 border border-white/20">
-              <div class="bg-[#FBBF24] text-black px-3 py-2 rounded-lg font-bold mb-4 inline-block">
-                {{ banners[currentBanner].featureTitle }}
-              </div>
-
-              @for (feature of banners[currentBanner].features; track $index) {
-              <div class="flex gap-3 mb-3">
-                <div class="w-10 h-10 bg-[#1D4ED8] text-white flex items-center justify-center rounded-lg shadow">
-                  <span [innerHTML]="feature.icon"></span>
-                </div>
-                <div>
-                  <p class="font-semibold text-sm">{{ feature.title }}</p>
-                  <p class="text-xs text-white/70">{{ feature.text }}</p>
-                </div>
-              </div>
-              }
+            <div class="bg-white/10 rounded-lg px-2 py-2 text-center border border-white/20">
+              <p class="text-base font-bold text-[#FBBF24] leading-tight">
+                {{ banner.stat1 }}
+              </p>
+              <p class="text-[10px] text-white/70 leading-tight">
+                {{ banner.stat1Label }}
+              </p>
             </div>
 
-            <!-- image -->
-            <div class="relative">
-              <div class="rounded-xl overflow-hidden">
-                <img [src]="banners[currentBanner].image"
-                  class="w-full h-full object-cover scale-105 hover:scale-110 transition duration-700" />
+            <div class="bg-white/10 rounded-lg px-2 py-2 text-center border border-white/20">
+              <p class="text-base font-bold text-[#FBBF24] leading-tight">
+                {{ banner.stat2 }}
+              </p>
+              <p class="text-[10px] text-white/70 leading-tight">
+                {{ banner.stat2Label }}
+              </p>
+            </div>
+
+            <div class="bg-white/10 rounded-lg px-2 py-2 text-center border border-white/20">
+              <p class="text-base font-bold text-[#FBBF24] leading-tight">
+                {{ banner.stat3 }}
+              </p>
+              <p class="text-[10px] text-white/70 leading-tight">
+                {{ banner.stat3Label }}
+              </p>
+            </div>
+
+          </div>
+
+          <!-- button -->
+          <div (click)="openForm()" class="mt-4">
+            <button class="bg-yellow-400 text-black px-6 py-3 rounded-full font-bold hover:scale-105 transition">
+              Enroll Now
+            </button>
+          </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="lg:col-span-7">
+          <div class="bg-white/10 backdrop-blur rounded-[28px] p-5">
+
+            <div class="grid md:grid-cols-2 gap-4">
+
+              <!-- features -->
+              <div class="bg-white/10 rounded-xl p-4 border border-white/20">
+                <div class="bg-[#FBBF24] text-black px-3 py-2 rounded-lg font-bold mb-4 inline-block">
+                  {{ banner.featureTitle }}
+                </div>
+
+                @for (feature of banner.features; track $index) {
+                <div class="flex gap-3 mb-3">
+                  <div class="w-10 h-10 bg-[#1D4ED8] text-white flex items-center justify-center rounded-lg">
+                    <span [innerHTML]="feature.icon"></span>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-sm">{{ feature.title }}</p>
+                    <p class="text-xs text-white/70">{{ feature.text }}</p>
+                  </div>
+                </div>
+                }
               </div>
 
-              <!-- badges -->
-              <div class="absolute top-3 left-3 bg-white px-3 py-2 rounded-lg shadow">
-                <p class="text-xs text-gray-500">{{ banners[currentBanner].badgeTopLabel }}</p>
-                <p class="font-bold text-[#1D4ED8]">{{ banners[currentBanner].badgeTopValue }}</p>
+              <!-- image -->
+              <div class="relative">
+                <div class="rounded-xl overflow-hidden">
+                  <img [src]="banner.image" class="w-full h-full object-cover" />
+                </div>
+
+                <div class="absolute top-3 left-3 bg-white px-3 py-2 rounded-lg">
+                  <p class="text-xs text-gray-500">{{ banner.badgeTopLabel }}</p>
+                  <p class="font-bold text-[#1D4ED8]">{{ banner.badgeTopValue }}</p>
+                </div>
+
+                <div class="absolute bottom-3 right-3 bg-[#FBBF24] px-3 py-2 rounded-lg">
+                  <p class="text-xs">{{ banner.badgeBottomLabel }}</p>
+                  <p class="font-bold">{{ banner.badgeBottomValue }}</p>
+                </div>
               </div>
 
-              <div class="absolute bottom-3 right-3 bg-[#FBBF24] px-3 py-2 rounded-lg shadow">
-                <p class="text-xs">{{ banners[currentBanner].badgeBottomLabel }}</p>
-                <p class="font-bold">{{ banners[currentBanner].badgeBottomValue }}</p>
-              </div>
             </div>
 
           </div>
@@ -119,238 +125,303 @@
 
       </div>
     </div>
+    }
 
+  </div>
+  <!-- ================= DOTS (OUTSIDE) ================= -->
+  <div class="flex justify-center mb-6 gap-2">
+    @for (b of banners; track $index; let i = $index) {
+    <div (click)="goToBanner(i)" class="w-3 h-3 rounded-full cursor-pointer transition"
+      [class.bg-yellow-400]="i === currentBanner" [class.bg-white/40]="i !== currentBanner">
+    </div>
+    }
   </div>
 </div>
-<!-- ========================choose your goal======================== -->
-<section class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-4 md:px-6">
+<!-- ===========================about enhacers-academy====================================  -->
+<section class="relative py-16 md:py-10 overflow-hidden">
+  <div class="relative max-w-5xl mx-auto px-4 text-center">
 
-    <div class="grid lg:grid-cols-12 gap-10 items-start">
-
-      <!-- Left Content -->
-      <div class="lg:col-span-4" data-aos="fade-left">
-        <span class="inline-block text-sm font-semibold text-[#1D4ED8] bg-blue-50 px-4 py-2 rounded-full">
-          Academic Pathways
-        </span>
-
-        <h2 class="mt-5 text-3xl md:text-5xl font-bold text-[#1F2937] leading-tight">
-          Choose Your
-          <span class="text-[#1D4ED8]">Goal</span>
-        </h2>
-
-        <p class="mt-5 text-gray-600 text-base md:text-lg leading-7">
-          Pick the right academic path and move ahead with focused preparation, expert support, and structured learning.
-        </p>
-
-        <div class="mt-8 flex items-center gap-4">
-          <div class="w-12 h-1 bg-[#1D4ED8] rounded-full"></div>
-          <div class="w-20 h-1 bg-[#FBBF24] rounded-full"></div>
-        </div>
-      </div>
-
-      <!-- Right Cards -->
-      <div class="lg:col-span-8">
-        <div class="grid md:grid-cols-2 gap-6">
-
-          <!-- Card 1 -->
-          <div
-            class="bg-[#F8FAFC] rounded-[24px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition duration-300"
-            data-aos="fade-down">
-
-            <img src="/1234.avif" class="w-full h-40 object-cover" />
-
-            <div class="p-6">
-              <div class="flex items-start justify-between">
-                <div>
-                  <p class="text-sm font-medium text-[#1D4ED8] mb-2">Learning Path</p>
-                  <h3 class="text-2xl font-bold text-[#1F2937]">Class 6 – 10</h3>
-                </div>
-                <div class="w-12 h-12 rounded-2xl bg-[#1D4ED8] text-white flex items-center justify-center text-xl">
-                  <i class="fa-solid fa-book"></i>
-                </div>
-              </div>
-
-              <p class="mt-4 text-gray-600 leading-6">
-                Build strong basics, improve subject understanding, and develop confidence step by step.
-              </p>
-
-              <div class="mt-6">
-                <span class="bg-blue-50 text-[#1D4ED8] text-sm px-4 py-2 rounded-full">
-                  Strong Learning
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div
-            class="bg-[#1D4ED8] text-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition duration-300 md:translate-y-8"
-            data-aos="fade-up">
-
-            <img src="/12345.jpg" class="w-full h-40 object-cover opacity-80" />
-
-            <div class="p-6">
-              <div class="flex items-start justify-between">
-                <div>
-                  <p class="text-sm font-medium text-white/80 mb-2">Senior Secondary</p>
-                  <h3 class="text-2xl font-bold">Class 11 – 12</h3>
-                </div>
-                <div class="w-12 h-12 rounded-2xl bg-[#FBBF24] text-[#1F2937] flex items-center justify-center text-xl">
-                  <i class="fa-solid fa-graduation-cap"></i>
-                </div>
-              </div>
-
-              <p class="mt-4 text-white/85 leading-6">
-                Accountancy, Economics & Biology (Gaurav Arora) with NEET, CUET & entrance prep.
-              </p>
-
-              <div class="mt-6">
-                <span class="bg-white/15 text-white text-sm px-4 py-2 rounded-full">
-                  Expert Mentorship
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div
-            class="md:col-span-2 bg-[#FFF8E7] rounded-[24px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition duration-300"
-            data-aos="fade-right">
-
-            <img src="/dsfasdf.jpg" class="w-full h-66 object-cover" />
-
-            <div class="p-6 md:p-8">
-              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <div>
-                  <p class="text-sm font-medium text-[#1D4ED8] mb-2">Competitive Preparation</p>
-                  <h3 class="text-2xl md:text-3xl font-bold text-[#1F2937]">CUET Preparation</h3>
-                  <p class="mt-3 text-gray-600 leading-7 max-w-2xl">
-                    Prepare strategically with practice, revision, concept clarity, and expert guidance.
-                  </p>
-                </div>
-
-                <div class="flex gap-3">
-                  <div class="w-14 h-14 bg-[#FBBF24] rounded-2xl flex items-center justify-center text-2xl">
-                    <i class="fa-solid fa-rocket"></i>
-                  </div>
-                  <div class="w-14 h-14 bg-[#1D4ED8] text-white rounded-2xl flex items-center justify-center text-2xl">
-                    <i class="fa-solid fa-bullseye"></i>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mt-6 flex flex-wrap gap-3">
-                <span class="bg-white px-4 py-2 rounded-full text-sm border">Exam Strategy</span>
-                <span class="bg-white px-4 py-2 rounded-full text-sm border">Mock Practice</span>
-                <span class="bg-white px-4 py-2 rounded-full text-sm border">Guided Learning</span>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="py-10 bg-white">
-  <div class="max-w-6xl  mx-auto px-4 md:px-6">
+    <!-- Tag -->
+    <span class="inline-block bg-yellow-400 text-blue-900 px-4 py-1 rounded-full text-sm font-semibold mb-4">
+      Enhancers Academy
+    </span>
 
     <!-- Heading -->
-    <div class="text-center  mb-14">
-      <span class="px-4 py-2 rounded-full bg-gray-50 text-[#1D4ED8] text-sm font-semibold">
-        Programs We Offer
+    <h1 class="text-2xl md:text-5xl font-extrabold leading-tight">
+      Achieve Academic Excellence with
+      <span class="text-yellow-400">Enhancers Academy</span>
+      <br class="hidden md:block" />
+      <span class="text-lg md:text-3xl font-semibold">
+        Your Path to NEET, CUET & Success
       </span>
-      <h2 class="text-3xl md:text-5xl font-bold text-[#1F2937] mt-4">
+    </h1>
+
+    <!-- Paragraph -->
+    <p class="text-sm md:text-lg max-w-3xl mx-auto leading-7">
+      Enhancers Academy offers expert guidance for Classes I–XII with a strong focus on concept clarity and results.
+      With dedicated faculty and structured learning, we prepare students for board exams as well as
+      <span class="text-yellow-600 font-semibold">NEET, CUET, and other entrance exams</span>,
+      helping them achieve their academic goals with confidence.
+    </p>
+
+    <!-- Buttons -->
+    <div class="mt-8 flex justify-center gap-4 flex-wrap">
+      <button class="bg-yellow-400 text-blue-900 px-6 py-3 rounded-full font-bold shadow hover:scale-105 transition">
+        Enroll Now
+      </button>
+    </div>
+
+  </div>
+
+</section>
+<section class="py-10 bg-gradient-to-b from-white to-blue-50">
+
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+
+    <!-- Heading -->
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <h2 class="text-3xl md:text-6xl font-extrabold text-[#1D4ED8]">
         Our Courses
       </h2>
-      <p class="text-gray-600 mt-3 max-w-2xl mx-auto">
-        Choose the right course for your academic stage and grow with expert guidance.
+      <p class="text-gray-600 mt-3">
+        Explore our structured courses designed for academic excellence.
       </p>
     </div>
 
-    <!-- Courses -->
-    <div class="grid md:grid-cols-2 gap-7">
+    <!-- Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <!-- Card 1 -->
-      <div class="group rounded-[28px] overflow-hidden shadow hover:shadow-2xl hover:-translate-y-2 transition"
-        data-aos="fade-up">
+      <!-- CARD -->
+      <div
+        class="group relative bg-white/70 backdrop-blur-xl rounded-2xl p-6 border border-white/40 shadow-lg hover:shadow-2xl transition duration-500 hover:-translate-y-2">
 
-        <img src="/1234.avif" class="w-full h-44 object-cover" />
+        <!-- glow -->
+        <div
+          class="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-200/20 to-yellow-200/20 opacity-0 group-hover:opacity-100 transition">
+        </div>
 
-        <div class="p-6">
-          <h3 class="text-2xl font-bold">Class 1 – 8</h3>
-          <p class="text-gray-600 mt-3">
-            Classes 1–5 guided by <b>Kiran Chawla</b> with strong foundation building.
+        <div class="relative z-10">
+
+          <div class="text-4xl mb-4 text-[#1D4ED8]">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+
+          <h3 class="text-xl font-bold mb-2">Classes I – VIII</h3>
+
+          <p class="text-gray-600 text-sm">
+            All subjects with strong foundation and concept clarity.
           </p>
 
-          <button class="mt-5 text-[#1D4ED8] font-semibold">
-            Learn More →
-          </button>
         </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="group rounded-[28px] overflow-hidden shadow hover:shadow-2xl hover:-translate-y-2 transition"
-        data-aos="fade-right">
+      <!-- CARD -->
+      <div
+        class="group relative bg-white/70 backdrop-blur-xl rounded-2xl p-6 border border-white/40 shadow-lg hover:shadow-2xl transition duration-500 hover:-translate-y-2">
 
-        <img src="/12345.jpg" class="w-full h-44 object-cover" />
+        <div
+          class="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-200/20 to-yellow-200/20 opacity-0 group-hover:opacity-100 transition">
+        </div>
 
-        <div class="p-6 bg-[#1D4ED8] text-white">
-          <h3 class="text-2xl font-bold">Class 9 – 10</h3>
-          <p class="mt-3 text-white/85">
-            Maths, Science & English with strong conceptual clarity.
+        <div class="relative z-10">
+          <div class="text-4xl mb-4 text-[#1D4ED8]">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+
+          <h3 class="text-xl font-bold mb-2">Classes IX – X</h3>
+
+          <p class="text-gray-600 text-sm">
+            Maths, Science & English with focused exam preparation.
           </p>
-
-          <button class="mt-5 text-[#FBBF24] font-semibold">
-            Learn More →
-          </button>
         </div>
       </div>
 
-      <!-- Card 3 -->
-      <div class="group rounded-[28px] overflow-hidden shadow hover:shadow-2xl hover:-translate-y-2 transition"
-        data-aos="fade-left">
+      <!-- CARD -->
+      <div
+        class="group relative bg-white/70 backdrop-blur-xl rounded-2xl p-6 border border-white/40 shadow-lg hover:shadow-2xl transition duration-500 hover:-translate-y-2">
 
-        <img src="/dsgsdf.jpg" class="w-full h-44 object-cover" />
+        <div
+          class="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-200/20 to-yellow-200/20 opacity-0 group-hover:opacity-100 transition">
+        </div>
 
-        <div class="p-6 bg-[#FFF8E7]">
-          <h3 class="text-2xl font-bold">Class 11 – 12</h3>
-          <p class="text-gray-700 mt-3">
-            Accountancy, Economics & Biology by <b>Gaurav Arora</b> + NEET, CUET prep.
+        <div class="relative z-10">
+          <div class="text-4xl mb-4 text-[#1D4ED8]">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+
+          <h3 class="text-xl font-bold mb-2">Classes XI – XII</h3>
+
+          <p class="text-gray-600 text-sm">
+            Accountancy, Economics & Maths by expert faculty.
           </p>
-
-          <button class="mt-5 text-[#1D4ED8] font-semibold">
-            Learn More →
-          </button>
         </div>
       </div>
 
-      <!-- Card 4 -->
-      <div class="group rounded-[28px] overflow-hidden shadow hover:shadow-2xl hover:-translate-y-2 transition"
-        data-aos="fade-down">
+      <!-- 🔥 ENTRANCE CARD (UPDATED) -->
+      <div
+        class="group relative bg-white/70 backdrop-blur-xl rounded-2xl p-6 border border-white/40 shadow-lg hover:shadow-2xl transition duration-500 hover:-translate-y-2">
 
-        <img src="/123.avif" class="w-full h-44 object-cover" />
+        <div
+          class="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-200/20 to-yellow-200/20 opacity-0 group-hover:opacity-100 transition">
+        </div>
 
-        <div class="p-6">
-          <h3 class="text-2xl font-bold">CUET & Entrance Exams</h3>
-          <p class="text-gray-600 mt-3">
-            Complete preparation with mock tests, strategy, and guidance.
+        <div class="relative z-10">
+
+          <!-- badge -->
+          <span class="inline-block bg-yellow-400 text-black text-xs px-3 py-1 rounded-full mb-2">
+            Popular
+          </span>
+
+          <div class="text-4xl mb-4 text-[#1D4ED8]">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+
+          <h3 class="text-xl font-bold mb-2">
+            NEET, CUET & Other Entrance Exams
+          </h3>
+
+          <p class="text-gray-600 text-sm">
+            NEET, CUET & other entrance exams preparation with expert guidance.
           </p>
 
-          <button class="mt-5 text-[#1D4ED8] font-semibold">
-            Learn More →
-          </button>
+        </div>
+      </div>
+
+      <!-- CARD -->
+      <div
+        class="group relative bg-white/70 backdrop-blur-xl rounded-2xl p-6 border border-white/40 shadow-lg hover:shadow-2xl transition duration-500 hover:-translate-y-2">
+
+        <div
+          class="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-200/20 to-yellow-200/20 opacity-0 group-hover:opacity-100 transition">
+        </div>
+
+        <div class="relative z-10">
+          <div class="text-4xl mb-4 text-[#1D4ED8]">
+            <i class="fa-solid fa-user-group"></i>
+          </div>
+
+          <h3 class="text-xl font-bold mb-2">Small Batch Learning</h3>
+
+          <p class="text-gray-600 text-sm">
+            Personal attention with limited students per batch.
+          </p>
+        </div>
+      </div>
+
+      <!-- CARD -->
+      <div
+        class="group relative bg-white/70 backdrop-blur-xl rounded-2xl p-6 border border-white/40 shadow-lg hover:shadow-2xl transition duration-500 hover:-translate-y-2">
+
+        <div
+          class="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-200/20 to-yellow-200/20 opacity-0 group-hover:opacity-100 transition">
+        </div>
+
+        <div class="relative z-10">
+          <div class="text-4xl mb-4 text-[#1D4ED8]">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+
+          <h3 class="text-xl font-bold mb-2">Concept Clarity</h3>
+
+          <p class="text-gray-600 text-sm">
+            Learn with practical examples and easy explanations.
+          </p>
         </div>
       </div>
 
     </div>
+
+  </div>
+
+</section>
+<!-- ========================choose your goal======================== -->
+<section class="py-10 bg-gradient-to-b from-[#f8fafc] to-blue-100">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+
+    <!-- Heading -->
+    <div class="text-center mb-8">
+      <span class="bg-yellow-400/20 text-yellow-600 px-4 py-1 rounded-full text-sm font-semibold">
+        Our Achievers
+      </span>
+
+      <h2 class="mt-2 text-3xl md:text-5xl font-extrabold text-gray-800">
+        Top Students
+        <span class="text-blue-600">Results</span>
+      </h2>
+
+      <p class="mt-2 text-gray-600 max-w-2xl mx-auto">
+        Consistent top performance with expert guidance and dedication.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+      <div *ngFor="let student of topStudents"
+        class="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden text-center">
+
+        <!-- Glow Effect -->
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-yellow-400/10 opacity-0 group-hover:opacity-100 transition">
+        </div>
+
+        <!-- Image -->
+        <div class="relative pt-6 flex justify-center">
+
+          <div class="relative w-28 h-28">
+
+            <!-- Circle bg -->
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full blur-md opacity-20">
+            </div>
+
+            <!-- Image -->
+            <img [src]="student.image"
+              class="relative w-28 h-28 object-cover rounded-full border-4 border-white shadow-md" />
+
+            <!-- Rank Badge -->
+            <div
+              class="absolute -top-2 -right-2 bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full shadow">
+              #{{ student.rank }}
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Info -->
+        <div class="p-3">
+
+          <h3 class="text-lg font-bold text-gray-800">
+            {{ student.name }}
+          </h3>
+
+          <p class="text-sm text-gray-500 mt-1">
+            {{ student.class }}
+          </p>
+
+          <!-- Score -->
+          <div class="mt-1">
+            <p class="text-2xl font-extrabold text-blue-600">
+              {{ student.score }}
+            </p>
+            <p class="text-xs text-gray-500">
+              {{ student.exam }}
+            </p>
+          </div>
+
+          <!-- Divider -->
+          <div class="mt-4 w-12 h-1 bg-yellow-400 mx-auto rounded-full"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 </section>
-<section class="py-20 relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-indigo-50 text-center">
+
+<section class="py-10 relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-indigo-50 text-center">
 
   <!-- Background blobs -->
   <div class="absolute top-0 left-0 w-72 h-72 bg-blue-200 rounded-full blur-3xl opacity-30"></div>
@@ -369,11 +440,7 @@
 
     <!-- Radio -->
     @for (t of teachers; track $index; let i = $index) {
-    <input 
-      type="radio" 
-      name="testimonial" 
-      [id]="'t-' + (i+1)" 
-      [checked]="i === teacherIndex" />
+    <input type="radio" name="testimonial" [id]="'t-' + (i+1)" [checked]="i === teacherIndex" />
     }
 
     <!-- Cards -->
@@ -382,7 +449,8 @@
       @for (t of teachers; track $index; let i = $index) {
       <label class="item absolute cursor-pointer" [attr.for]="'t-' + (i+1)">
 
-        <div class="bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl shadow-xl p-6 w-[260px] h-[330px] text-center transition duration-500 hover:scale-105 hover:shadow-2xl">
+        <div
+          class="bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl shadow-xl p-6 w-[260px] h-[330px] text-center transition duration-500 hover:scale-105 hover:shadow-2xl">
 
           <p class="font-semibold text-gray-200 mb-2">
             {{t.subject}}
@@ -408,10 +476,8 @@
     <!-- Dots -->
     <div class="dots flex justify-center mt-6">
       @for (t of teachers; track $index; let i = $index) {
-      <label 
-        class="w-3 h-3 bg-gray-300 rounded-full mx-1 cursor-pointer transition hover:bg-blue-500"
-        [class.bg-blue-500]="i === teacherIndex"
-        [attr.for]="'t-' + (i+1)">
+      <label class="w-3 h-3 bg-gray-300 rounded-full mx-1 cursor-pointer transition hover:bg-blue-500"
+        [class.bg-blue-500]="i === teacherIndex" [attr.for]="'t-' + (i+1)">
       </label>
       }
     </div>
@@ -434,7 +500,7 @@
   <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#FBBF24]/20 rounded-full blur-3xl"></div>
 
   <!-- CONTENT -->
-  <div class="relative max-w-7xl mx-auto w-full px-4 md:px-6">
+  <div class="relative max-w-6xl mx-auto w-full px-4 md:px-6">
 
     <div class="grid lg:grid-cols-2 items-center gap-10">
 

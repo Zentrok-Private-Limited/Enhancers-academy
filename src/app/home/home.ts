@@ -18,82 +18,133 @@ export class Home implements OnInit, OnDestroy {
   bannerInterval: ReturnType<typeof setInterval> | null = null;
 
   banners = [
-    {
-      // tag: 'Admissions Open • Enhancers Academy',
-      title1: 'Classes XI & XII',
-      title2: 'Accountancy',
-      title3: 'Economics',
-      desc: 'Expert guidance for senior classes with dedicated faculty. Accountancy by CS Nitin Gupta and Maths by Ashutosh Shukla.',
-      stat1: 'XI–XII',
-      stat1Label: 'Senior Classes',
-      stat2: '2',
-      stat2Label: 'Expert Faculties',
-      stat3: 'CUET',
-      stat3Label: 'Preparation',
-      featureTitle: 'Courses & Faculty',
-      features: [
-        { icon: '<i class="fa-solid fa-book-open"></i>', title: 'Accountancy', text: 'Special guidance for Class XI & XII students.' },
-        { icon: '<i class="fa-solid fa-arrow-trend-up"></i>', title: 'Economics', text: 'Strong concept building and exam preparation.' },
-        { icon: '<i class="fa-solid fa-chalkboard-user"></i>', title: 'CS Nitin Gupta', text: 'Dedicated faculty for Accountancy & Economics.' },
-        { icon: '<i class="fa-solid fa-square-root-variable"></i>', title: 'Maths by Ashutosh Shukla', text: 'Focused learning with clear concept support.' }
-      ],
-      image: '/2.png',
-      badgeTopLabel: 'Branch 1',
-      badgeTopValue: 'F-10, Prashant Vihar',
-      badgeBottomLabel: 'Branch 2',
-      badgeBottomValue: 'QU 233-C Pitampura'
-    },
-    {
-      tag: 'Classes I–VIII • IX–X Admissions Open',
-      title1: 'All Subject',
-      title2: 'Maths Science',
-      title3: 'English',
-      desc: 'Complete academic support for junior and middle classes. All subjects for Classes I–VIII and Maths, Science, English for Classes IX–X.',
-      stat1: 'I–VIII',
-      stat1Label: 'All Subjects',
-      stat2: 'IX–X',
-      stat2Label: 'Core Subjects',
-      stat3: '2',
-      stat3Label: 'Branches',
-      featureTitle: 'What We Offer',
-      features: [
-        { icon: '<i class="fa-solid fa-book"></i>', title: 'Classes I–VIII', text: 'All subjects covered with proper academic support.' },
-        { icon: '<i class="fa-solid fa-calculator"></i>', title: 'Maths', text: 'Concept clarity and regular practice sessions.' },
-        { icon: '<i class="fa-solid fa-flask"></i>', title: 'Science', text: 'Strong fundamentals with guided preparation.' },
-        { icon: '<i class="fa-solid fa-pen-nib"></i>', title: 'English', text: 'Grammar, writing and comprehension improvement.' }
-      ],
-      image: '/5.png',
-      badgeTopLabel: 'Call Now',
-      badgeTopValue: '95991 27878',
-      badgeBottomLabel: 'Also Call',
-      badgeBottomValue: '98687 26527'
-    },
-    {
-      tag: 'CUET & Entrance Exam Preparation',
-      title1: 'Prepare Smart',
-      title2: 'Crack CUET',
-      title3: 'With Confidence',
-      desc: 'Focused preparation for CUET and entrance exams with expert mentoring, regular practice, and strong academic support.',
-      stat1: 'CUET',
-      stat1Label: 'Target Exam',
-      stat2: '2',
-      stat2Label: 'Branches',
-      stat3: '100%',
-      stat3Label: 'Guidance',
-      featureTitle: 'Entrance Preparation',
-      features: [
-        { icon: '<i class="fa-solid fa-bullseye"></i>', title: 'CUET Preparation', text: 'Focused coaching for better exam performance.' },
-        { icon: '<i class="fa-solid fa-file-pen"></i>', title: 'Regular Practice', text: 'Test-based approach for stronger preparation.' },
-        { icon: '<i class="fa-solid fa-chalkboard-user"></i>', title: 'Expert Guidance', text: 'Mentorship by experienced faculty members.' },
-        { icon: '<i class="fa-solid fa-rocket"></i>', title: 'Confidence Building', text: 'Prepare with strategy and exam readiness.' }
-      ],
-      image: '/6.png',
-      badgeTopLabel: 'Main Contact',
-      badgeTopValue: '95991 27878',
-      badgeBottomLabel: 'Support Contact',
-      badgeBottomValue: '98687 26527'
-    }
-  ];
+  {
+    title1: 'Classes XI & XII',
+    title2: 'Accountancy',
+    title3: 'Economics',
+    desc: 'Expert guidance for senior classes with dedicated faculty. Accountancy by CS Nitin Gupta and Maths by Ashutosh Shukla.',
+    stat1: 'XI–XII',
+    stat1Label: 'Senior Classes',
+    stat2: '2',
+    stat2Label: 'Expert Faculties',
+    stat3: 'CUET',
+    stat3Label: 'Preparation',
+    featureTitle: 'Courses & Faculty',
+    features: [
+      { icon: '<i class="fa-solid fa-book-open"></i>', title: 'Accountancy', text: 'Special guidance for Class XI & XII students.' },
+      { icon: '<i class="fa-solid fa-arrow-trend-up"></i>', title: 'Economics', text: 'Strong concept building and exam preparation.' },
+      { icon: '<i class="fa-solid fa-chalkboard-user"></i>', title: 'CS Nitin Gupta', text: 'Dedicated faculty for Accountancy & Economics.' },
+      { icon: '<i class="fa-solid fa-square-root-variable"></i>', title: 'Maths by Ashutosh Shukla', text: 'Focused learning with clear concept support.' }
+    ],
+    image: '/2.png',
+    badgeTopLabel: 'Branch 1',
+    badgeTopValue: 'F-10, Prashant Vihar',
+    badgeBottomLabel: 'Branch 2',
+    badgeBottomValue: 'QU 233-C Pitampura'
+  },
+
+  {
+    title1: 'All Subject',
+    title2: 'Maths Science',
+    title3: 'English',
+    desc: 'Complete academic support for junior and middle classes. All subjects for Classes I–VIII and Maths, Science, English for Classes IX–X.',
+    stat1: 'I–VIII',
+    stat1Label: 'All Subjects',
+    stat2: 'IX–X',
+    stat2Label: 'Core Subjects',
+    stat3: '2',
+    stat3Label: 'Branches',
+    featureTitle: 'What We Offer',
+    features: [
+      { icon: '<i class="fa-solid fa-book"></i>', title: 'Classes I–VIII', text: 'All subjects covered with proper academic support.' },
+      { icon: '<i class="fa-solid fa-calculator"></i>', title: 'Maths', text: 'Concept clarity and regular practice sessions.' },
+      { icon: '<i class="fa-solid fa-flask"></i>', title: 'Science', text: 'Strong fundamentals with guided preparation.' },
+      { icon: '<i class="fa-solid fa-pen-nib"></i>', title: 'English', text: 'Grammar, writing and comprehension improvement.' }
+    ],
+    image: '/5.png',
+    badgeTopLabel: 'Call Now',
+    badgeTopValue: '95991 27878',
+    badgeBottomLabel: 'Also Call',
+    badgeBottomValue: '98687 26527'
+  },
+
+  {
+    title1: 'Prepare Smart',
+    title2: 'Crack CUET',
+    title3: 'With Confidence',
+    desc: 'Focused preparation for CUET and entrance exams with expert mentoring, regular practice, and strong academic support.',
+    stat1: 'CUET',
+    stat1Label: 'Target Exam',
+    stat2: '2',
+    stat2Label: 'Branches',
+    stat3: '100%',
+    stat3Label: 'Guidance',
+    featureTitle: 'Entrance Preparation',
+    features: [
+      { icon: '<i class="fa-solid fa-bullseye"></i>', title: 'CUET Preparation', text: 'Focused coaching for better exam performance.' },
+      { icon: '<i class="fa-solid fa-file-pen"></i>', title: 'Regular Practice', text: 'Test-based approach for stronger preparation.' },
+      { icon: '<i class="fa-solid fa-chalkboard-user"></i>', title: 'Expert Guidance', text: 'Mentorship by experienced faculty members.' },
+      { icon: '<i class="fa-solid fa-rocket"></i>', title: 'Confidence Building', text: 'Prepare with strategy and exam readiness.' }
+    ],
+    image: '/6.png',
+    badgeTopLabel: 'Main Contact',
+    badgeTopValue: '95991 27878',
+    badgeBottomLabel: 'Support Contact',
+    badgeBottomValue: '98687 26527'
+  },
+
+  // 🔥 NEW 1: TEACHERS BANNER
+  {
+    title1: 'Learn From',
+    title2: 'Expert Teachers',
+    title3: 'Best Guidance',
+    desc: 'Our experienced teachers focus on concept clarity, personal attention, and consistent performance improvement.',
+    stat1: '10+',
+    stat1Label: 'Years Experience',
+    stat2: 'Expert',
+    stat2Label: 'Faculty',
+    stat3: '100%',
+    stat3Label: 'Support',
+    featureTitle: 'Our Faculty',
+    features: [
+      { icon: '<i class="fa-solid fa-chalkboard-user"></i>', title: 'Experienced Teachers', text: 'Highly qualified and experienced faculty.' },
+      { icon: '<i class="fa-solid fa-user-group"></i>', title: 'Personal Attention', text: 'Small batches for better focus.' },
+      { icon: '<i class="fa-solid fa-lightbulb"></i>', title: 'Concept Clarity', text: 'Deep understanding of subjects.' },
+      { icon: '<i class="fa-solid fa-chart-line"></i>', title: 'Performance Tracking', text: 'Regular tests and feedback.' }
+    ],
+    image: '/teacher.png',
+    badgeTopLabel: 'Top Faculty',
+    badgeTopValue: 'Experienced Team',
+    badgeBottomLabel: 'Join Now',
+    badgeBottomValue: 'Limited Seats'
+  },
+
+  // 🔥 NEW 2: TOP STUDENTS BANNER
+  {
+    title1: 'Our Top',
+    title2: 'Students',
+    title3: 'Achievements',
+    desc: 'Our students consistently achieve top ranks and excellent results in board exams and competitive tests.',
+    stat1: '95%+',
+    stat1Label: 'Board Results',
+    stat2: 'Top',
+    stat2Label: 'Rankers',
+    stat3: '100%',
+    stat3Label: 'Success',
+    featureTitle: 'Student Success',
+    features: [
+      { icon: '<i class="fa-solid fa-trophy"></i>', title: 'Top Results', text: 'Students scoring 90%+ consistently.' },
+      { icon: '<i class="fa-solid fa-medal"></i>', title: 'Rank Holders', text: 'Top ranks in school and exams.' },
+      { icon: '<i class="fa-solid fa-star"></i>', title: 'Excellent Growth', text: 'Improvement in every student.' },
+      { icon: '<i class="fa-solid fa-graduation-cap"></i>', title: 'Success Stories', text: 'Real student achievements.' }
+    ],
+    image: '/student.png',
+    badgeTopLabel: 'Top Score',
+    badgeTopValue: '95%+',
+    badgeBottomLabel: 'Join Achievers',
+    badgeBottomValue: 'Enroll Now'
+  }
+];
 
   nextBanner(): void {
     this.currentBanner = (this.currentBanner + 1) % this.banners.length;
@@ -121,6 +172,108 @@ export class Home implements OnInit, OnDestroy {
       this.bannerInterval = null;
     }
   }
+// ===================== top student ===========================
+topStudents = [
+  {
+    name: 'Riddhesh B',
+    class: 'Class 12',
+    score: '99.99%ile',
+    exam: 'JEE Main',
+    rank: '1',
+    image: 'assets/students/s1.jpg'
+  },
+  {
+    name: 'Sanjay Kumar',
+    class: 'Class 12',
+    score: '99.95%ile',
+    exam: 'JEE Main',
+    rank: '24',
+    image: 'assets/students/s2.jpg'
+  },
+  {
+    name: 'Priya Sharma',
+    class: 'Class 12',
+    score: '98.87%',
+    exam: 'Boards',
+    rank: 'Topper',
+    image: 'assets/students/s3.jpg'
+  },
+  {
+    name: 'Aman Verma',
+    class: 'Class 11',
+    score: '97.45%',
+    exam: 'School Topper',
+    rank: 'Top 5',
+    image: 'assets/students/s4.jpg'
+  },
+
+  // 🔥 NEW 8 STUDENTS
+
+  {
+    name: 'Ankit Singh',
+    class: 'Class 12',
+    score: '99.92%ile',
+    exam: 'JEE Main',
+    rank: '56',
+    image: 'assets/students/s5.jpg'
+  },
+  {
+    name: 'Neha Gupta',
+    class: 'Class 12',
+    score: '98.75%',
+    exam: 'Boards',
+    rank: 'School Rank 1',
+    image: 'assets/students/s6.jpg'
+  },
+  {
+    name: 'Rahul Mehta',
+    class: 'Class 12',
+    score: '99.10%ile',
+    exam: 'NEET',
+    rank: 'Top 100',
+    image: 'assets/students/s7.jpg'
+  },
+  {
+    name: 'Sneha Jain',
+    class: 'Class 11',
+    score: '96.80%',
+    exam: 'School Exams',
+    rank: 'Topper',
+    image: 'assets/students/s8.jpg'
+  },
+  {
+    name: 'Karan Patel',
+    class: 'Class 12',
+    score: '99.01%ile',
+    exam: 'JEE Main',
+    rank: '89',
+    image: 'assets/students/s9.jpg'
+  },
+  {
+    name: 'Pooja Verma',
+    class: 'Class 12',
+    score: '97.95%',
+    exam: 'Boards',
+    rank: 'Top 3',
+    image: 'assets/students/s10.jpg'
+  },
+  {
+    name: 'Vikas Yadav',
+    class: 'Class 12',
+    score: '98.60%ile',
+    exam: 'CUET',
+    rank: 'Top 50',
+    image: 'assets/students/s11.jpg'
+  },
+  {
+    name: 'Isha Kapoor',
+    class: 'Class 11',
+    score: '95.40%',
+    exam: 'School Exams',
+    rank: 'Top 5',
+    image: 'assets/students/s12.jpg'
+  }
+];
   // ================= TESTIMONIAL SLIDER =================
   testimonialIndex = 0;
   testimonialInterval: ReturnType<typeof setInterval> | null = null;
