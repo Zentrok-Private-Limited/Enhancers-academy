@@ -1,15 +1,19 @@
 <div
   class="relative overflow-hidden rounded-[36px] bg-gradient-to-br from-[#010b33] via-[#023dbf] to-[#021452] shadow-[0_20px_80px_rgba(0,0,0,0.25)]"
-  (mouseenter)="stopBannerAutoPlay()" (mouseleave)="startBannerAutoPlay()">
+  (mouseenter)="stopBannerAutoPlay()"
+  (mouseleave)="startBannerAutoPlay()"
+>
 
-  <!-- GLOBAL GLOW (ONLY ONCE) -->
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.2),transparent)]"></div>
-  <div class="absolute -top-20 -left-20 w-72 h-72 bg-[#FBBF24]/20 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+  <!-- ✅ BACKGROUND EFFECTS (CLICK-THROUGH) -->
+  <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.2),transparent)]"></div>
+  <div class="absolute -top-20 -left-20 w-72 h-72 bg-[#FBBF24]/20 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
 
   <!-- ================= SLIDER ================= -->
-  <div class="flex transition-all duration-700 ease-in-out will-change-transform"
-    [style.transform]="'translateX(-' + currentBanner * 100 + '%)'">
+  <div
+    class="flex transition-all duration-700 ease-in-out will-change-transform"
+    [style.transform]="'translateX(-' + currentBanner * 100 + '%)'"
+  >
 
     @for (banner of banners; track $index) {
     <div class="w-full flex-shrink-0">
@@ -19,8 +23,7 @@
         <!-- LEFT -->
         <div class="lg:col-span-5">
 
-          <span
-            class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm">
+          <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm">
             <span class="w-2 h-2 rounded-full bg-[#FBBF24]"></span>
             Premium Learning
           </span>
@@ -37,34 +40,20 @@
 
           <!-- stats -->
           <div class="mt-2 grid grid-cols-3 gap-2 max-w-sm">
-
             <div class="bg-white/10 rounded-lg px-2 py-2 text-center border border-white/20">
-              <p class="text-base font-bold text-[#FBBF24] leading-tight">
-                {{ banner.stat1 }}
-              </p>
-              <p class="text-[10px] text-white/70 leading-tight">
-                {{ banner.stat1Label }}
-              </p>
+              <p class="text-base font-bold text-[#FBBF24]">{{ banner.stat1 }}</p>
+              <p class="text-[10px] text-white/70">{{ banner.stat1Label }}</p>
             </div>
 
             <div class="bg-white/10 rounded-lg px-2 py-2 text-center border border-white/20">
-              <p class="text-base font-bold text-[#FBBF24] leading-tight">
-                {{ banner.stat2 }}
-              </p>
-              <p class="text-[10px] text-white/70 leading-tight">
-                {{ banner.stat2Label }}
-              </p>
+              <p class="text-base font-bold text-[#FBBF24]">{{ banner.stat2 }}</p>
+              <p class="text-[10px] text-white/70">{{ banner.stat2Label }}</p>
             </div>
 
             <div class="bg-white/10 rounded-lg px-2 py-2 text-center border border-white/20">
-              <p class="text-base font-bold text-[#FBBF24] leading-tight">
-                {{ banner.stat3 }}
-              </p>
-              <p class="text-[10px] text-white/70 leading-tight">
-                {{ banner.stat3Label }}
-              </p>
+              <p class="text-base font-bold text-[#FBBF24]">{{ banner.stat3 }}</p>
+              <p class="text-[10px] text-white/70">{{ banner.stat3Label }}</p>
             </div>
-
           </div>
 
           <!-- button -->
@@ -128,14 +117,19 @@
     }
 
   </div>
-  <!-- ================= DOTS (OUTSIDE) ================= -->
-  <div class="flex justify-center mb-6 gap-2">
+
+  <!-- ================= DOTS ================= -->
+  <div class="flex justify-center mb-6 gap-2 relative z-10">
     @for (b of banners; track $index; let i = $index) {
-    <div (click)="goToBanner(i)" class="w-3 h-3 rounded-full cursor-pointer transition"
-      [class.bg-yellow-400]="i === currentBanner" [class.bg-white/40]="i !== currentBanner">
+    <div
+      (click)="goToBanner(i)"
+      class="w-3 h-3 rounded-full cursor-pointer transition hover:scale-125"
+      [class.bg-yellow-400]="i === currentBanner"
+      [class.bg-white/40]="i !== currentBanner">
     </div>
     }
   </div>
+
 </div>
 <!-- ===========================about enhacers-academy====================================  -->
 <section class="relative py-16 md:py-10 overflow-hidden">
