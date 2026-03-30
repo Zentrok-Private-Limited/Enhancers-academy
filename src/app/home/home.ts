@@ -1,5 +1,5 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID, ElementRef, ViewChildren, QueryList, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 // import { AfterViewInit } from '@angular/core';
 declare var Swiper: any;
@@ -11,7 +11,11 @@ declare var Swiper: any;
   styleUrls: ['./home.css']
 })
 export class Home implements OnInit, OnDestroy {
+  /* ================= COUNTER ================= */
+  @ViewChildren('counter') counters!: QueryList<ElementRef<HTMLElement>>;
   @ViewChild('bg') bg!: ElementRef;
+
+
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
   // ================= BANNER SLIDER =================
   currentBanner = 0;
@@ -180,7 +184,7 @@ topStudents = [
     score: '99.99%ile',
     exam: 'JEE Main',
     rank: '1',
-    image: '/s1.jpg'
+    image: '/1.png'
   },
   {
     name: 'Sanjay Kumar',
@@ -188,7 +192,7 @@ topStudents = [
     score: '99.95%ile',
     exam: 'JEE Main',
     rank: '24',
-    image: '/s2.jpg'
+    image: '/1.png'
   },
   {
     name: 'Priya Sharma',
@@ -196,7 +200,7 @@ topStudents = [
     score: '98.87%',
     exam: 'Boards',
     rank: 'Topper',
-    image: '/s3.jpg'
+    image: '/1.png'
   },
   {
     name: 'Aman Verma',
@@ -204,7 +208,7 @@ topStudents = [
     score: '97.45%',
     exam: 'School Topper',
     rank: 'Top 5',
-    image: '/s4.jpg'
+    image: '/1.png'
   },
 
   // 🔥 NEW 8 STUDENTS
@@ -215,7 +219,7 @@ topStudents = [
     score: '99.92%ile',
     exam: 'JEE Main',
     rank: '56',
-    image: '/s5.jpg'
+    image: '/1.png'
   },
   {
     name: 'Neha Gupta',
@@ -223,7 +227,7 @@ topStudents = [
     score: '98.75%',
     exam: 'Boards',
     rank: 'School Rank 1',
-    image: '/s6.jpg'
+    image: '/1.png'
   },
   {
     name: 'Rahul Mehta',
@@ -231,7 +235,7 @@ topStudents = [
     score: '99.10%ile',
     exam: 'NEET',
     rank: 'Top 100',
-    image: '/s7.jpg'
+    image: '/1.png'
   },
   {
     name: 'Sneha Jain',
@@ -239,40 +243,8 @@ topStudents = [
     score: '96.80%',
     exam: 'School Exams',
     rank: 'Topper',
-    image: '/s8.jpg'
+    image: '/1.png'
   },
-  {
-    name: 'Karan Patel',
-    class: 'Class 12',
-    score: '99.01%ile',
-    exam: 'JEE Main',
-    rank: '89',
-    image: '/s9.jpg'
-  },
-  {
-    name: 'Pooja Verma',
-    class: 'Class 12',
-    score: '97.95%',
-    exam: 'Boards',
-    rank: 'Top 3',
-    image: '/s10.jpg'
-  },
-  {
-    name: 'Vikas Yadav',
-    class: 'Class 12',
-    score: '98.60%ile',
-    exam: 'CUET',
-    rank: 'Top 50',
-    image: '/s11.jpg'
-  },
-  {
-    name: 'Isha Kapoor',
-    class: 'Class 11',
-    score: '95.40%',
-    exam: 'School Exams',
-    rank: 'Top 5',
-    image: '/s12.jpg'
-  }
 ];
   // ================= TESTIMONIAL SLIDER =================
   testimonialIndex = 0;
