@@ -1,6 +1,7 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID, ElementRef, ViewChildren, QueryList, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AfterViewInit } from '@angular/core';
 // import { AfterViewInit } from '@angular/core';
 declare var Swiper: any;
 @Component({
@@ -10,12 +11,36 @@ declare var Swiper: any;
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })
-export class Home implements OnInit, OnDestroy {
+export class Home implements OnInit, OnDestroy, AfterViewInit {
   /* ================= COUNTER ================= */
   @ViewChildren('counter') counters!: QueryList<ElementRef<HTMLElement>>;
   @ViewChild('bg') bg!: ElementRef;
+startCounter() {
+  this.counters.forEach((counterEl: ElementRef) => {
+    const element = counterEl.nativeElement;
+    const target = +element.getAttribute('data-target')!;
+    let count = 0;
 
+    const speed = 200; // jitna kam, utna fast
 
+    const updateCount = () => {
+      const increment = target / speed;
+
+      if (count < target) {
+        count += increment;
+        element.innerText = Math.ceil(count).toString();
+        requestAnimationFrame(updateCount);
+      } else {
+        element.innerText = target.toString();
+      }
+    };
+
+    updateCount();
+  });
+}
+ngAfterViewInit(): void {
+  this.startCounter();
+}
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
   // ================= BANNER SLIDER =================
   currentBanner = 0;
