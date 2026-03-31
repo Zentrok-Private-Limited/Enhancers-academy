@@ -77,3 +77,86 @@ input[type="radio"] {
 #t-4:checked ~ .testimonials label[for="t-3"] {
   transform: translateX(-200px) scale(0.85);
 }
+.teachers-section {
+  padding: 60px 20px;
+  background: #f5f6fa;
+
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .card {
+    background: #eaeaf4;
+    border-radius: 20px;
+    text-align: center;
+    padding: 60px 20px 30px;
+    position: relative;
+    transition: 0.3s;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    .image-wrapper {
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #fff;
+      }
+    }
+
+    .card-content {
+      margin-top: 60px;
+
+      .role {
+        color: #6c63ff;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .social {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        a {
+          width: 35px;
+          height: 35px;
+          background: #fff;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #6c63ff;
+          transition: 0.3s;
+
+          &:hover {
+            background: #6c63ff;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

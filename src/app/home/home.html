@@ -1,19 +1,17 @@
 <div
   class="relative overflow-hidden rounded-[36px] bg-gradient-to-br from-[#010b33] via-[#023dbf] to-[#021452] shadow-[0_20px_80px_rgba(0,0,0,0.25)]"
-  (mouseenter)="stopBannerAutoPlay()"
-  (mouseleave)="startBannerAutoPlay()"
->
+  (mouseenter)="stopBannerAutoPlay()" (mouseleave)="startBannerAutoPlay()">
 
   <!-- ✅ BACKGROUND EFFECTS (CLICK-THROUGH) -->
-  <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.2),transparent)]"></div>
+  <div
+    class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.2),transparent)]">
+  </div>
   <div class="absolute -top-20 -left-20 w-72 h-72 bg-[#FBBF24]/20 rounded-full blur-3xl pointer-events-none"></div>
   <div class="absolute bottom-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
 
   <!-- ================= SLIDER ================= -->
-  <div
-    class="flex transition-all duration-700 ease-in-out will-change-transform"
-    [style.transform]="'translateX(-' + currentBanner * 100 + '%)'"
-  >
+  <div class="flex transition-all duration-700 ease-in-out will-change-transform"
+    [style.transform]="'translateX(-' + currentBanner * 100 + '%)'">
 
     @for (banner of banners; track $index) {
     <div class="w-full flex-shrink-0">
@@ -23,7 +21,8 @@
         <!-- LEFT -->
         <div class="lg:col-span-5">
 
-          <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm">
+          <span
+            class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm">
             <span class="w-2 h-2 rounded-full bg-[#FBBF24]"></span>
             Premium Learning
           </span>
@@ -121,26 +120,22 @@
   <!-- ================= DOTS ================= -->
   <div class="flex justify-center mb-6 gap-2 relative z-10">
     @for (b of banners; track $index; let i = $index) {
-    <div
-      (click)="goToBanner(i)"
-      class="w-3 h-3 rounded-full cursor-pointer transition hover:scale-125"
-      [class.bg-yellow-400]="i === currentBanner"
-      [class.bg-white/40]="i !== currentBanner">
+    <div (click)="goToBanner(i)" class="w-3 h-3 rounded-full cursor-pointer transition hover:scale-125"
+      [class.bg-yellow-400]="i === currentBanner" [class.bg-white/40]="i !== currentBanner">
     </div>
     }
   </div>
 
 </div>
 <!-- ===========================about enhacers-academy====================================  -->
-<section class="relative py-16 md:py-10 overflow-hidden">
+
+<!-- <section class="relative py-16 md:py-10 overflow-hidden">
   <div class="relative max-w-5xl mx-auto px-4 text-center">
 
-    <!-- Tag -->
     <span class="inline-block bg-yellow-400 text-blue-900 px-4 py-1 rounded-full text-sm font-semibold mb-4">
       Enhancers Academy
     </span>
 
-    <!-- Heading -->
     <h1 class="text-2xl md:text-5xl font-extrabold leading-tight">
       Achieve Academic Excellence with
       <span class="text-yellow-400">Enhancers Academy</span>
@@ -150,7 +145,6 @@
       </span>
     </h1>
 
-    <!-- Paragraph -->
     <p class="text-sm md:text-lg max-w-3xl mx-auto leading-7">
       Enhancers Academy offers expert guidance for Classes I–XII with a strong focus on concept clarity and results.
       With dedicated faculty and structured learning, we prepare students for board exams as well as
@@ -158,7 +152,6 @@
       helping them achieve their academic goals with confidence.
     </p>
 
-    <!-- Buttons -->
     <div class="mt-8 flex justify-center gap-4 flex-wrap">
       <button class="bg-yellow-400 text-blue-900 px-6 py-3 rounded-full font-bold shadow hover:scale-105 transition">
         Enroll Now
@@ -167,6 +160,174 @@
 
   </div>
 
+</section> -->
+<section class="py-16 bg-white">
+
+  <div class="max-w-5xl mx-auto px-4">
+
+    <!-- HEADING -->
+    <div class="text-center mb-8">
+      <div class="flex items-center justify-center gap-3 mb-1">
+
+        <!-- Left Line -->
+        <div class="h-[2px] w-12 bg-yellow-500"></div>
+
+        <!-- Text -->
+        <h2 class="text-yellow-500 font-semibold tracking-widest text-sm">
+          CATEGORIES
+        </h2>
+
+        <!-- Right Line -->
+        <div class="h-[2px] w-12 bg-yellow-500"></div>
+
+      </div>
+
+      <h2 class="text-3xl md:text-4xl text-blue-900 font-bold">
+        Courses Categories
+      </h2>
+    </div>
+
+    <!-- GRID -->
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- LEFT -->
+      <div class="md:col-span-2 grid sm:grid-cols-2 gap-6">
+
+        <!-- CARD -->
+        <div class="relative group overflow-hidden rounded-xl">
+          <img src="/about.jpg" class="w-full h-[180px] object-cover group-hover:scale-110 transition duration-500" />
+
+          <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur px-4 py-2 rounded shadow">
+            <h3 class="font-semibold text-sm">Class I–VII</h3>
+            <p class="text-xs text-blue-500">All subjects</p>
+          </div>
+        </div>
+
+        <!-- CARD -->
+        <div class="relative group overflow-hidden rounded-xl">
+          <img src="/dsfasdf.jpg" class="w-full h-[180px] object-cover group-hover:scale-110 transition duration-500" />
+
+          <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur px-4 py-2 rounded shadow">
+            <h3 class="font-semibold text-sm">Class IX–X</h3>
+            <p class="text-xs text-blue-500">All subjects</p>
+          </div>
+        </div>
+
+        <!-- CARD -->
+        <div class="relative group overflow-hidden rounded-xl">
+          <img src="/dsgsdf.jpg" class="w-full h-[180px] object-cover group-hover:scale-110 transition duration-500" />
+
+          <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur px-4 py-2 rounded shadow">
+            <h3 class="font-semibold text-sm">Entrance Exams</h3>
+            <p class="text-xs text-blue-500">CUET, NEET, JEE</p>
+          </div>
+        </div>
+
+        <!-- CARD -->
+        <div class="relative group overflow-hidden rounded-xl">
+          <img src="/123.avif" class="w-full h-[180px] object-cover group-hover:scale-110 transition duration-500" />
+
+          <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur px-4 py-2 rounded shadow">
+            <h3 class="font-semibold text-sm">Other Courses</h3>
+            <p class="text-xs text-blue-500">Skill Based</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT BIG -->
+      <div class="relative group overflow-hidden rounded-xl">
+        <img src="/12345.jpg"
+          class="w-full h-full min-h-[400px] object-cover group-hover:scale-110 transition duration-500" />
+
+        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-5 py-3 rounded shadow">
+          <h3 class="font-semibold">Online Learning</h3>
+          <p class="text-xs text-blue-500">All Courses</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<section class="py-10 bg-gradient-to-b from-white to-yellow-50">
+
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- TOP SECTION -->
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+      <!-- LEFT IMAGE -->
+      <div class="relative">
+        <img src="/about.jpg" alt="about" class="rounded-3xl shadow-lg w-full h-[400px] object-cover">
+
+        <!-- overlay card -->
+        <div class="absolute bottom-4 left-4 bg-white shadow-md rounded-xl px-4 py-2">
+          <p class="text-sm font-semibold text-blue-900">20+ Years of Excellence</p>
+        </div>
+      </div>
+
+      <!-- RIGHT CONTENT -->
+      <div>
+
+        <div class="flex items-center justify-start gap-3 mb-1">
+
+        <!-- Left Line -->
+        <div class="h-[2px] w-12 bg-yellow-500"></div>
+
+        <!-- Text -->
+        <h2 class="text-yellow-500 font-semibold tracking-widest text-sm">
+          CATEGORIES
+        </h2>
+
+        <!-- Right Line -->
+        <div class="h-[2px] w-12 bg-yellow-500"></div>
+
+      </div>
+
+        <h2 class="text-3xl md:text-5xl font-bold text-blue-900 mt-2 mb-6">
+          Building Strong Foundations For Future Success
+        </h2>
+
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          We are committed to delivering high-quality education with a focus on concept clarity,
+          personalized attention, and real academic growth. Our experienced faculty ensures that
+          every student reaches their full potential.
+        </p>
+
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          With years of excellence in teaching, we have helped hundreds of students achieve
+          outstanding results and build confidence in their studies.
+        </p>
+
+        <!-- highlights -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="flex items-center gap-2">
+            <i class="fas fa-check-circle text-green-500"></i>
+            <span class="text-sm">Expert Teachers</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <i class="fas fa-check-circle text-green-500"></i>
+            <span class="text-sm">Smart Learning</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <i class="fas fa-check-circle text-green-500"></i>
+            <span class="text-sm">Regular Tests</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <i class="fas fa-check-circle text-green-500"></i>
+            <span class="text-sm">Doubt Support</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
 </section>
 <section class="py-10 bg-gradient-to-b from-white to-blue-50">
 
@@ -187,7 +348,7 @@
 
       <!-- CARD -->
       <div
-        class="group relative bg-white/70 backdrop-blur-xl rounded-2xl p-6 border border-white/40 shadow-lg hover:shadow-2xl transition duration-500 hover:-translate-y-2 border-t-4 border-yellow-500" >
+        class="group relative bg-white/70 backdrop-blur-xl rounded-2xl p-6 border border-white/40 shadow-lg hover:shadow-2xl transition duration-500 hover:-translate-y-2 border-t-4 border-yellow-500">
 
         <!-- glow -->
         <div
@@ -333,7 +494,20 @@
 
     <!-- Heading -->
     <div class="text-center max-w-3xl mx-auto">
-      <p class="text-sm uppercase tracking-[0.25em] text-[#1D4ED8] font-semibold">Roadmap</p>
+      <div class="flex items-center justify-center gap-3 mb-1">
+
+        <!-- Left Line -->
+        <div class="h-[2px] w-12 bg-yellow-500"></div>
+
+        <!-- Text -->
+        <h2 class="text-yellow-500 font-semibold tracking-widest text-sm">
+          Roadmap
+        </h2>
+
+        <!-- Right Line -->
+        <div class="h-[2px] w-12 bg-yellow-500"></div>
+
+      </div>
       <h2 class="mt-4 text-4xl md:text-6xl font-bold text-[#1F2937]">
         Your Journey to Success
       </h2>
@@ -354,7 +528,7 @@
 
         <!-- Step 1 -->
         <div class="grid lg:grid-cols-2 gap-8 items-center group">
-          <div class="lg:text-right lg:pr-12"  data-aos="fade-right">
+          <div class="lg:text-right lg:pr-12" data-aos="fade-right">
             <span class="text-[#1D4ED8] font-bold text-lg">01</span>
             <h3 class="mt-2 text-2xl font-bold">Guidance & Planning</h3>
             <p class="mt-3 text-gray-600">We begin with the right direction and academic clarity.</p>
@@ -446,9 +620,20 @@
 
     <!-- Heading -->
     <div class="text-center mb-8">
-      <span class="bg-yellow-400/20 text-yellow-600 px-4 py-1 rounded-full text-sm font-semibold">
-        Our Achievers
-      </span>
+      <div class="flex items-center justify-center gap-3 mb-1">
+
+        <!-- Left Line -->
+        <div class="h-[2px] w-12 bg-yellow-500"></div>
+
+        <!-- Text -->
+        <h2 class="text-yellow-500 font-semibold tracking-widest text-sm">
+          Our Achievers
+        </h2>
+
+        <!-- Right Line -->
+        <div class="h-[2px] w-12 bg-yellow-500"></div>
+
+      </div>
 
       <h2 class="mt-2 text-3xl md:text-5xl font-extrabold text-gray-800">
         Top Students
@@ -527,69 +712,72 @@
   </div>
 </section>
 
-<section class="py-10 relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-indigo-50 text-center">
+<section class="py-20 bg-white">
+  <div class="max-w-5xl mx-auto px-4">
 
-  <!-- Background blobs -->
-  <div class="absolute top-0 left-0 w-72 h-72 bg-blue-200 rounded-full blur-3xl opacity-30"></div>
-  <div class="absolute bottom-0 right-0 w-72 h-72 bg-indigo-200 rounded-full blur-3xl opacity-30"></div>
+    <!-- 🔥 Heading -->
+    <div class="text-center mb-18">
+      <div class="flex items-center justify-center gap-3 mb-1">
 
-  <!-- Heading -->
-  <h1 class="text-4xl md:text-5xl font-extrabold mb-3 text-gray-800">
-    Our Teachers
-  </h1>
+        <!-- Left Line -->
+        <div class="h-[2px] w-12 bg-yellow-500"></div>
 
-  <p class="text-gray-500 mb-12 max-w-xl mx-auto">
-    Where knowledge meets mentorship to unlock every student’s potential.
-  </p>
+        <!-- Text -->
+        <h2 class="text-yellow-500 font-semibold tracking-widest text-sm">
+          Our Teachers
+        </h2>
 
-  <div class="slider max-w-6xl mx-auto relative">
+        <!-- Right Line -->
+        <div class="h-[2px] w-12 bg-yellow-500"></div>
 
-    <!-- Radio -->
-    @for (t of teachers; track $index; let i = $index) {
-    <input type="radio" name="testimonial" [id]="'t-' + (i+1)" [checked]="i === teacherIndex" />
-    }
+      </div>
 
-    <!-- Cards -->
-    <div class="testimonials relative flex justify-center items-center h-[380px]">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-600 mb-4">
+        Meet Our Expert Teachers
+      </h2>
 
-      @for (t of teachers; track $index; let i = $index) {
-      <label class="item absolute cursor-pointer" [attr.for]="'t-' + (i+1)">
-
-        <div
-          class="bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl shadow-xl p-6 w-[260px] h-[330px] text-center transition duration-500 hover:scale-105 hover:shadow-2xl">
-
-          <p class="font-semibold text-gray-200 mb-2">
-            {{t.subject}}
-          </p>
-
-          <img [src]="t.image" class="w-32 h-32 mx-auto rounded-full mb-4 object-cover border-4 border-white/30" />
-
-          <h2 class="text-lg font-bold">
-            {{t.name}}
-          </h2>
-
-          <p class="text-sm text-gray-100 mt-2">
-            {{t.description}}
-          </p>
-
-        </div>
-
-      </label>
-      }
-
+      <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+        We build strong foundations with engaging and confident learning.
+      </p>
     </div>
 
-    <!-- Dots -->
-    <div class="dots flex justify-center mt-6">
-      @for (t of teachers; track $index; let i = $index) {
-      <label class="w-3 h-3 bg-gray-300 rounded-full mx-1 cursor-pointer transition hover:bg-blue-500"
-        [class.bg-blue-500]="i === teacherIndex" [attr.for]="'t-' + (i+1)">
-      </label>
-      }
+    <!-- Cards -->
+    <div class="grid md:grid-cols-3 gap-8 justify-items-center">
+
+      <div *ngFor="let t of teachers"
+        class="group relative w-[220px] h-[250px] bg-blue-50 rounded-2xl text-center pt-20 pb-6 px-4 transition duration-300 hover:-translate-y-3 hover:shadow-xl">
+
+        <!-- Image -->
+        <div class="absolute -top-14 left-1/2 w-45 h-45 -translate-x-1/2">
+          <img [src]="t.image" [alt]="t.name"
+            class="w-45 h-45 rounded-full object-cover border-4 border-white shadow-md transition duration-300 group-hover:scale-105">
+        </div>
+
+        <!-- Content -->
+        <p class="text-yellow-500 text-sm mt-14 mb-1">{{ t.subject }}</p>
+        <h3 class="text-base text-blue-500 font-semibold mb-3">{{ t.name }}</h3>
+
+        <!-- Social -->
+        <div class="flex justify-center gap-2">
+          <a href="#"
+            class="w-8 h-8 flex items-center justify-center bg-white rounded-full text-yellow-500 hover:bg-yellow-500 hover:text-white transition">
+            <i class="fab fa-facebook-f text-xs"></i>
+          </a>
+          <a href="#"
+            class="w-8 h-8 flex items-center justify-center bg-white rounded-full text-yellow-500 hover:bg-yellow-500 hover:text-white transition">
+            <i class="fab fa-twitter text-xs"></i>
+          </a>
+          <a href="#"
+            class="w-8 h-8 flex items-center justify-center bg-white rounded-full text-yellow-500 hover:bg-yellow-500 hover:text-white transition">
+            <i class="fab fa-linkedin-in text-xs"></i>
+          </a>
+        </div>
+
+      </div>
+
     </div>
 
   </div>
-
 </section>
 
 <section class="relative min-h-[520px] flex items-center overflow-hidden">
@@ -905,123 +1093,26 @@
     </div>
   </div>
 </section>
-<section class="py-20 bg-gradient-to-b from-white to-yellow-50">
 
-  <div class="max-w-7xl mx-auto px-4">
-
-    <!-- TOP SECTION -->
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-
-      <!-- LEFT IMAGE -->
-      <div class="relative">
-        <img src="/dsfasdf.jpg" alt="about"
-             class="rounded-3xl shadow-lg w-full h-[400px] object-cover">
-
-        <!-- overlay card -->
-        <div class="absolute bottom-4 left-4 bg-white shadow-md rounded-xl px-4 py-2">
-          <p class="text-sm font-semibold text-blue-900">20+ Years of Excellence</p>
-        </div>
-      </div>
-
-      <!-- RIGHT CONTENT -->
-      <div>
-
-        <span class="text-blue-600 font-semibold uppercase tracking-wide">
-          About Us
-        </span>
-
-        <h2 class="text-3xl md:text-5xl font-bold text-blue-900 mt-2 mb-6">
-          Building Strong Foundations For Future Success
-        </h2>
-
-        <p class="text-gray-600 mb-6 leading-relaxed">
-          We are committed to delivering high-quality education with a focus on concept clarity,
-          personalized attention, and real academic growth. Our experienced faculty ensures that
-          every student reaches their full potential.
-        </p>
-
-        <p class="text-gray-600 mb-6 leading-relaxed">
-          With years of excellence in teaching, we have helped hundreds of students achieve
-          outstanding results and build confidence in their studies.
-        </p>
-
-        <!-- highlights -->
-        <div class="grid grid-cols-2 gap-4">
-          <div class="flex items-center gap-2">
-            <i class="fas fa-check-circle text-green-500"></i>
-            <span class="text-sm">Expert Teachers</span>
-          </div>
-
-          <div class="flex items-center gap-2">
-            <i class="fas fa-check-circle text-green-500"></i>
-            <span class="text-sm">Smart Learning</span>
-          </div>
-
-          <div class="flex items-center gap-2">
-            <i class="fas fa-check-circle text-green-500"></i>
-            <span class="text-sm">Regular Tests</span>
-          </div>
-
-          <div class="flex items-center gap-2">
-            <i class="fas fa-check-circle text-green-500"></i>
-            <span class="text-sm">Doubt Support</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- MISSION & VISION -->
-    <div class="grid md:grid-cols-2 gap-8 mt-16">
-
-      <!-- Mission -->
-      <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300">
-
-        <div class="text-blue-600 text-3xl mb-4">
-          <i class="fas fa-bullseye"></i>
-        </div>
-
-        <h3 class="text-xl font-bold text-blue-900 mb-3">
-          Our Mission
-        </h3>
-
-        <p class="text-gray-600">
-          To provide quality education that builds strong academic foundations,
-          enhances critical thinking, and prepares students for future success.
-        </p>
-
-      </div>
-
-      <!-- Vision -->
-      <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition duration-300">
-
-        <div class="text-yellow-500 text-3xl mb-4">
-          <i class="fas fa-eye"></i>
-        </div>
-
-        <h3 class="text-xl font-bold text-blue-900 mb-3">
-          Our Vision
-        </h3>
-
-        <p class="text-gray-600">
-          To become a trusted educational institute known for excellence,
-          innovation, and empowering students to achieve their dreams.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
 <section class="py-12 bg-gradient-to-b from-white to-blue-50">
   <div class="max-w-6xl mx-auto px-4 md:px-6">
 
     <!-- heading -->
     <div class="text-center max-w-2xl mx-auto mb-12">
-      <p class="text-sm font-semibold tracking-[0.2em] uppercase text-[#1D4ED8]">
-        Need Help
-      </p>
+      <div class="flex items-center justify-center gap-3 mb-1">
+
+        <!-- Left Line -->
+        <div class="h-[2px] w-12 bg-yellow-500"></div>
+
+        <!-- Text -->
+        <h2 class="text-yellow-500 font-semibold tracking-widest text-sm">
+          Need Help?
+        </h2>
+
+        <!-- Right Line -->
+        <div class="h-[2px] w-12 bg-yellow-500"></div>
+
+      </div>
       <h2 class="mt-3 text-3xl md:text-5xl font-bold text-[#1F2937]">
         We’re here to guide you
       </h2>
@@ -1216,7 +1307,8 @@
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
       <!-- CARD 1 -->
-      <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-yellow-500 ">
+      <div
+        class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-yellow-500 ">
 
         <div class="text-blue-900 text-3xl mb-4">
           <i class="fas fa-user-graduate"></i>
@@ -1233,7 +1325,8 @@
       </div>
 
       <!-- CARD 2 -->
-      <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-yellow-500">
+      <div
+        class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-yellow-500">
 
         <div class="text-blue-900 text-3xl mb-4">
           <i class="fas fa-users"></i>
@@ -1250,7 +1343,8 @@
       </div>
 
       <!-- CARD 3 -->
-      <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-yellow-500">
+      <div
+        class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-yellow-500">
 
         <div class="text-blue-900 text-3xl mb-4">
           <i class="fas fa-chalkboard-teacher"></i>
@@ -1267,7 +1361,8 @@
       </div>
 
       <!-- CARD 4 (Highlight) -->
-      <div class="bg-[#eef2ff] rounded-2xl p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-yellow-500">
+      <div
+        class="bg-[#eef2ff] rounded-2xl p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-yellow-500">
 
         <div class="text-blue-900 text-3xl mb-4">
           <i class="fas fa-brain"></i>
