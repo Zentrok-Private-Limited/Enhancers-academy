@@ -366,12 +366,12 @@
       </div>
 
       <!-- Buttons -->
-      <button (click)="prev()" class="absolute left-2 top-1/2 -translate-y-1/2 bg-yellow-400 px-2 py-1 rounded-full">
-        ◀
+      <button (click)="prev()" class="absolute text-blue-900 left-2 top-1/2 -translate-y-1/2 bg-yellow-400 px-2 py-1 rounded-full">
+        <i class="fa-solid fa-arrow-left"></i>
       </button>
 
-      <button (click)="next()" class="absolute right-2 top-1/2 -translate-y-1/2 bg-yellow-400 px-2 py-1 rounded-full">
-        ▶
+      <button (click)="next()" class="absolute text-blue-900 right-2 top-1/2 -translate-y-1/2 bg-yellow-400 px-2 py-1 rounded-full">
+        <i class="fa-solid fa-arrow-right"></i>
       </button>
 
     </div>
@@ -425,7 +425,7 @@
 
 </section>
 <!-- ======================== Top Students ======================== -->
-<section class="py-20">
+<section class="py-10">
 
   <div class="max-w-6xl mx-auto px-4 md:px-6">
 
@@ -1016,7 +1016,7 @@
 </div>
 }
 <!-- =========================== Newsletter Subscription =========================  -->
-<section class="pt-30 pb-20 bg-gradient-to-b from-white to-blue-200">
+<section class="md:pt-30 pb-20 bg-gradient-to-b from-white to-blue-200">
 
   <div class="max-w-6xl mx-auto px-4">
 
@@ -1026,7 +1026,7 @@
       <div class="grid md:grid-cols-2 h-full items-end">
 
         <!-- LEFT IMAGE -->
-        <div class="relative flex justify-center">
+        <div class="relative flex justify-center hidden md:block">
 
           <!-- 👇 ABSOLUTE IMAGE -->
           <img src="/about.png" class="absolute bottom-0 h-[360px] md:h-[320px] object-contain 
