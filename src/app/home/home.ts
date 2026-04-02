@@ -16,33 +16,52 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
   /* ================= COUNTER ================= */
   @ViewChildren('counter') counters!: QueryList<ElementRef<HTMLElement>>;
   @ViewChild('bg') bg!: ElementRef;
-  startCounter() {
-    this.counters.forEach((counterEl: ElementRef) => {
-      const element = counterEl.nativeElement;
-      const target = +element.getAttribute('data-target')!;
-      let count = 0;
+  hasAnimated = false;
 
-      const speed = 200; // jitna kam, utna fast
+ngAfterViewInit(): void {
+  const section = this.el.nativeElement.querySelector('section');
 
-      const updateCount = () => {
-        const increment = target / speed;
-
-        if (count < target) {
-          count += increment;
-          element.innerText = Math.ceil(count).toString();
-          requestAnimationFrame(updateCount);
-        } else {
-          element.innerText = target.toString();
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !this.hasAnimated) {
+          this.startCounter();
+          this.hasAnimated = true;
         }
-      };
+      });
+    },
+    { threshold: 0.4 }
+  );
 
-      updateCount();
-    });
-  }
-  ngAfterViewInit(): void {
-    this.startCounter();
-  }
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
+  observer.observe(section);
+}
+
+
+startCounter() {
+  this.counters.forEach((counterEl: ElementRef) => {
+    const element = counterEl.nativeElement;
+    const target = +element.getAttribute('data-target');
+    let count = 0;
+
+    const duration = 1500; // smooth timing
+    const step = target / (duration / 16);
+
+    const updateCount = () => {
+      count += step;
+
+      if (count < target) {
+        element.innerText = Math.floor(count).toString();
+        requestAnimationFrame(updateCount);
+      } else {
+        element.innerText = target.toString();
+      }
+    };
+
+    updateCount();
+  });
+}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object,
+private el: ElementRef) { }
   // ================= BANNER SLIDER =================
   currentBanner = 0;
   bannerInterval: ReturnType<typeof setInterval> | null = null;
