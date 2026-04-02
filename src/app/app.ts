@@ -18,6 +18,6 @@ export class App {
 ngOnInit() {
   setTimeout(() => {
     this.loading = false;
-  }, 10000); // 3 sec loader
+  }, 8000); // 3 sec loader
 }
 }
