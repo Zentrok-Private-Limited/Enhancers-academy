@@ -1,59 +1,138 @@
-<footer class="bg-white border-t border-gray-200">
-  <div class="max-w-7xl mx-auto px-4 md:px-6 py-14">
+<footer class="bg-gradient-to-br from-blue-50 via-white to-yellow-50">
 
-    <div class="grid lg:grid-cols-12 gap-10 items-start">
-      <!-- Brand -->
+  <div class="max-w-7xl mx-auto px-4 md:px-6 md:pt-8 pb-5">
+
+    <!-- UPDATED GRID -->
+    <div class="grid lg:grid-cols-12 gap-10">
+
+      <!-- BRAND (EXPANDED) -->
       <div class="lg:col-span-5">
-        <div class="items-center gap-3 mb-5">
-          <a routerLink="/home"><img src="/logo.png" alt="Enhancers Academy Logo" class="h-18 w-auto object-contain"></a>
-          <p class="text-sm text-gray-500">Academic Excellence Starts Here</p>
-        </div>
+        <img src="/logo.png" class="h-16 mb-4" alt="logo">
 
-        <p class="text-gray-600 leading-7 max-w-md">
-          Focused coaching, expert mentorship, and smart preparation for school students and CUET aspirants.
+        <p class="text-gray-600 text-sm leading-6">
+          Academic Excellence Starts Here with expert mentorship.
         </p>
+
+        <!-- STATS -->
+        <div class="mt-6 space-y-3 text-sm text-gray-600">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-user-graduate text-[#1D4ED8]"></i>
+            <span>5000+ Students</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-chalkboard-user text-[#1D4ED8]"></i>
+            <span>Expert Faculty</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-trophy text-[#1D4ED8]"></i>
+            <span>Top Results</span>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Links -->
+      <!-- LINKS -->
       <div class="lg:col-span-2">
-        <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-[#1D4ED8] mb-4">Pages</h3>
-        <ul class="space-y-3 text-gray-600">
-          <li><a routerLink="/" class="hover:text-[#1D4ED8] transition">Home</a></li>
-          <li><a routerLink="/about" class="hover:text-[#1D4ED8] transition">About</a></li>
-          <li><a routerLink="/courses" class="hover:text-[#1D4ED8] transition">Courses</a></li>
-          <li><a href="#" class="hover:text-[#1D4ED8] transition">Contact</a></li>
+        <h3 class="font-semibold text-lg mb-4 text-[#1D4ED8]">Quick Links</h3>
+
+        <ul class="space-y-3 text-gray-600 text-sm">
+          <li><a routerLink="/" class="hover:text-[#1D4ED8]">Home</a></li>
+          <li><a routerLink="/about" class="hover:text-[#1D4ED8]">About</a></li>
+          <li><a routerLink="/courses" class="hover:text-[#1D4ED8]">Courses</a></li>
+          <li><a routerLink="/contact" class="hover:text-[#1D4ED8]">Contact</a></li>
         </ul>
       </div>
 
-      <!-- Programs -->
-      <div class="lg:col-span-2">
-        <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-[#1D4ED8] mb-4">Programs</h3>
-        <ul class="space-y-3 text-gray-600">
-          <li><a href="#" class="hover:text-[#1D4ED8] transition">Class 1 – 8</a></li>
-          <li><a href="#" class="hover:text-[#1D4ED8] transition">Class 9 – 10</a></li>
-          <li><a href="#" class="hover:text-[#1D4ED8] transition">Class 11 – 12</a></li>
-          <li><a href="#" class="hover:text-[#1D4ED8] transition">CUET Preparation</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact -->
+      <!-- COURSES -->
       <div class="lg:col-span-3">
-        <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-[#1D4ED8] mb-4">Contact</h3>
-        <div class="space-y-3 text-gray-600">
-          <p>Pitampura, Delhi</p>
-          <p>9599127878</p>
-          <p>info@enhancers.com</p>
+        <h3 class="font-semibold text-lg mb-4 text-[#1D4ED8]">Courses</h3>
+
+        <div class="flex flex-wrap gap-3">
+
+          <!-- BUTTON -->
+          <div class="flex items-center gap-2 px-4 py-2 rounded-full 
+                border border-blue-200 bg-white text-sm text-gray-700
+                hover:border-yellow-400 hover:bg-yellow-50 
+                hover:shadow-sm transition cursor-pointer">
+            <i class="fa-solid fa-graduation-cap text-blue-600"></i>
+            Classes I–VIII
+          </div>
+
+          <div
+            class="flex items-center gap-2 px-4 py-2 rounded-full border border-blue-200 bg-white text-sm hover:border-yellow-400 hover:bg-yellow-50 cursor-pointer">
+            <i class="fa-solid fa-book text-blue-600"></i>
+            Classes IX–X
+          </div>
+
+          <div
+            class="flex items-center gap-2 px-4 py-2 rounded-full border border-blue-200 bg-white text-sm hover:border-yellow-400 hover:bg-yellow-50 cursor-pointer">
+            <i class="fa-solid fa-chart-line text-blue-600"></i>
+            Commerce
+          </div>
+
+          <div
+            class="flex items-center gap-2 px-4 py-2 rounded-full border border-blue-200 bg-white text-sm hover:border-yellow-400 hover:bg-yellow-50 cursor-pointer">
+            <i class="fa-solid fa-flask text-blue-600"></i>
+            Science
+          </div>
+
+          <div
+            class="flex items-center gap-2 px-4 py-2 rounded-full border border-blue-200 bg-white text-sm hover:border-yellow-400 hover:bg-yellow-50 cursor-pointer">
+            <i class="fa-solid fa-bullseye text-blue-600"></i>
+            Entrance
+          </div>
+
+          <div
+            class="flex items-center gap-2 px-4 py-2 rounded-full border border-blue-200 bg-white text-sm hover:border-yellow-400 hover:bg-yellow-50 cursor-pointer">
+            <i class="fa-solid fa-brain text-blue-600"></i>
+            Olympiad
+          </div>
+
+          <div
+            class="flex items-center gap-2 px-4 py-2 rounded-full border border-blue-200 bg-white text-sm hover:border-yellow-400 hover:bg-yellow-50 cursor-pointer">
+            <i class="fa-solid fa-comments text-blue-600"></i>
+            English
+          </div>
+
+          <div
+            class="flex items-center gap-2 px-4 py-2 rounded-full border border-blue-200 bg-white text-sm hover:border-yellow-400 hover:bg-yellow-50 cursor-pointer">
+            <i class="fa-solid fa-calculator text-blue-600"></i>
+            Maths
+          </div>
+
         </div>
       </div>
+
+      <!-- CONTACT -->
+      <div class="lg:col-span-2">
+        <h3 class="font-semibold text-lg mb-4 text-[#1D4ED8]">Contact</h3>
+
+        <div class="space-y-3 text-gray-600 text-sm">
+          <p><i class="fa-solid fa-location-dot mr-2 text-blue-600"></i>Pitampura, Delhi</p>
+          <p><i class="fa-solid fa-phone mr-2 text-blue-600"></i>9599127878</p>
+          <p><i class="fa-solid fa-envelope mr-2 text-blue-600"></i>info@enhancers.com</p>
+        </div>
+
+        <div class="flex gap-3 mt-5">
+          <i class="fa-brands fa-facebook text-xl text-blue-600 hover:text-yellow-500 cursor-pointer"></i>
+          <i class="fa-brands fa-instagram text-xl text-blue-600 hover:text-yellow-500 cursor-pointer"></i>
+          <i class="fa-brands fa-youtube text-xl text-blue-600 hover:text-yellow-500 cursor-pointer"></i>
+        </div>
+      </div>
+
     </div>
 
-    <div class="mt-10 pt-6 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-gray-500">© 2026 Enhancers Academy. All rights reserved.</p>
+    <!-- BOTTOM -->
+    <div class="border-t mt-2 pt-2 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+      <p>© 2026 Enhancers Academy</p>
 
-      <div class="flex gap-4 text-sm text-gray-500">
-        <a href="#" class="hover:text-[#1D4ED8] transition">Privacy Policy</a>
-        <a href="#" class="hover:text-[#1D4ED8] transition">Terms</a>
+      <div class="flex gap-6 mt-3 md:mt-0">
+        <a href="#" class="hover:text-[#1D4ED8]">Privacy</a>
+        <a href="#" class="hover:text-[#1D4ED8]">Terms</a>
       </div>
     </div>
+
   </div>
 </footer>

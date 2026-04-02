@@ -1,0 +1,25 @@
+<div class="relative flex justify-center items-center h-screen bg-blue-600">
+
+  <!-- BOOK -->
+  <div class="book absolute">
+    <div class="inner">
+      <div class="left"></div>
+      <div class="middle"></div>
+      <div class="right"></div>
+    </div>
+
+    <ul>
+      @for (item of pages; track $index) {
+        <li></li>
+      }
+    </ul>
+  </div>
+
+  <!-- TEXT -->
+  @if (showText) {
+    <h1 class="loader-text mt-8">
+      Enhancers <span class="text-yellow-600">Academy</span>
+    </h1>
+  }
+
+</div>

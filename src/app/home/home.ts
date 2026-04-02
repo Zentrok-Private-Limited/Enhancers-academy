@@ -463,14 +463,14 @@ private el: ElementRef) { }
     {
       title: 'XI – XII (Commerce)',
       slug: '/courses/class-11-12',
-      desc: 'Accounts, Economics & Business studies.',
+      desc: 'Accounts, Economics, Mathematics & Business studies.',
       icon: 'fa-solid fa-chart-line',
       category: 'Academic'
     },
     {
       title: 'XI – XII (Science)',
       slug: '/courses/class-11-12-commerce',
-      desc: 'Physics, Chemistry & Maths (PCM).',
+      desc: 'Physics, Chemistry, Biology & Maths (PCM).',
       icon: 'fa-solid fa-flask',
       category: 'Academic'
     },

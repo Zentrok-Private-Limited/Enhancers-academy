@@ -1,23 +1,15 @@
-@if (isLoading) {
-  <div class="fixed inset-0 bg-[#1D4ED8] flex flex-col items-center justify-center z-[9999]">
+<div class="app-container">
 
-    <img src="/logo.png" class="w-64 mb-4 animate-pulse" />
-
-    <div class="w-14 h-14 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin mb-4"></div>
-
-    <h2 class="text-white text-xl font-bold">Enhancers Academy</h2>
-    <p class="text-white/70 text-sm mt-1">Loading your future...</p>
+  <!-- PRELOADER -->
+  <div class="loader-wrapper" [class.hide]="!loading">
+    <app-preloader></app-preloader>
   </div>
-} @else {
 
-  <div class="animate-fadeIn">
-
+  <!-- MAIN APP -->
+  <div class="main-content" [class.show]="!loading">
     <app-navbar></app-navbar>
-
     <router-outlet></router-outlet>
-
     <app-footer></app-footer>
-
   </div>
 
-}
+</div>
