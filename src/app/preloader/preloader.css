@@ -266,6 +266,9 @@ Repeat same pattern for page-2 to page-18
     font-weight: 700;
     letter-spacing: 2px;
     opacity: 0;
+
+    white-space: nowrap;
+    text-align: center;
     animation: showText 1s ease forwards;
 }
 

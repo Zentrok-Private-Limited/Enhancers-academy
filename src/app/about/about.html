@@ -1,509 +1,281 @@
-<!-- ABOUT HERO -->
-<section class="bg-gradient-to-br from-blue-50 via-white to-yellow-50 py-5 md:py-8">
-  <div class="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center">
+<!-- ================= HERO ================= -->
+<section class="pb-10">
+  <div class="relative overflow-hidden group">
+    <img src="/16.png"
+      class="w-full h-[300px] md:h-[400px] object-cover group-hover:scale-105 transition duration-700" />
 
-    <!-- Left -->
-    <div data-aos="fade-right">
-      <span class="inline-block px-4 py-2 rounded-full bg-blue-100 text-[#1D4ED8] text-sm font-semibold mb-5">
-        About Enhancers Academy
-      </span>
+    <div class="absolute inset-0 bg-black/60"></div>
 
-      <h1 class="text-4xl md:text-6xl font-bold text-[#1F2937] leading-tight">
-        Shaping Futures with
-        <span class="text-[#1D4ED8]">Quality Education</span>
-      </h1>
-
-      <p class="mt-6 text-lg text-gray-600 leading-8 max-w-2xl">
-        At Enhancers Academy, we believe every student has the potential to achieve excellence.
-        Our mission is to provide strong academic support, concept clarity, and confidence-building guidance
-        for school studies as well as entrance preparation.
+    <div class="absolute inset-0 flex flex-col justify-center px-6 md:px-16 text-white">
+      <h1 class="text-4xl md:text-6xl font-bold">About Us</h1>
+      <p class="mt-4 text-gray-200 max-w-xl">
+        Empowering learners with skills, knowledge, and confidence to succeed.
       </p>
-
-      <div class="mt-8 flex flex-wrap gap-4">
-        <button (click)="openForm()" class="bg-[#1D4ED8] text-white px-7 py-3 rounded-full font-semibold hover:bg-blue-700 transition">
-          Enroll Now
-        </button>
-        <!-- <button class="border border-[#1D4ED8] text-[#1D4ED8] px-7 py-3 rounded-full font-semibold hover:bg-blue-50 transition">
-          Explore Courses
-        </button> -->
-      </div>
-    </div>
-
-    <!-- Right -->
-    <div class="relative" data-aos="fade-up">
-      <div class="absolute -top-6 -left-6 w-28 h-28 bg-yellow-200 rounded-full blur-2xl opacity-60"></div>
-      <div class="absolute -bottom-8 -right-6 w-36 h-36 bg-blue-200 rounded-full blur-3xl opacity-60"></div>
-
-      <div class="relative bg-white rounded-[32px] p-4 shadow-xl border border-blue-100">
-        <img
-          src="https://img.freepik.com/free-vector/online-learning-concept_52683-37480.jpg"
-          alt="About Enhancers Academy"
-          class="w-full h-[320px] md:h-[420px] object-cover rounded-[24px]"
-        >
-      </div>
-    </div>
-
-  </div>
-</section>
-@if (showForm) {
-<div class="fixed inset-0 z-[9999] bg-black/40 flex items-center justify-center px-4">
-  <div class="w-full max-w-xl bg-white rounded-[28px] shadow-2xl p-6 md:p-8 relative">
-    <button type="button" (click)="closeForm()"
-      class="absolute top-4 right-4 w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 transition">
-      ✕
-    </button>
-
-    <p class="text-sm font-semibold uppercase tracking-wider text-[#1D4ED8]">Expert Support</p>
-    <h2 class="mt-2 text-2xl md:text-3xl font-bold text-[#1F2937]">
-      Talk to an Expert
-    </h2>
-
-    <form class="mt-8 space-y-5">
-      <input type="text" placeholder="Your Name"
-        class="w-full border-b border-gray-300 px-1 py-3 outline-none focus:border-[#1D4ED8]">
-
-      <input type="tel" placeholder="Phone Number"
-        class="w-full border-b border-gray-300 px-1 py-3 outline-none focus:border-[#1D4ED8]">
-
-      <input type="email" placeholder="Email Address"
-        class="w-full border-b border-gray-300 px-1 py-3 outline-none focus:border-[#1D4ED8]">
-
-      <textarea rows="4" placeholder="How can we help you?"
-        class="w-full border-b border-gray-300 px-1 py-3 outline-none focus:border-[#1D4ED8]"></textarea>
-
-      <button type="submit"
-        class="mt-4 bg-[#1D4ED8] text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition">
-        Submit
-      </button>
-    </form>
-  </div>
-</div>
-}
-<!-- WHO WE ARE -->
-<section class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center">
-
-    <div class="relative order-2 lg:order-1" data-aos="fade-down">
-      <div class="bg-[#F8FBFF] rounded-[30px] p-4 border border-blue-100 shadow-sm">
-        <img
-          src="https://img.freepik.com/free-vector/teacher-concept-illustration_114360-1638.jpg"
-          alt="Who We Are"
-          class="w-full h-[320px] md:h-[350px] object-cover rounded-[24px]"
-        >
-      </div>
-    </div>
-
-    <div class="order-1 lg:order-2" data-aos="fade-left">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#1D4ED8] mb-3">
-        Who We Are
+      <p class="mt-3 text-sm md:text-base text-gray-300 font-medium flex items-center gap-2">
+        <a routerLink="/" class="hover:text-yellow-400 transition">
+          Home
+        </a>
+        <span>/</span>
+        <span class="text-white font-semibold">
+          About Us
+        </span>
       </p>
-
-      <h2 class="text-3xl md:text-5xl font-bold text-[#1F2937] leading-tight">
-        A learning space built for growth and success
-      </h2>
-
-      <p class="mt-6 text-gray-600 leading-8 text-lg">
-        Enhancers Academy is dedicated to helping students achieve strong academic results
-        through expert teaching, regular practice, and personalized support.
-      </p>
-
-      <p class="mt-4 text-gray-600 leading-8 text-lg">
-        We focus on building concepts, improving confidence, and guiding students with the
-        right strategy for school exams and competitive preparation.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- MISSION / VISION -->
-<section class="py-20 bg-[#F8FBFF]">
-  <div class="max-w-6xl mx-auto px-4 md:px-6">
-    <div class="text-center mb-14">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#1D4ED8] mb-3">
-        Our Purpose
-      </p>
-      <h2 class="text-3xl md:text-5xl font-bold text-[#1F2937]">
-        Mission & Vision
-      </h2>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-white rounded-[28px] p-8 shadow-sm border border-blue-100 hover:shadow-md transition" data-aos="fade-down">
-        <div class="w-14 h-14 rounded-2xl bg-blue-100 text-[#1D4ED8] flex items-center justify-center text-2xl mb-6">
-          <i class="fa-solid fa-bullseye"></i>
-        </div>
-        <h3 class="text-2xl font-bold text-[#1F2937] mb-4">Our Mission</h3>
-        <p class="text-gray-600 leading-8">
-          To provide quality education with concept clarity, disciplined practice, and
-          dedicated mentorship so that every student can achieve academic excellence.
-        </p>
-      </div>
-
-      <div class="bg-white rounded-[28px] p-8 shadow-sm border border-yellow-100 hover:shadow-md transition" data-aos="fade-up">
-        <div class="w-14 h-14 rounded-2xl bg-yellow-100 text-[#1F2937] flex items-center justify-center text-2xl mb-6">
-          <i class="fa-solid fa-lightbulb"></i>
-        </div>
-        <h3 class="text-2xl font-bold text-[#1F2937] mb-4">Our Vision</h3>
-        <p class="text-gray-600 leading-8">
-          To become a trusted learning destination where students grow with confidence,
-          perform with consistency, and shape a brighter future.
-        </p>
-      </div>
     </div>
   </div>
 </section>
 
-<!-- WHY CHOOSE US -->
-<section class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-4 md:px-6">
-    <div class="text-center mb-14">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#1D4ED8] mb-3">
-        Why Choose Us
-      </p>
-      <h2 class="text-3xl md:text-5xl font-bold text-[#1F2937]">
-        What makes Enhancers Academy different
-      </h2>
-    </div>
+<!-- ================= INTRO ================= -->
+<section class="py-5">
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="rounded-[24px] bg-[#F8FBFF] p-6 border border-blue-100 shadow-sm hover:-translate-y-1 transition" data-aos="flip-right">
-        <div class="text-3xl mb-4"><i class="fa-solid fa-chalkboard-user"></i></div>
-        <h3 class="text-xl font-bold text-[#1F2937] mb-3">Expert Faculty</h3>
-        <p class="text-gray-600 leading-7">
-          Learn from experienced teachers who focus on concept clarity and performance.
-        </p>
-      </div>
-
-      <div class="rounded-[24px] bg-[#FFFDF5] p-6 border border-yellow-100 shadow-sm hover:-translate-y-1 transition" data-aos="flip-down">
-        <div class="text-3xl mb-4"><i class="fa-solid fa-book"></i></div>
-        <h3 class="text-xl font-bold text-[#1F2937] mb-3">Structured Learning</h3>
-        <p class="text-gray-600 leading-7">
-          Well-planned study material, notes, assignments, and revision support.
-        </p>
-      </div>
-
-      <div class="rounded-[24px] bg-[#F8FBFF] p-6 border border-blue-100 shadow-sm hover:-translate-y-1 transition" data-aos="flip-left">
-        <div class="text-3xl mb-4"><i class="fa-solid fa-file-pen"></i></div>
-        <h3 class="text-xl font-bold text-[#1F2937] mb-3">Regular Tests</h3>
-        <p class="text-gray-600 leading-7">
-          Consistent assessment and performance tracking for steady improvement.
-        </p>
-      </div>
-
-      <div class="rounded-[24px] bg-[#FFFDF5] p-6 border border-yellow-100 shadow-sm hover:-translate-y-1 transition" data-aos="flip-up">
-        <div class="text-3xl mb-4"><i class="fa-solid fa-user-group"></i></div>
-        <h3 class="text-xl font-bold text-[#1F2937] mb-3">Personal Guidance</h3>
-        <p class="text-gray-600 leading-7">
-          Special attention and mentoring to help each student reach their goals.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STATS -->
-<section class="py-20 bg-gradient-to-r from-[#1D4ED8] to-blue-500">
-  <div class="max-w-6xl mx-auto px-4 md:px-6">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-white">
-        Our Impact in Numbers
-      </h2>
-      <p class="mt-4 text-white/80 text-lg">
-        Trusted by students and parents for quality education and results
-      </p>
-    </div>
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-      <div class="bg-white rounded-[24px] p-8 shadow-lg">
-        <h3 class="text-4xl font-bold text-[#1D4ED8]">500+</h3>
-        <p class="mt-2 text-gray-600">Students Guided</p>
-      </div>
-
-      <div class="bg-white rounded-[24px] p-8 shadow-lg">
-        <h3 class="text-4xl font-bold text-[#1D4ED8]">50+</h3>
-        <p class="mt-2 text-gray-600">Mock Tests</p>
-      </div>
-
-      <div class="bg-white rounded-[24px] p-8 shadow-lg">
-        <h3 class="text-4xl font-bold text-[#1D4ED8]">10+</h3>
-        <p class="mt-2 text-gray-600">Expert Mentors</p>
-      </div>
-
-      <div class="bg-white rounded-[24px] p-8 shadow-lg">
-        <h3 class="text-4xl font-bold text-[#1D4ED8]">95%</h3>
-        <p class="mt-2 text-gray-600">Student Satisfaction</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- YOUTUBE VIDEO SECTION -->
-<section class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-4 md:px-6">
-
-    <div class="text-center mb-10">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#1D4ED8] mb-3">
-        Watch Us
-      </p>
-      <h2 class="text-3xl md:text-5xl font-bold text-[#1F2937]">
-        Explore Enhancers Academy on YouTube
-      </h2>
-      <p class="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">
-        Watch our classes, guidance videos, and expert sessions to understand our teaching style better.
-      </p>
-    </div>
-
-    <a
-      href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="group block relative overflow-hidden rounded-[32px] shadow-2xl"
-    >
-      <div class="absolute inset-0 bg-gradient-to-r from-[#1F2937]/80 via-[#1D4ED8]/50 to-[#F59E0B]/40 z-10"></div>
-
-      <img
-        src="https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg"
-        alt="Enhancers Academy YouTube"
-        class="w-full h-[260px] md:h-[420px] object-cover group-hover:scale-105 transition duration-500"
-      >
-
-      <div class="absolute inset-0 z-20 flex flex-col justify-between p-6 md:p-10 text-white">
-        <div class="flex items-start justify-between gap-4">
-          <div>
-            <p class="text-sm md:text-base font-medium text-white/90">
-              Enhancers Academy
-            </p>
-            <h3 class="text-2xl md:text-4xl font-bold leading-tight mt-2">
-              Classes for School & Entrance Preparation
-            </h3>
-          </div>
-
-          <div class="hidden md:flex items-center gap-2 bg-white/15 backdrop-blur px-4 py-2 rounded-full text-sm font-medium">
-            ▶ Watch on YouTube
-          </div>
-        </div>
-
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <div>
-            <p class="mt-4 text-lg md:text-3xl font-semibold text-white">
-              For Classes 1st to 12th & CUET Preparation
-            </p>
-          </div>
-
-          <div class="flex justify-start md:justify-end">
-            <div class="w-15 h-15 md:w-18 md:h-18 rounded-full bg-red-600 flex items-center justify-center shadow-2xl group-hover:scale-110 transition">
-              <span class="text-white text-3xl md:text-4xl"><i class="fa-brands fa-youtube"></i></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </a>
-
-  </div>
-</section>
-
-<!-- OUR APPROACH -->
-<section class="py-20 bg-[#F8FBFF]">
-  <div class="max-w-6xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center">
-
-    <div data-aos="fade-right">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[#1D4ED8] mb-3">
-        Our Teaching Approach
-      </p>
-      <h2 class="text-3xl md:text-5xl font-bold text-[#1F2937] leading-tight">
-        A balanced approach to academic success
-      </h2>
-
-      <div class="mt-8 space-y-6">
-        <div class="flex gap-4">
-          <div class="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-xl font-semibold">1</div>
-          <div>
-            <h3 class="text-xl font-semibold text-[#1F2937]">Concept Building</h3>
-            <p class="text-gray-600 mt-2">We strengthen fundamentals so students understand topics deeply.</p>
-          </div>
-        </div>
-
-        <div class="flex gap-4">
-          <div class="w-12 h-12 rounded-2xl bg-yellow-100 flex items-center justify-center text-xl font-semibold">2</div>
-          <div>
-            <h3 class="text-xl font-semibold text-[#1F2937]">Practice & Revision</h3>
-            <p class="text-gray-600 mt-2">Assignments, worksheets, and revision sessions ensure better retention.</p>
-          </div>
-        </div>
-
-        <div class="flex gap-4">
-          <div class="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-xl font-semibold">3</div>
-          <div>
-            <h3 class="text-xl font-semibold text-[#1F2937]">Performance Improvement</h3>
-            <p class="text-gray-600 mt-2">Regular tests and analysis help students improve consistently.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-[30px] p-4 border border-blue-100 shadow-sm" data-aos="fade-up">
-      <img
-        src="https://img.freepik.com/free-vector/college-project-concept-illustration_114360-749.jpg"
-        alt="Teaching Approach"
-        class="w-full h-[320px] md:h-[380px] object-cover rounded-[24px]"
-      >
-    </div>
-
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="py-20 bg-gradient-to-r from-[#1D4ED8] to-blue-500">
-  <div class="max-w-5xl mx-auto px-4 md:px-6 text-center text-white">
-    <h2 class="text-3xl md:text-5xl font-bold leading-tight">
-      Join Enhancers Academy and
-      start your journey to success
-    </h2>
-
-    <p class="mt-5 text-white/85 text-lg leading-8 max-w-2xl mx-auto">
-      Learn with confidence, grow with the right guidance, and achieve the academic results you dream of.
-    </p>
-
-    <div class="mt-8 flex flex-wrap justify-center gap-4">
-      <button class="bg-white text-[#1D4ED8] px-7 py-3 rounded-full font-semibold hover:bg-blue-50 transition">
-        Enroll Now
-      </button>
-      <button class="border border-white text-white px-7 py-3 rounded-full font-semibold hover:bg-white/10 transition">
-        Contact Us
-      </button>
-    </div>
-  </div>
-</section>
-<!-- =========================== Why Choose Us ========================  -->
-<section class="py-20 bg-[#f8fafc] relative">
-
-  <div class="max-w-7xl mx-auto px-4">
-
-    <!-- TOP CONTENT -->
-    <div class="grid lg:grid-cols-2 gap-10 items-center mb-14">
-
-      <div>
-        <h2 class="text-3xl md:text-5xl font-bold text-gray-800 leading-tight">
-          Expert Guidance Meets <br> Personalized Learning >>>>
-        </h2>
-      </div>
-
-      <div>
-        <p class="text-gray-600 leading-relaxed border-t-2 border-yellow-600 pt-4">
-          Join top-quality learning programs designed to provide personal attention,
-          expert guidance, and a supportive environment where every student thrives.
-        </p>
-      </div>
-
-    </div>
-
-    <!-- CARDS -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-      <!-- CARD 1 -->
-      <div
-        class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-yellow-500 ">
-
-        <div class="text-blue-900 text-3xl mb-4">
-          <i class="fas fa-user-graduate"></i>
-        </div>
-
-        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-          Personalized Learning
-        </h3>
-
-        <p class="text-gray-600 text-sm">
-          Customized study plans to match each student’s pace and learning style.
-        </p>
-
-      </div>
-
-      <!-- CARD 2 -->
-      <div
-        class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-yellow-500">
-
-        <div class="text-blue-900 text-3xl mb-4">
-          <i class="fas fa-users"></i>
-        </div>
-
-        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-          Small Batch Focus
-        </h3>
-
-        <p class="text-gray-600 text-sm">
-          Learn in small groups for better interaction, attention, and clarity.
-        </p>
-
-      </div>
-
-      <!-- CARD 3 -->
-      <div
-        class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-yellow-500">
-
-        <div class="text-blue-900 text-3xl mb-4">
-          <i class="fas fa-chalkboard-teacher"></i>
-        </div>
-
-        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-          Learn From Experts
-        </h3>
-
-        <p class="text-gray-600 text-sm">
-          Get guidance from experienced mentors with real teaching expertise.
-        </p>
-
-      </div>
-
-      <!-- CARD 4 (Highlight) -->
-      <div
-        class="bg-[#eef2ff] rounded-2xl p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-yellow-500">
-
-        <div class="text-blue-900 text-3xl mb-4">
-          <i class="fas fa-brain"></i>
-        </div>
-
-        <h3 class="text-lg font-semibold text-gray-800 mb-2">
-          Confidence Building
-        </h3>
-
-        <p class="text-gray-600 text-sm">
-          Clear doubts, build concepts, and gain confidence to excel in exams.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- <section class="py-16 bg-white">
   <div class="max-w-6xl mx-auto px-4">
 
-    <div class="grid md:grid-cols-2 gap-10 items-center">
+    <!-- HEADING -->
+    <div class="text-center max-w-2xl mx-auto mb-5 animate-fadeIn">
+      <div class="flex items-center justify-center gap-3 mb-1">
+        <div class="h-[2px] w-12 bg-yellow-500"></div>
+        <h2 class="text-yellow-500 font-semibold tracking-widest text-sm">
+          ABOUT ENHANCERS ACADEMY
+        </h2>
+        <div class="h-[2px] w-12 bg-yellow-500"></div>
+      </div>
 
-      <div class="bg-gradient-to-br from-blue-500 to-yellow-400 p-6 md:p-8 rounded-[20px]">
+      <h2 class="text-4xl md:text-5xl font-bold mt-2 text-blue-900 leading-tight">
+        Shaping Futures with <span class="text-yellow-600">Quality Education</span>
+      </h2>
+    </div>
 
-        <div *ngFor="let item of faqs; let i = index"
-          class="bg-white rounded-2xl px-6 py-4 mb-4 cursor-pointer transition-all duration-300 hover:scale-[1.02] shadow-sm"
-          (click)="toggleFAQ(i)">
+    <!-- GRID -->
+    <div class="grid md:grid-cols-12 gap-5 items-end">
 
-          <div class="flex justify-between items-center font-medium text-gray-800">
-            <span>{{ item.question }}</span>
+      <!-- IMAGE -->
+      <div class="md:col-span-3 relative flex justify-center items-end group">
 
-            <span
-              class="w-8 h-8 flex items-center justify-center rounded-full bg-blue-600 text-white text-lg transition-transform duration-300"
-              [class.rotate-45]="activeIndex === i">
-              +
-            </span>
+        <div
+          class="absolute w-[110%] h-[110%] bg-gradient-to-r from-blue-200 to-yellow-200 rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition">
+        </div>
+
+        <img src="/about1.png"
+          class="relative w-full h-[400px] max-w-xs md:max-w-sm transform group-hover:scale-105 transition duration-500">
+      </div>
+      <div class="md:col-span-9 animate-slideUp">
+        <p class="text-gray-600 leading-7 text-lg">
+          At Enhancers Academy, we empower students to achieve academic excellence through a
+          well-structured learning system and expert mentorship. Our goal is not just to teach,
+          but to build strong conceptual clarity that stays with students for life.
+        </p>
+        <p class="mt-4 text-gray-600 leading-7 text-lg">
+          We believe every student has unique potential. That’s why we focus on personalized
+          guidance, regular performance tracking, and continuous motivation to help them grow
+          with confidence and consistency.
+        </p>
+        <p class="mt-4 text-gray-600 leading-7 text-lg">
+          Whether preparing for school exams or competitive challenges, we ensure that students
+          develop the right mindset, discipline, and problem-solving skills needed for success.
+        </p>
+        <div class="mt-8 grid sm:grid-cols-2 gap-6">
+          <div class="backdrop-blur-lg bg-white/60 border border-white/40 p-5 rounded-2xl shadow-md 
+                      hover:shadow-xl hover:-translate-y-2 transition duration-300">
+            <p class="font-semibold text-gray-800">Concept-based Learning</p>
+            <p class="text-sm text-gray-500 mt-1">Understanding over memorization</p>
+          </div>
+          <div class="backdrop-blur-lg bg-white/60 border border-white/40 p-5 rounded-2xl shadow-md 
+                      hover:shadow-xl hover:-translate-y-2 transition duration-300">
+            <p class="font-semibold text-gray-800">Expert Faculty</p>
+            <p class="text-sm text-gray-500 mt-1">Learn from experienced mentors</p>
+          </div>
+          <div class="backdrop-blur-lg bg-white/60 border border-white/40 p-5 rounded-2xl shadow-md 
+                      hover:shadow-xl hover:-translate-y-2 transition duration-300">
+            <p class="font-semibold text-gray-800">Regular Tests</p>
+            <p class="text-sm text-gray-500 mt-1">Track progress consistently</p>
+          </div>
+          <div class="backdrop-blur-lg bg-white/60 border border-white/40 p-5 rounded-2xl shadow-md 
+                      hover:shadow-xl hover:-translate-y-2 transition duration-300">
+            <p class="font-semibold text-gray-800">Personal Mentorship</p>
+            <p class="text-sm text-gray-500 mt-1">Individual student support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ================= WHO WE ARE ================= -->
+<section class="py-20 bg-white">
+
+  <div class="max-w-6xl mx-auto px-4">
+
+    <div class="grid md:grid-cols-12 gap-12 items-center">
+
+      <!-- CONTENT LEFT -->
+      <div class="md:col-span-6">
+
+        <div class="flex items-center gap-3 mb-1">
+          <div class="h-[2px] w-12 bg-yellow-500"></div>
+          <h2 class="text-yellow-500 font-semibold tracking-widest text-sm">
+            WHO WE ARE
+          </h2>
+          <div class="h-[2px] w-12 bg-yellow-500"></div>
+        </div>
+
+        <h2 class="text-3xl md:text-5xl font-bold leading-tight">
+          Why <span class="text-blue-600">Enhancers Academy</span> Exists
+        </h2>
+
+        <p class="mt-6 text-gray-600 leading-7">
+          Enhancers Academy is built to transform learning into a clear, engaging, and result-driven process.
+          We focus on simplifying concepts so students can truly understand and apply them confidently.
+        </p>
+
+        <p class="mt-4 text-gray-600 leading-7">
+          Our goal is to guide every student with the right strategy, consistent practice, and personal support
+          to achieve academic success and long-term growth.
+        </p>
+
+        <!-- ICON LIST -->
+        <div class="mt-6 space-y-4">
+
+          <div class="flex items-start gap-3 group">
+            <div class="bg-blue-100 text-blue-600 p-2 rounded-lg group-hover:scale-110 transition">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <p class="text-gray-700">Concept clarity with practical understanding</p>
           </div>
 
-          <div class="overflow-hidden transition-all duration-500 ease-in-out" [class.max-h-40]="activeIndex === i"
-            [class.max-h-0]="activeIndex !== i" [class.opacity-100]="activeIndex === i"
-            [class.opacity-0]="activeIndex !== i">
-            <p class="mt-3 text-sm text-gray-600">
-              {{ item.answer }}
+          <div class="flex items-start gap-3 group">
+            <div class="bg-yellow-100 text-yellow-600 p-2 rounded-lg group-hover:scale-110 transition">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <p class="text-gray-700">Regular tests and performance tracking</p>
+          </div>
+
+          <div class="flex items-start gap-3 group">
+            <div class="bg-blue-100 text-blue-600 p-2 rounded-lg group-hover:scale-110 transition">
+              <i class="fa-solid fa-chalkboard-user"></i>
+            </div>
+            <p class="text-gray-700">Experienced faculty & personal mentorship</p>
+          </div>
+
+        </div>
+
+        <!-- STATS -->
+        <div class="mt-8 grid grid-cols-2 gap-6">
+
+          <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-5 rounded-xl text-center 
+                      hover:shadow-lg hover:-translate-y-1 transition">
+            <p class="text-2xl font-bold text-blue-600">500+</p>
+            <p class="text-sm text-gray-600 mt-1">Students Guided</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-5 rounded-xl text-center 
+                      hover:shadow-lg hover:-translate-y-1 transition">
+            <p class="text-2xl font-bold text-yellow-500">95%</p>
+            <p class="text-sm text-gray-600 mt-1">Success Rate</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- VIDEO RIGHT -->
+      <div class="md:col-span-6 flex justify-center">
+
+        <div class="relative w-full max-w-md aspect-video rounded-3xl overflow-hidden shadow-xl">
+
+          <!-- IFRAME -->
+          <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            title="Enhancers Academy Video" frameborder="0" allowfullscreen>
+          </iframe>
+
+          <!-- OVERLAY (Logo + Text) -->
+          <div class="absolute top-0 left-0 w-full p-3 flex items-center gap-3 
+                bg-gradient-to-b from-black/70 to-transparent">
+
+            <!-- LOGO -->
+            <img src="/logo.png" class="h-8 object-contain">
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- ================= OUR APPROACH ================= -->
+<section class="py-20 bg-[#F8FBFF]">
+  <div class="max-w-6xl mx-auto px-4">
+
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold">
+        Our Teaching Approach
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <h3 class="text-xl font-semibold">Concept Building</h3>
+        <p class="text-gray-600 mt-2">
+          Strong fundamentals for deep understanding.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <h3 class="text-xl font-semibold">Practice & Revision</h3>
+        <p class="text-gray-600 mt-2">
+          Assignments and revision for better retention.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <h3 class="text-xl font-semibold">Performance Improvement</h3>
+        <p class="text-gray-600 mt-2">
+          Tests and analysis for continuous growth.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= MISSION ================= -->
+<section class="py-12 md:py-16 bg-gradient-to-br from-blue-50 via-white to-yellow-50">
+
+  <div class="max-w-7xl mx-auto px-4 md:px-6">
+
+    <div class="relative rounded-[40px] overflow-hidden">
+
+      <!-- Background Image -->
+      <img src="/10.png" class="w-full h-[400px] md:h-[500px] object-cover">
+
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black/40"></div>
+
+      <!-- Content -->
+      <div class="absolute bottom-6 left-6 right-6 md:left-12 md:max-w-2xl">
+
+        <div class="bg-white/90 backdrop-blur-lg rounded-[30px] p-6 md:p-8 shadow-2xl border border-white/40">
+
+          <!-- Heading -->
+          <h1 class="text-2xl md:text-4xl font-bold text-gray-800 leading-tight">
+            Our <span class="text-[#1D4ED8]">Mission & Vision</span>
+          </h1>
+
+          <!-- Mission -->
+          <div class="mt-5">
+            <h3 class="text-lg font-semibold text-[#1D4ED8]">Mission</h3>
+            <p class="text-gray-600 text-sm md:text-base leading-7 mt-1">
+              To empower students with strong academic foundations, clear concepts, and the confidence
+              to excel in school and competitive exams through quality education and personalized guidance.
+            </p>
+          </div>
+
+          <!-- Vision -->
+          <div class="mt-4">
+            <h3 class="text-lg font-semibold text-yellow-500">Vision</h3>
+            <p class="text-gray-600 text-sm md:text-base leading-7 mt-1">
+              To become a trusted learning platform that nurtures future achievers and inspires lifelong
+              learning by creating a supportive and innovative educational environment.
             </p>
           </div>
 
@@ -511,30 +283,86 @@
 
       </div>
 
-      <div>
-        <div class="flex items-center justify-start gap-3 mb-2">
-          <div class="h-[2px] w-10 bg-yellow-500"></div>
-          <h2 class="text-yellow-500 font-semibold tracking-widest text-sm">
-            ABOUT US
-          </h2>
-          <div class="h-[2px] w-10 bg-yellow-500"></div>
-        </div>
-
-        <h2 class="text-3xl md:text-4xl font-extrabold mb-4 leading-snug text-gray-900">
-          What Makes Us the <span class="text-yellow-500">Right Choice</span> for Students?
-        </h2>
-
-        <p class="text-gray-600 mb-6">
-          We provide a focused learning environment where students get personal attention,
-          clear concepts, and continuous support to achieve their academic goals.
-        </p>
-
-        <button class="px-6 py-2 bg-yellow-400 text-white rounded-full font-semibold hover:bg-yellow-500 transition">
-          Know More
-        </button>
-      </div>
-
     </div>
 
   </div>
-</section> -->
+
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+<section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-5xl font-bold">
+        Why Choose Us
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-6">
+
+      <div class="p-6 bg-blue-50 rounded-2xl">
+        <h3 class="font-semibold text-lg">Expert Faculty</h3>
+      </div>
+
+      <div class="p-6 bg-yellow-50 rounded-2xl">
+        <h3 class="font-semibold text-lg">Structured Learning</h3>
+      </div>
+
+      <div class="p-6 bg-blue-50 rounded-2xl">
+        <h3 class="font-semibold text-lg">Regular Tests</h3>
+      </div>
+
+      <div class="p-6 bg-yellow-50 rounded-2xl">
+        <h3 class="font-semibold text-lg">Personal Guidance</h3>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="py-20 bg-blue-600 text-white text-center">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-6">
+
+    <div>
+      <h3 class="text-4xl font-bold">500+</h3>
+      <p>Students</p>
+    </div>
+
+    <div>
+      <h3 class="text-4xl font-bold">50+</h3>
+      <p>Tests</p>
+    </div>
+
+    <div>
+      <h3 class="text-4xl font-bold">10+</h3>
+      <p>Mentors</p>
+    </div>
+
+    <div>
+      <h3 class="text-4xl font-bold">95%</h3>
+      <p>Satisfaction</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="py-20 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-center">
+  <div class="max-w-4xl mx-auto px-4">
+
+    <h2 class="text-3xl md:text-5xl font-bold">
+      Start Your Learning Journey Today
+    </h2>
+
+    <p class="mt-4 text-lg">
+      Join us and achieve your academic goals with confidence.
+    </p>
+
+    <button class="mt-6 bg-white text-blue-600 px-6 py-3 rounded-full font-semibold">
+      Enroll Now
+    </button>
+
+  </div>
+</section>
