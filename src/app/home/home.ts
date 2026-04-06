@@ -62,6 +62,8 @@ startCounter() {
 }
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
 private el: ElementRef) { }
+
+
   // ================= BANNER SLIDER =================
   currentBanner = 0;
   bannerInterval: ReturnType<typeof setInterval> | null = null;

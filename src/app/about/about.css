@@ -15,3 +15,103 @@
 .animate-slideUp {
   animation: slideUp 1.2s ease forwards;
 }
+
+/* hide scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  min-width: 80%;
+  scroll-snap-align: center;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(to right, #60a5fa, #facc15);
+}
+
+@media (min-width: 768px) {
+  .card {
+    min-width: auto;
+  }
+}
+
+.card-inner {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 24px;
+  text-align: center;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.icon.blue {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.icon.yellow {
+  background: #fef9c3;
+  color: #ca8a04;
+}
+
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* hover pe pause */
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Floating card animation */
+.floating {
+  animation: float 4s ease-in-out infinite;
+}
+
+.delay1 {
+  animation-delay: 1s;
+}
+.delay2 {
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Tilt hover effect */
+.card1 {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: perspective(800px) rotateX(5deg) rotateY(5deg) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+/* Button styles */

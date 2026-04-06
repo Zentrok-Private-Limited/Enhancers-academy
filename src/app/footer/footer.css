@@ -1,0 +1,15 @@
+.tag {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid #bfdbfe;
+  background: white;
+  font-size: 12px;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  border-color: #facc15;
+  background: #fef9c3;
+}
