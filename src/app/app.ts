@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { Navbar } from './navbar/navbar';
 import { Footer } from './footer/footer';
 import { Preloader } from './preloader/preloader';
+import { FloatingButton } from './shared/floating-button/floating-button';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Navbar, Footer, Preloader],
+  imports: [RouterOutlet, Navbar, Footer, Preloader, FloatingButton  ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
