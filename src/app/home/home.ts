@@ -370,7 +370,6 @@ private el: ElementRef) { }
   // ================= LIFECYCLE =================
   async ngOnInit(): Promise<void> {
 
-    // ✅ AOS fix (only browser)
     if (isPlatformBrowser(this.platformId)) {
       const AOS = (await import('aos')).default;
 
@@ -381,7 +380,6 @@ private el: ElementRef) { }
       });
     }
 
-    // ✅ tumhare existing functions
     this.startBannerAutoPlay();
     this.startTestimonialAuto();
     this.startTeacherAuto();
@@ -478,7 +476,7 @@ private el: ElementRef) { }
     },
     {
       title: 'Entrance Exams',
-      slug: 'courses/cuet',
+      slug: '/courses/cuet',
       desc: 'Preparation for NEET, CUET & JEE.',
       icon: 'fa-solid fa-bullseye',
       category: 'Entrance'
@@ -535,7 +533,7 @@ private el: ElementRef) { }
     }
   ];
 
-  currentIndex = 2; // center se start (best UX)
+  currentIndex = 2; 
 
   next() {
     if (this.currentIndex < this.steps.length - 1) {
