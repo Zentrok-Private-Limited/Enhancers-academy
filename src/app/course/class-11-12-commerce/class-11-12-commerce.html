@@ -139,82 +139,61 @@
             </div>
         </div>
     </section>
+<!-- ==================================== Teacher Details & Class Information ============================ -->
+   <section class="bg-white">
+  <section class="relative overflow-hidden bg-[#1D4ED8] text-white">
 
-    <section class="bg-white">
-        <!-- Hero -->
-        <section class="relative overflow-hidden bg-[#1D4ED8] text-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-12">
 
-            <!-- Slides -->
-            <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-12 relative z-10">
+      <!-- Slider -->
+      <div class="relative">
 
-                <div class="relative py-6">
+        <div *ngFor="let t of teachers; let i = index">
 
-                    <!-- Slide 1 -->
-                    <div *ngIf="currentSlide === 0"
-                        class="grid lg:grid-cols-2 gap-10 items-center transition-all duration-700">
+          <div *ngIf="currentSlide === i"
+            class="grid lg:grid-cols-2 gap-10 items-center transition-all duration-700">
 
-                        <div class="flex justify-center">
-                            <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&w=800&q=80"
-                                class="w-full max-w-[350px] rounded-2xl shadow-xl" />
-                        </div>
-
-                        <div>
-                            <span class="bg-[#FBBF24] text-[#1D4ED8] px-4 py-2 rounded-full text-sm font-bold">
-                                Mathematics Faculty
-                            </span>
-
-                            <h2 class="text-3xl md:text-4xl font-extrabold mt-4 mb-4">
-                                Maths by <span class="text-[#FBBF24]">Ashutosh Shukla</span>
-                            </h2>
-
-                            <p class="text-white/90">
-                                Master mathematics with strong concepts, shortcut techniques, and problem-solving
-                                strategies for board exams.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <!-- Slide 2 -->
-                    <div *ngIf="currentSlide === 1"
-                        class="grid lg:grid-cols-2 gap-10 items-center transition-all duration-700">
-
-                        <div class="flex justify-center">
-                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80"
-                                class="w-full max-w-[350px] rounded-2xl shadow-xl" />
-                        </div>
-
-                        <div>
-                            <span class="bg-[#FBBF24] text-[#1D4ED8] px-4 py-2 rounded-full text-sm font-bold">
-                                Commerce Faculty
-                            </span>
-
-                            <h2 class="text-3xl md:text-4xl font-extrabold mt-4 mb-4">
-                                Economics & Accountancy by <span class="text-[#FBBF24]">CS Nitin Gupta</span>
-                            </h2>
-
-                            <p class="text-white/90">
-                                Learn Economics and Accountancy with strong concept clarity, practical understanding,
-                                and exam-focused preparation.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Dots -->
-                <div class="flex justify-center gap-2 mt-6">
-                    <span *ngFor="let s of [0,1]; let i = index" (click)="currentSlide = i"
-                        class="w-3 h-3 rounded-full cursor-pointer"
-                        [ngClass]="currentSlide === i ? 'bg-[#FBBF24]' : 'bg-white/50'">
-                    </span>
-                </div>
-
+            <!-- Image -->
+            <div class="flex justify-center">
+              <img [src]="t.image"
+                class="w-full max-w-[350px] rounded-2xl shadow-xl hover:scale-105 transition duration-500" />
             </div>
 
-        </section>
+            <!-- Content -->
+            <div>
+              <span class="bg-[#FBBF24] text-[#1D4ED8] px-4 py-2 rounded-full text-sm font-bold">
+                {{ t.subject }}
+              </span>
 
+              <h2 class="text-3xl md:text-4xl font-extrabold mt-4 mb-4">
+                {{ t.subject.split(' ')[0] }} by
+                <span class="text-[#FBBF24]">{{ t.name }}</span>
+              </h2>
+
+              <p class="text-white/90">
+                {{ t.desc }}
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Dots -->
+      <div class="flex justify-center gap-2 mt-6">
+        <span *ngFor="let t of teachers; let i = index"
+          (click)="currentSlide = i"
+          class="w-3 h-3 rounded-full cursor-pointer transition"
+          [ngClass]="currentSlide === i ? 'bg-[#FBBF24] scale-125' : 'bg-white/50'">
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+<!-- ============================ subject details ============================ -->
         <section class="bg-gradient-to-b from-white to-blue-50 min-h-screen py-12 px-4 md:px-8 lg:px-16">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-2">

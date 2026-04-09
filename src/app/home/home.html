@@ -56,7 +56,7 @@
     [style.transform]="'translateX(-' + currentBanner * 100 + '%)'">
     @for (banner of banners; track $index) {
     <div class="w-full flex-shrink-0">
-      <div class="grid lg:grid-cols-12 gap-3 items-center p-6 md:p-10 text-white">
+      <div class="grid lg:grid-cols-12 gap-3 items-center p-6 md:py-5 md:px-10 text-white">
         <div class="lg:col-span-5">
           <span
             class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm">
@@ -95,10 +95,13 @@
         <div class="lg:col-span-7">
           <div class="bg-white/10 backdrop-blur rounded-[28px] p-5">
             <div class="grid md:grid-cols-2 gap-4">
+
+              <!-- LEFT SIDE SAME (features) -->
               <div class="bg-white/10 rounded-xl p-4 border border-white/20">
                 <div class="bg-[#FBBF24] text-black px-3 py-2 rounded-lg font-bold mb-4 inline-block">
                   {{ banner.featureTitle }}
                 </div>
+
                 @for (feature of banner.features; track $index) {
                 <div class="flex gap-3 mb-3">
                   <div class="w-10 h-10 bg-[#1D4ED8] text-white flex items-center justify-center rounded-lg">
@@ -111,19 +114,43 @@
                 </div>
                 }
               </div>
+
+              <!-- RIGHT SIDE FIXED -->
               <div class="relative">
+
+                <!-- ✅ TEACHERS VIEW -->
+                @if (banner.teachers) {
+
+                <div class="grid gap-4" [ngClass]="banner.teachers.length === 3 ? 'grid-cols-3' : 'grid-cols-2'">
+                  @for (teacher of banner.teachers; track $index) {
+                  <div class="bg-white/10 rounded-xl p-2 text-center border border-white/20 
+                      hover:scale-105 transition duration-300">
+
+                    <img [src]="teacher.image" class="w-28 h-28 mx-auto rounded-full object-contain mb-2 
+                        border-2 border-[#FBBF24]" />
+
+                    <p class="font-semibold text-sm">{{ teacher.name }}</p>
+
+                  </div>
+                  }
+                </div>
+
+                } @else {
+
+                <!-- ✅ NORMAL IMAGE VIEW (unchanged look) -->
                 <div class="rounded-xl overflow-hidden">
-                  <img [src]="banner.image" class="w-full h-full object-cover" />
+                  <img [src]="banner.image" class="w-85 h-80 object-cover" />
                 </div>
-                <div class="absolute top-3 left-3 bg-white px-3 py-2 rounded-lg">
-                  <p class="text-xs text-gray-500">{{ banner.badgeTopLabel }}</p>
-                  <p class="font-bold text-[#1D4ED8]">{{ banner.badgeTopValue }}</p>
-                </div>
+
                 <div class="absolute bottom-3 right-3 bg-[#FBBF24] px-3 py-2 rounded-lg">
                   <p class="text-xs">{{ banner.badgeBottomLabel }}</p>
                   <p class="font-bold">{{ banner.badgeBottomValue }}</p>
                 </div>
+
+                }
+
               </div>
+
             </div>
           </div>
         </div>

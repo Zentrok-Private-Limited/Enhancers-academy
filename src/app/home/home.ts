@@ -18,50 +18,50 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('bg') bg!: ElementRef;
   hasAnimated = false;
 
-ngAfterViewInit(): void {
-  const section = this.el.nativeElement.querySelector('section');
+  ngAfterViewInit(): void {
+    const section = this.el.nativeElement.querySelector('section');
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !this.hasAnimated) {
-          this.startCounter();
-          this.hasAnimated = true;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !this.hasAnimated) {
+            this.startCounter();
+            this.hasAnimated = true;
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(section);
+  }
+
+
+  startCounter() {
+    this.counters.forEach((counterEl: ElementRef) => {
+      const element = counterEl.nativeElement;
+      const target = +element.getAttribute('data-target');
+      let count = 0;
+
+      const duration = 1500; // smooth timing
+      const step = target / (duration / 16);
+
+      const updateCount = () => {
+        count += step;
+
+        if (count < target) {
+          element.innerText = Math.floor(count).toString();
+          requestAnimationFrame(updateCount);
+        } else {
+          element.innerText = target.toString();
         }
-      });
-    },
-    { threshold: 0.4 }
-  );
+      };
 
-  observer.observe(section);
-}
-
-
-startCounter() {
-  this.counters.forEach((counterEl: ElementRef) => {
-    const element = counterEl.nativeElement;
-    const target = +element.getAttribute('data-target');
-    let count = 0;
-
-    const duration = 1500; // smooth timing
-    const step = target / (duration / 16);
-
-    const updateCount = () => {
-      count += step;
-
-      if (count < target) {
-        element.innerText = Math.floor(count).toString();
-        requestAnimationFrame(updateCount);
-      } else {
-        element.innerText = target.toString();
-      }
-    };
-
-    updateCount();
-  });
-}
+      updateCount();
+    });
+  }
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
-private el: ElementRef) { }
+    private el: ElementRef) { }
 
 
   // ================= BANNER SLIDER =================
@@ -70,30 +70,36 @@ private el: ElementRef) { }
 
   banners = [
     {
-      title1: 'Classes XI & XII',
-      title2: 'Accountancy',
-      title3: 'Economics',
-      desc: 'Expert guidance for senior classes with dedicated faculty. Accountancy by CS Nitin Gupta and Maths by Ashutosh Shukla.',
-      stat1: 'XI–XII',
-      stat1Label: 'Senior Classes',
-      stat2: '2',
-      stat2Label: 'Expert Faculties',
-      stat3: 'CUET',
-      stat3Label: 'Preparation',
-      featureTitle: 'Courses & Faculty',
+      title1: 'Welcome to',
+      title2: 'Enhancers Academy',
+      title3: 'Shape Your Future',
+
+      desc: 'Enhancers Academy provides expert coaching for Classes I–XII with a focus on concept clarity, personal attention, and result-oriented learning. We prepare students for school exams and competitive exams like CUET.',
+
+      stat1: 'I–XII',
+      stat1Label: 'All Classes',
+      stat2: '10+',
+      stat2Label: 'Expert Faculty',
+      stat3: '95%+',
+      stat3Label: 'Results',
+
+      featureTitle: 'Why Choose Us',
+
       features: [
-        { icon: '<i class="fa-solid fa-book-open"></i>', title: 'Accountancy', text: 'Special guidance for Class XI & XII students.' },
-        { icon: '<i class="fa-solid fa-arrow-trend-up"></i>', title: 'Economics', text: 'Strong concept building and exam preparation.' },
-        { icon: '<i class="fa-solid fa-chalkboard-user"></i>', title: 'CS Nitin Gupta', text: 'Dedicated faculty for Accountancy & Economics.' },
-        { icon: '<i class="fa-solid fa-square-root-variable"></i>', title: 'Maths by Ashutosh Shukla', text: 'Focused learning with clear concept support.' }
+        { icon: '<i class="fa-solid fa-user-graduate"></i>', title: 'All Classes Covered', text: 'Coaching for Classes I to XII with all major subjects.' },
+        { icon: '<i class="fa-solid fa-chalkboard-user"></i>', title: 'Expert Teachers', text: 'Highly experienced faculty with strong subject knowledge.' },
+        { icon: '<i class="fa-solid fa-layer-group"></i>', title: 'Small Batches', text: 'Personal attention for every student.' },
+        { icon: '<i class="fa-solid fa-chart-line"></i>', title: 'Regular Tests', text: 'Performance tracking with tests and feedback.' }
       ],
-      image: '/2.png',
+
+      image: '/banner1.png', 
+
       badgeTopLabel: 'Branch 1',
       badgeTopValue: 'F-10, Prashant Vihar',
+
       badgeBottomLabel: 'Branch 2',
       badgeBottomValue: 'QU 233-C Pitampura'
     },
-
     {
       title1: 'All Subject',
       title2: 'Maths Science',
@@ -112,7 +118,7 @@ private el: ElementRef) { }
         { icon: '<i class="fa-solid fa-flask"></i>', title: 'Science', text: 'Strong fundamentals with guided preparation.' },
         { icon: '<i class="fa-solid fa-pen-nib"></i>', title: 'English', text: 'Grammar, writing and comprehension improvement.' }
       ],
-      image: '/5.png',
+      image: '/banner2.png',
       badgeTopLabel: 'Call Now',
       badgeTopValue: '95991 27878',
       badgeBottomLabel: 'Also Call',
@@ -137,7 +143,7 @@ private el: ElementRef) { }
         { icon: '<i class="fa-solid fa-chalkboard-user"></i>', title: 'Expert Guidance', text: 'Mentorship by experienced faculty members.' },
         { icon: '<i class="fa-solid fa-rocket"></i>', title: 'Confidence Building', text: 'Prepare with strategy and exam readiness.' }
       ],
-      image: '/6.png',
+      image: '/banner3.png',
       badgeTopLabel: 'Main Contact',
       badgeTopValue: '95991 27878',
       badgeBottomLabel: 'Support Contact',
@@ -150,22 +156,40 @@ private el: ElementRef) { }
       title2: 'Expert Teachers',
       title3: 'Best Guidance',
       desc: 'Our experienced teachers focus on concept clarity, personal attention, and consistent performance improvement.',
+
       stat1: '10+',
       stat1Label: 'Years Experience',
       stat2: 'Expert',
       stat2Label: 'Faculty',
       stat3: '100%',
       stat3Label: 'Support',
+
       featureTitle: 'Our Faculty',
       features: [
-        { icon: '<i class="fa-solid fa-chalkboard-user"></i>', title: 'Experienced Teachers', text: 'Highly qualified and experienced faculty.' },
-        { icon: '<i class="fa-solid fa-user-group"></i>', title: 'Personal Attention', text: 'Small batches for better focus.' },
-        { icon: '<i class="fa-solid fa-lightbulb"></i>', title: 'Concept Clarity', text: 'Deep understanding of subjects.' },
-        { icon: '<i class="fa-solid fa-chart-line"></i>', title: 'Performance Tracking', text: 'Regular tests and feedback.' }
+        { icon: '<i class="fa-solid fa-bullseye"></i>', title: 'CS Nitin Gupta', text: 'Accountancy & Economics expert with 26 years of experience.' },
+        { icon: '<i class="fa-solid fa-file-pen"></i>', title: 'Ashutosh Shukla', text: 'Mathematics and Physics expert with 8 years of experience.' },
+        { icon: '<i class="fa-solid fa-chalkboard-user"></i>', title: 'Gaurav Arora', text: 'Science and Biology expert with 12 years of experience.' },
+        { icon: '<i class="fa-solid fa-rocket"></i>', title: 'Kevin Ribeiro', text: 'English & Social Science expert with 42 years of experience.' }
       ],
-      image: '/7.png',
-      badgeTopLabel: 'Top Faculty',
-      badgeTopValue: 'Experienced Team',
+      teachers: [
+        {
+          name: 'CS Nitin Gupta',
+          image: '/nitin-gupta.png'
+        },
+        {
+          name: 'Ashutosh Shukla',
+          image: '/ashutosh-shukla1.png'
+        },
+        {
+          name: 'Guarv Arora',
+          image: '/guarv-arora.png'
+        },
+        {
+          name: 'Kevin Ribeiro',
+          image: '/teacher4.png'
+        }
+      ],
+
       badgeBottomLabel: 'Join Now',
       badgeBottomValue: 'Limited Seats'
     },
@@ -189,7 +213,7 @@ private el: ElementRef) { }
         { icon: '<i class="fa-solid fa-star"></i>', title: 'Excellent Growth', text: 'Improvement in every student.' },
         { icon: '<i class="fa-solid fa-graduation-cap"></i>', title: 'Success Stories', text: 'Real student achievements.' }
       ],
-      image: '/8.png',
+      image: '/banner4.png',
       badgeTopLabel: 'Top Score',
       badgeTopValue: '95%+',
       badgeBottomLabel: 'Join Achievers',
@@ -223,7 +247,7 @@ private el: ElementRef) { }
       this.bannerInterval = null;
     }
   }
-  
+
   // ===================== top student ===========================
   topStudents = [
     {
@@ -533,7 +557,7 @@ private el: ElementRef) { }
     }
   ];
 
-  currentIndex = 2; 
+  currentIndex = 2;
 
   next() {
     if (this.currentIndex < this.steps.length - 1) {
