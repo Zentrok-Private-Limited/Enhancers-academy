@@ -266,6 +266,86 @@
     </div>
   </div>
 </section>
+<!-- ====================our teacher section======== -->
+<section class="py-10 relative overflow-hidden">
+  <div class="relative z-10">
+    <div class="flex items-center justify-center gap-3 mb-2">
+      <div class="h-[2px] w-10 bg-yellow-500"></div>
+      <h2 class="text-yellow-500 font-semibold tracking-widest text-sm">
+        TEACHERS
+      </h2>
+      <div class="h-[2px] w-10 bg-yellow-500"></div>
+    </div>
+    <h2 class="text-center text-4xl font-bold text-blue-900 mb-2">
+      Our Teachers
+    </h2>
+
+    <p class="text-center text-gray-600 mb-3">
+      Experienced educators dedicated to your success.
+    </p>
+
+    <!-- SLIDER -->
+    <div class="relative w-[90%] mx-auto overflow-visible" (mouseenter)="stopAutoSlide()"
+      (mouseleave)="startAutoSlide()" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
+
+      <!-- CARDS -->
+      <div class="flex justify-center gap-4 md:gap-6 py-6">
+
+        <div *ngFor="let card of visibleCards; let i = index" [ngClass]="{
+               'scale-105 z-10': i === 1 && visibleCards.length > 1,
+               'scale-95 opacity-60': i !== 1 && visibleCards.length > 1,
+               'scale-100': visibleCards.length === 1
+             }"
+          class="bg-white shadow-xl border rounded-2xl p-5 w-[240px] sm:w-[260px] md:w-[280px] transition-all duration-500">
+
+          <!-- IMAGE -->
+          <div class="flex justify-center mb-4">
+            <img [src]="card.image"
+              class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-4 border-blue-500">
+          </div>
+
+          <!-- CONTENT -->
+          <div class="text-center text-blue-900">
+            <h3 class="text-base sm:text-lg font-bold">{{card.name}}</h3>
+            <p class="text-xs sm:text-sm opacity-80">{{card.subject}}</p>
+            <p class="text-xs sm:text-sm mt-2">Class: {{card.class}}</p>
+            <p class="text-xs text-gray-500 mt-1">
+              {{card.experience}} experience
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- NAV -->
+      <div class="flex justify-between absolute w-full px-2 md:px-4 top-1/2 -translate-y-1/2">
+
+        <button (click)="teacherPrev()" class="px-3 py-1 md:px-4 md:py-2 text-sm md:text-base bg-gray-200 rounded-lg">
+          ←
+        </button>
+
+        <button (click)="teacherNext()"
+          class="px-3 py-1 md:px-4 md:py-2 text-sm md:text-base bg-blue-900 text-white rounded-lg">
+          →
+        </button>
+
+      </div>
+
+      <!-- DOTS -->
+      <div class="flex justify-center gap-2 mt-6">
+        <div *ngFor="let c of teacherCards; let i = index" (click)="goToSlide(i)" [ngClass]="{
+               'bg-blue-900 w-6': i === active,
+               'bg-gray-300 w-3': i !== active
+             }" class="h-3 rounded-full cursor-pointer transition-all">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 <!-- ===============roadmap=================== -->
 <section class="py-10 bg-gradient-to-br from-blue-50 via-white to-yellow-50">
   <div class="max-w-6xl mx-auto px-4">
