@@ -159,7 +159,7 @@ selectedClass = 'Class 1';
     this.stopAutoSlide(); // important (duplicate interval fix)
     this.interval = setInterval(() => {
       this.teacherNext();
-    }, 3000);
+    }, 1500);
   }
 
   stopAutoSlide() {

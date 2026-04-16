@@ -1,5 +1,6 @@
 <nav
-  class="sticky top-0 z-[9999] bg-white border-b border-gray-200 px-4 md:px-6 h-[72px] flex items-center justify-between relative">
+  class="sticky top-0 z-[9999] bg-white border-b border-gray-200 px-4 md:px-6 h-[72px] flex items-center justify-between relative"
+>
   <!-- Logo -->
   <div class="text-xl md:text-2xl font-bold">
     <a routerLink="/" class="text-black hover:text-yellow-400 transition">
@@ -12,43 +13,103 @@
     <li><a routerLink="/" class="hover:text-yellow-400 transition">Home</a></li>
     <li><a routerLink="/about" class="hover:text-yellow-400 transition">About</a></li>
     <!-- Courses Dropdown -->
-    <li class="relative">
-      <button type="button" (click)="toggleCoursesDropdown()"
-        class="flex items-center gap-2 hover:text-yellow-400 transition">
+    <li class="relative" #coursesMenu>
+      <button
+        type="button"
+        (click)="toggleCoursesDropdown()"
+        class="flex items-center gap-2 hover:text-yellow-400 transition"
+      >
         Courses
-        <span class="text-sm transition-transform duration-300" [class.rotate-180]="isCoursesDropdownOpen"><i class="fa-solid fa-angle-down"></i></span>
+        <span
+          class="text-sm transition-transform duration-300"
+          [class.rotate-180]="isCoursesDropdownOpen"
+          ><i class="fa-solid fa-angle-down"></i
+        ></span>
       </button>
 
-      <div *ngIf="isCoursesDropdownOpen"
-        class="absolute left-0 top-full mt-3 w-72 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50">
-        <a routerLink="/courses/class-1-8" fragment="class-1-8" (click)="closeCoursesDropdown()"
-          class="block px-5 py-4 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition border-b border-gray-100">
-          <span class="block font-semibold">Classes I - VIII</span>
-          <span class="text-sm text-gray-500">All Subjects</span>
+      <div
+        *ngIf="isCoursesDropdownOpen"
+        class="absolute left-0 top-full mt-3 w-90 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50"
+      >
+        <a
+          routerLink="/courses/class-1-8"
+          fragment="class-1-8"
+          (click)="closeCoursesDropdown()"
+          class="block px-5 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition border-b border-gray-100"
+        >
+          <span class="block text-sm font-semibold">Classes I - VIII</span>
+          <span class="text-xs text-gray-500">All Subjects</span>
         </a>
 
-        <a routerLink="/courses/class-9-10" fragment="class-9-10" (click)="closeCoursesDropdown()"
-          class="block px-5 py-4 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition border-b border-gray-100">
-          <span class="block font-semibold">Classes IX - X</span>
-          <span class="text-sm text-gray-500">Maths, Science, English</span>
+        <a
+          routerLink="/courses/class-9-10"
+          fragment="class-9-10"
+          (click)="closeCoursesDropdown()"
+          class="block px-5 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition border-b border-gray-100"
+        >
+          <span class="block text-sm font-semibold">Classes IX - X</span>
+          <span class="text-xs text-gray-500">Maths, Science, English</span>
         </a>
 
-        <a routerLink="/courses/class-11-12" fragment="class-11-12" (click)="closeCoursesDropdown()"
-          class="block px-5 py-4 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition border-b border-gray-100">
-          <span class="block font-semibold">Classes XI - XII</span>
-          <span class="text-sm text-gray-500">(Science) Physics, Chemistry, Biology, Mathematics</span>
+        <a
+          routerLink="/courses/class-11-12"
+          fragment="class-11-12"
+          (click)="closeCoursesDropdown()"
+          class="block px-5 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition border-b border-gray-100"
+        >
+          <span class="text-sm block font-semibold">Classes XI - XII</span>
+          <span class="text-xs text-gray-500"
+            >(Science) Physics, Chemistry, Biology, Mathematics</span
+          >
         </a>
 
-        <a routerLink="/courses/class-11-12-commerce" fragment="class-11-12" (click)="closeCoursesDropdown()"
-          class="block px-5 py-4 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition border-b border-gray-100">
-          <span class="block font-semibold">Classes XI - XII</span>
-          <span class="text-sm text-gray-500">(Commerce) Economics, Accountancy, Business Studies</span>
+        <a
+          routerLink="/courses/class-11-12-commerce"
+          fragment="class-11-12"
+          (click)="closeCoursesDropdown()"
+          class="block px-5 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition border-b border-gray-100"
+        >
+          <span class="text-sm block font-semibold">Classes XI - XII</span>
+          <span class="text-xs text-gray-500"
+            >(Commerce) Economics, Accountancy, Business Studies</span
+          >
         </a>
 
-        <a routerLink="/courses/cuet" fragment="cuet" (click)="closeCoursesDropdown()"
-          class="block px-5 py-4 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition">
-          <span class="block font-semibold">Entrance Exam Preparation</span>
-          <span class="text-sm text-gray-500">NEET, CUET and Other Exams</span>
+        <a
+          routerLink="/courses/cuet"
+          fragment="cuet"
+          (click)="closeCoursesDropdown()"
+          class="block px-5 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition"
+        >
+          <span class="text-sm block font-semibold">Entrance Exam Preparation</span>
+          <span class="text-xs text-gray-500">NEET, CUET and Other Exams</span>
+        </a>
+        <a
+          routerLink="/courses/olympiad-preparation"
+          fragment="olympiad-preparation"
+          (click)="closeCoursesDropdown()"
+          class="block px-5 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition border-b border-gray-100"
+        >
+          <span class="text-sm block font-semibold">Olympiad Preparation</span>
+          <span class="text-xs text-gray-500">Maths & Science olympiad training.</span>
+        </a>
+        <a
+          routerLink="/courses/spoken-english"
+          fragment="spoken-english"
+          (click)="closeCoursesDropdown()"
+          class="block px-5 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition border-b border-gray-100"
+        >
+          <span class="text-sm block font-semibold">Spoken English</span>
+          <span class="text-xs text-gray-500">Improve communication & confidence.</span>
+        </a>
+        <a
+          routerLink="/courses/vedic-maths"
+          fragment="vedic-maths"
+          (click)="closeCoursesDropdown()"
+          class="block px-5 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition border-b border-gray-100"
+        >
+          <span class="text-sm block font-semibold">Vedic Math</span>
+          <span class="text-xs text-gray-500">Improve communication & confidence.</span>
         </a>
       </div>
     </li>
@@ -62,82 +123,144 @@
 
   <!-- Right Section -->
   <div class="hidden lg:flex items-center space-x-4 text-sm">
-    <span class="text-black/90 font-semibold">
-      <i class="fa-solid fa-phone"></i> 9599127878
-    </span>
-    <button class="bg-[#FBBF24] text-[#1F2937] px-4 py-1.5 rounded-full font-semibold hover:scale-105 transition">
+    <span class="text-black/90 font-semibold"> <i class="fa-solid fa-phone"></i> 9599127878 </span>
+    <button
+      class="bg-[#FBBF24] text-[#1F2937] px-4 py-1.5 rounded-full font-semibold hover:scale-105 transition"
+    >
       Enroll Now
     </button>
   </div>
 
   <!-- Mobile Menu Button -->
-  <button type="button" (click)="toggleMenu()"
-    class="lg:hidden text-3xl text-blue-950 ">
+  <button type="button" (click)="toggleMenu()" class="lg:hidden text-3xl text-blue-950">
     <i class="fa-solid fa-bars"></i>
   </button>
 </nav>
 
 <!-- Mobile Menu Overlay -->
-<div *ngIf="isMenuOpen" class="fixed inset-0 z-[9998] bg-black/30 lg:hidden" (click)="closeAllMenus()"></div>
+<!-- Mobile Menu Overlay -->
+<div
+  *ngIf="isMenuOpen"
+  class="fixed inset-0 z-[9998] bg-black/40 lg:hidden"
+  (click)="closeAllMenus()"
+></div>
 
 <!-- Mobile Menu Panel -->
-<div *ngIf="isMenuOpen" class="fixed top-[72px] left-0 right-0 z-[9999] lg:hidden px-4 pt-3">
-  <div class="bg-white rounded-2xl shadow-2xl p-4 space-y-3 border border-gray-200">
-    <a routerLink="/" (click)="closeAllMenus()" class="block text-gray-800 hover:text-blue-600">Home</a>
-    <a routerLink="/about" (click)="closeAllMenus()" class="block text-gray-800 hover:text-blue-600">About</a>
+<div
+  *ngIf="isMenuOpen"
+  class="fixed inset-x-0 top-[72px] bottom-0 z-[9999] lg:hidden flex justify-center bg-black/40 backdrop-blur-sm"
+>
+  <div
+    class="w-[90%] max-w-sm bg-white rounded-3xl shadow-2xl px-5 py-2 overflow-y-auto max-h-[calc(100vh-150px)]"
+  >
+    <!-- Header -->
+    <div class="mb-2 pb-1 border-b">
+      <p class="text-lg font-semibold text-gray-800">Menu</p>
+      <p class="text-xs text-gray-500">Explore our sections</p>
+    </div>
 
-    <!-- Mobile Courses Dropdown -->
-    <div class="overflow-hidden">
-      <button type="button" (click)="toggleCoursesDropdown()"
-        class="w-full flex items-center justify-between  text-gray-800 hover:bg-blue-50">
-        <span>Courses</span>
-        <span class="transition-transform duration-300" [class.rotate-180]="isCoursesDropdownOpen"><i class="fa-solid fa-angle-down"></i></span>
+    <!-- Main Links -->
+    <div class="space-y-2">
+      <a routerLink="/" (click)="closeAllMenus()" class="flex items-center gap-2 text-gray-800 ">
+        <i class="fa-solid fa-house text-blue-500"></i>
+        Home
+      </a>
+
+      <a routerLink="/about" (click)="closeAllMenus()" class="flex items-center gap-2 text-gray-800 pb-1">
+        <i class="fa-solid fa-user text-purple-500"></i>
+        About
+      </a>
+    </div>
+
+    <!-- Divider -->
+    <div class="my-1 border-t"></div>
+
+    <!-- Courses Section -->
+    <div>
+      <button
+        type="button"
+        (click)="toggleMobileCourses()"
+        class="w-full flex items-center justify-between py-2 text-gray-800 font-medium"
+      >
+        <span class="flex items-center gap-2">
+          <i class="fa-solid fa-book text-yellow-500"></i>
+          Courses
+        </span>
+
+        <i
+          class="fa-solid fa-chevron-down transition-transform duration-300"
+          [class.rotate-180]="isMobileCoursesOpen"
+        ></i>
       </button>
 
-      <div *ngIf="isCoursesDropdownOpen" class="bg-gray-50 border-t">
-        <a routerLink="/courses" fragment="class-1-8" (click)="closeAllMenus()"
-          class="block py-2 px-2 text-sm text-gray-700 hover:bg-blue-50">
-          <span class="block font-semibold">Classes I - VIII</span>
-          <span class="text-sm text-gray-500">All Subjects</span>
+      <!-- Courses List -->
+      <div
+        *ngIf="isMobileCoursesOpen"
+        class="mt-3 space-y-2 bg-gray-50 rounded-xl p-3"
+      >
+        <a routerLink="/courses/class-1-8" (click)="closeAllMenus()" class="flex items-center gap-2 text-sm py-2">
+          <i class="fa-solid fa-book-open text-blue-500"></i>
+          Classes I - VIII
         </a>
-        <a routerLink="/courses" fragment="class-9-10" (click)="closeAllMenus()"
-          class="block py-2 px-2 text-sm text-gray-700 hover:bg-blue-50">
-          <span class="block font-semibold">Classes IX - X</span>
-          <span class="text-sm text-gray-500">Maths, Science, English</span>
+
+        <a routerLink="/courses/class-9-10" (click)="closeAllMenus()" class="flex items-center gap-2 text-sm py-2">
+          <i class="fa-solid fa-book-open text-green-500"></i>
+          Classes IX - X
         </a>
-        <a routerLink="/courses/class-11-12" fragment="class-11-12" (click)="closeAllMenus()"
-          class="block py-2 px-2 text-sm text-gray-700 hover:bg-blue-50">
-          <span class="block font-semibold">Classes XI - XII</span>
-          <span class="text-sm text-gray-500">(Science) Physics, Chemistry, Biology, Mathematics</span>
+
+        <a routerLink="/courses/class-11-12" (click)="closeAllMenus()" class="flex items-center gap-2 text-sm py-2">
+          <i class="fa-solid fa-flask text-purple-500"></i>
+          Classes XI - XII (Science)
         </a>
-        <a routerLink="/courses/class-11-12-commerce" fragment="class-11-12" (click)="closeAllMenus()"
-          class="block py-2 px-2 text-sm text-gray-700 hover:bg-blue-50">
-          <span class="block font-semibold">Classes XI - XII</span>
-          <span class="text-sm text-gray-500">(Commerce) Economics, Accountancy, Business Studies</span>
+
+        <a routerLink="/courses/class-11-12-commerce" (click)="closeAllMenus()" class="flex items-center gap-2 text-sm py-2">
+          <i class="fa-solid fa-calculator text-pink-500"></i>
+          Classes XI - XII (Commerce)
         </a>
-        <a routerLink="/courses" fragment="cuet" (click)="closeAllMenus()"
-          class="block py-2 px-2 text-sm text-gray-700 hover:bg-blue-50">
-          <span class="block font-semibold">CUET Preparation</span>
-          <span class="text-sm text-gray-500">Entrance Exam Preparation</span>
+
+        <a routerLink="/courses/cuet" (click)="closeAllMenus()" class="flex items-center gap-2 text-sm py-2">
+          <i class="fa-solid fa-bullseye text-red-500"></i>
+          CUET Preparation
+        </a>
+
+        <a routerLink="/courses/olympiad-preparation" (click)="closeAllMenus()" class="flex items-center gap-2 text-sm py-2">
+          <i class="fa-solid fa-trophy text-yellow-500"></i>
+          Olympiad Preparation
+        </a>
+
+        <a routerLink="/courses/spoken-english" (click)="closeAllMenus()" class="flex items-center gap-2 text-sm py-2">
+          <i class="fa-solid fa-comments text-indigo-500"></i>
+          Spoken English
+        </a>
+
+        <a routerLink="/courses/vedic-maths" (click)="closeAllMenus()" class="flex items-center gap-2 text-sm py-2">
+          <i class="fa-solid fa-brain text-orange-500"></i>
+          Vedic Maths
         </a>
       </div>
     </div>
 
-    <!-- <a href="#" class="block text-gray-800 hover:text-blue-600">Faculty</a>
-    <a href="#" class="block text-gray-800 hover:text-blue-600">Results</a>
-    <a href="#" class="block text-gray-800 hover:text-blue-600">Gallery</a> -->
-    <!-- <a href="#" class="block text-gray-800 hover:text-blue-600">Admission</a> -->
-    <a routerLink="/blog" class="block text-gray-800 hover:text-blue-600">Blog</a>
-    <a routerLink="/contact" class="block text-gray-800 hover:text-blue-600">Contact</a>
+    <!-- Bottom Section -->
+    <div class="mt-2 border-t pt-2 space-y-2">
+      <a routerLink="/blog" (click)="closeAllMenus()" class="flex items-center gap-2 text-gray-800">
+        <i class="fa-solid fa-pen-nib text-blue-500"></i>
+        Blog
+      </a>
 
-    <hr class="border-gray-200" />
+      <a routerLink="/contact" (click)="closeAllMenus()" class="flex items-center gap-2 text-gray-800">
+        <i class="fa-solid fa-phone text-green-500"></i>
+        Contact
+      </a>
 
-    <span class="text-gray-700 block">
-      <i class="fa-solid fa-phone"></i> 9599127878
-    </span>
+      <div class="text-gray-600 text-sm pt-1 flex items-center gap-2">
+        <i class="fa-solid fa-phone-volume text-green-600"></i>
+        9599127878
+      </div>
 
-    <button class="w-full bg-[#FBBF24] text-[#1F2937] py-2 rounded-full hover:bg-blue-700 transition">
-      Enroll Now
-    </button>
+      <button class="w-full bg-yellow-400 py-2 rounded-xl font-semibold mt-2 flex items-center justify-center gap-2">
+        <i class="fa-solid fa-bolt"></i>
+        Enroll Now
+      </button>
+    </div>
   </div>
 </div>

@@ -40,43 +40,10 @@ export class Class1112Commerce implements OnInit, OnDestroy {
   }
   currentSlide = 0;
 
-  teachers = [
-    {
-      name: 'Ashutosh Shukla',
-      subject: 'Mathematics Faculty',
-      desc: 'Master mathematics with strong concepts and shortcut techniques.',
-      image: '/ashutosh-shukla1.png'
-    },
-    {
-      name: 'CS Nitin Gupta',
-      subject: 'Commerce Faculty',
-      desc: 'Learn Economics & Accountancy with practical understanding.',
-      image: '/nitin-gupta.png'
-    },
-    {
-      name: 'Guarv Arora',
-      subject: 'English Faculty',
-      desc: 'Improve grammar, vocabulary and communication skills.',
-      image: '/guarv-arora.png'
-    },
-    {
-      name: 'Kevin Ribeiro',
-      subject: 'Science Faculty',
-      desc: 'Understand Physics & Chemistry with real-life examples.',
-      image: '/Kevin Ribeiro.png'
-    },
-    {
-      name: 'Kiran Chawla',
-      subject: 'All Subjects Faculty',
-      desc: 'Learn coding and computer basics with practical projects.',
-      image: '/kiran-chawla.png'
-    }
-  ];
-
   ngOnInit() {
     setInterval(() => {
-      this.currentSlide = (this.currentSlide + 1) % this.teachers.length;
-    }, 3000);
+      this.currentSlide = (this.currentSlide + 1) % this.teacherCards.length;
+    }, 1500);
 
     this.startAutoSlide();
   }
@@ -146,7 +113,7 @@ export class Class1112Commerce implements OnInit, OnDestroy {
     this.stopAutoSlide(); // important (duplicate interval fix)
     this.interval = setInterval(() => {
       this.teacherNext();
-    }, 3000);
+    }, 1500);
   }
 
   stopAutoSlide() {

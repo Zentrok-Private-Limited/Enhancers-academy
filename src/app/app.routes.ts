@@ -9,6 +9,9 @@ import { Blog } from './blog/blog';
 import { BlogDetail } from './blog-detail/blog-detail';
 import { Contact } from './contact/contact';
 import { Class1112Commerce } from './course/class-11-12-commerce/class-11-12-commerce';
+import { OlympiadPreparation } from './course/olympiad-preparation/olympiad-preparation';
+import { VedicMaths } from './course/vedic-maths/vedic-maths';
+import { SpokenEnglish } from './course/spoken-english/spoken-english';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -19,7 +22,10 @@ export const routes: Routes = [
     { path: 'courses/class-11-12', component: Class1112 },
     { path: 'courses/class-11-12-commerce', component: Class1112Commerce },
     { path: 'courses/cuet', component: Cuet },
+    { path: 'courses/olympiad-preparation', component: OlympiadPreparation},
+    { path: 'courses/vedic-maths', component: VedicMaths},
+    { path: 'courses/spoken-english', component: SpokenEnglish},
     { path: 'blog', component: Blog },
     { path: 'blog/:id', component: BlogDetail },
-    { path: 'contact', component: Contact}
+    { path: 'contact', component: Contact},
 ];

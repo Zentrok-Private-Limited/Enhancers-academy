@@ -104,7 +104,7 @@ export class Class910 implements OnInit, OnDestroy {
     this.stopAutoSlide(); // important (duplicate interval fix)
     this.interval = setInterval(() => {
       this.teacherNext();
-    }, 3000);
+    }, 1500);
   }
 
   stopAutoSlide() {

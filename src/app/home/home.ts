@@ -1,5 +1,15 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID, ElementRef, ViewChildren, QueryList, ViewChild } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  Inject,
+  PLATFORM_ID,
+  ElementRef,
+  ViewChildren,
+  QueryList,
+  ViewChild,
+} from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AfterViewInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -11,7 +21,7 @@ declare var Swiper: any;
   standalone: true,
   imports: [RouterModule, CommonModule, FormsModule],
   templateUrl: './home.html',
-  styleUrls: ['./home.css']
+  styleUrls: ['./home.css'],
 })
 export class Home implements OnInit, OnDestroy, AfterViewInit {
   /* ================= COUNTER ================= */
@@ -24,19 +34,18 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting && !this.hasAnimated) {
             this.startCounter();
             this.hasAnimated = true;
           }
         });
       },
-      { threshold: 0.4 }
+      { threshold: 0.4 },
     );
 
     observer.observe(section);
   }
-
 
   startCounter() {
     this.counters.forEach((counterEl: ElementRef) => {
@@ -61,194 +70,138 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
       updateCount();
     });
   }
-  constructor(@Inject(PLATFORM_ID) private platformId: Object,
-    private el: ElementRef) { }
-
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private el: ElementRef,
+  ) {}
 
   // ================= BANNER SLIDER =================
   currentBanner = 0;
   bannerInterval: ReturnType<typeof setInterval> | null = null;
 
+  // banner.component.ts
   banners = [
     {
-      title1: 'Welcome to',
-      title2: 'Enhancers Academy',
-      title3: 'Shape Your Future',
+      title1: 'Enhancers',
+      title2: 'Academy',
+      title3: 'Success Hub',
+      desc: 'Building strong academic foundations with expert guidance',
 
-      desc: 'Enhancers Academy provides expert coaching for Classes I–XII with a focus on concept clarity, personal attention, and result-oriented learning. We prepare students for school exams and competitive exams like CUET.',
-
-      stat1: 'I–XII',
-      stat1Label: 'All Classes',
-      stat2: '10+',
-      stat2Label: 'Expert Faculty',
-      stat3: '95%+',
-      stat3Label: 'Results',
-
-      featureTitle: 'Why Choose Us',
-
-      features: [
-        { icon: '<i class="fa-solid fa-user-graduate"></i>', title: 'All Classes Covered', text: 'Coaching for Classes I to XII with all major subjects.' },
-        { icon: '<i class="fa-solid fa-chalkboard-user"></i>', title: 'Expert Teachers', text: 'Highly experienced faculty with strong subject knowledge.' },
-        { icon: '<i class="fa-solid fa-layer-group"></i>', title: 'Small Batches', text: 'Personal attention for every student.' },
-        { icon: '<i class="fa-solid fa-chart-line"></i>', title: 'Regular Tests', text: 'Performance tracking with tests and feedback.' }
+      highlights: [
+        'Experienced & Dedicated Teachers',
+        'Result-Oriented Teaching Approach',
+        'Friendly & Motivating Environment',
       ],
 
-      image: '/banner1.png', 
-
-      badgeTopLabel: 'Branch 1',
-      badgeTopValue: 'F-10, Prashant Vihar',
-
-      badgeBottomLabel: 'Branch 2',
-      badgeBottomValue: 'QU 233-C Pitampura'
+      cta: 'Know More',
+      image: '/23.png',
+      bg: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/bg6.jpg)',
+      btn:'/contact'
     },
     {
-      title1: 'All Subject',
-      title2: 'Maths Science',
-      title3: 'English',
-      desc: 'Complete academic support for junior and middle classes. All subjects for Classes I–VIII and Maths, Science, English for Classes IX–X.',
-      stat1: 'I–VIII',
-      stat1Label: 'All Subjects',
-      stat2: 'IX–X',
-      stat2Label: 'Core Subjects',
-      stat3: '2',
-      stat3Label: 'Branches',
-      featureTitle: 'What We Offer',
-      features: [
-        { icon: '<i class="fa-solid fa-book"></i>', title: 'Classes I–VIII', text: 'All subjects covered with proper academic support.' },
-        { icon: '<i class="fa-solid fa-calculator"></i>', title: 'Maths', text: 'Concept clarity and regular practice sessions.' },
-        { icon: '<i class="fa-solid fa-flask"></i>', title: 'Science', text: 'Strong fundamentals with guided preparation.' },
-        { icon: '<i class="fa-solid fa-pen-nib"></i>', title: 'English', text: 'Grammar, writing and comprehension improvement.' }
+      title1: 'Learn from',
+      title2: 'Top Expert Teachers',
+      title3: 'Right in Your City',
+      desc: 'Classes I–XII | CUET & School Preparation',
+
+      highlights: [
+        'Personal Mentors for Every Student',
+        'Small Batches for Better Focus',
+        'Regular Tests with Performance Tracking',
       ],
-      image: '/banner2.png',
-      badgeTopLabel: 'Call Now',
-      badgeTopValue: '95991 27878',
-      badgeBottomLabel: 'Also Call',
-      badgeBottomValue: '98687 26527'
+
+      cta: 'Book Free Demo',
+      image: '/25.png',
+      bg: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/bg4.jpg)',
+      btn:'/contact'
+    },
+
+    {
+      title1: 'Master',
+      title2: 'Maths • Science',
+      title3: 'English with Ease',
+      desc: 'Strong academic support for Classes I–X',
+
+      highlights: [
+        'Concept Clarity with Smart Learning',
+        'Daily Practice & Doubt Solving',
+        'Personal Attention for Every Student',
+      ],
+
+      cta: 'Enroll Now',
+      image: '/24.png',
+      bg: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/bg10.jpg)',
+      btn:'/contact'
     },
 
     {
       title1: 'Prepare Smart',
       title2: 'Crack CUET',
       title3: 'With Confidence',
-      desc: 'Focused preparation for CUET and entrance exams with expert mentoring, regular practice, and strong academic support.',
-      stat1: 'CUET',
-      stat1Label: 'Target Exam',
-      stat2: '2',
-      stat2Label: 'Branches',
-      stat3: '100%',
-      stat3Label: 'Guidance',
-      featureTitle: 'Entrance Preparation',
-      features: [
-        { icon: '<i class="fa-solid fa-bullseye"></i>', title: 'CUET Preparation', text: 'Focused coaching for better exam performance.' },
-        { icon: '<i class="fa-solid fa-file-pen"></i>', title: 'Regular Practice', text: 'Test-based approach for stronger preparation.' },
-        { icon: '<i class="fa-solid fa-chalkboard-user"></i>', title: 'Expert Guidance', text: 'Mentorship by experienced faculty members.' },
-        { icon: '<i class="fa-solid fa-rocket"></i>', title: 'Confidence Building', text: 'Prepare with strategy and exam readiness.' }
+      desc: 'Focused preparation for CUET & entrance exams',
+
+      highlights: [
+        'Mock Tests Based on Latest Pattern',
+        'Expert Guidance & Strategy',
+        'Build Confidence with Real Exam Practice',
       ],
+
+      cta: 'Start Your Preparation',
       image: '/banner3.png',
-      badgeTopLabel: 'Main Contact',
-      badgeTopValue: '95991 27878',
-      badgeBottomLabel: 'Support Contact',
-      badgeBottomValue: '98687 26527'
+      bg: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/bg8.jpg)',
+      btn:'/contact'
     },
 
-    // 🔥 NEW 1: TEACHERS BANNER
+    
+
+    // ✅ NEW 2: Top Students / Results
     {
-      title1: 'Learn From',
-      title2: 'Expert Teachers',
-      title3: 'Best Guidance',
-      desc: 'Our experienced teachers focus on concept clarity, personal attention, and consistent performance improvement.',
+      title1: 'Our',
+      title2: 'Top Performers',
+      title3: 'Make Us Proud',
+      desc: 'Consistent results with high achievers every year',
 
-      stat1: '10+',
-      stat1Label: 'Years Experience',
-      stat2: 'Expert',
-      stat2Label: 'Faculty',
-      stat3: '100%',
-      stat3Label: 'Support',
-
-      featureTitle: 'Our Faculty',
-      features: [
-        { icon: '<i class="fa-solid fa-bullseye"></i>', title: 'CS Nitin Gupta', text: 'Accountancy & Economics expert with 26 years of experience.' },
-        { icon: '<i class="fa-solid fa-file-pen"></i>', title: 'Ashutosh Shukla', text: 'Mathematics and Physics expert with 8 years of experience.' },
-        { icon: '<i class="fa-solid fa-chalkboard-user"></i>', title: 'Gaurav Arora', text: 'Science and Biology expert with 12 years of experience.' },
-        { icon: '<i class="fa-solid fa-rocket"></i>', title: 'Kevin Ribeiro', text: 'English & Social Science expert with 42 years of experience.' }
-      ],
-      teachers: [
-        {
-          name: 'CS Nitin Gupta',
-          image: '/nitin-gupta.png'
-        },
-        {
-          name: 'Ashutosh Shukla',
-          image: '/ashutosh-shukla1.png'
-        },
-        {
-          name: 'Guarv Arora',
-          image: '/guarv-arora.png'
-        },
-        {
-          name: 'Kevin Ribeiro',
-          image: '/teacher4.png'
-        }
+      highlights: [
+        'Top Scores in School Exams',
+        'Outstanding CUET Results',
+        'Regular Rank Holders',
       ],
 
-      badgeBottomLabel: 'Join Now',
-      badgeBottomValue: 'Limited Seats'
+      cta: 'View Results',
+      image: '/20.png',
+      bg: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/bg7.jpg)',
+      btn:'/contact'
     },
 
-    // 🔥 NEW 2: TOP STUDENTS BANNER
+    // ✅ NEW 3: Class 1 to 8
     {
-      title1: 'Our Top',
-      title2: 'Students',
-      title3: 'Achievements',
-      desc: 'Our students consistently achieve top ranks and excellent results in board exams and competitive tests.',
-      stat1: '95%+',
-      stat1Label: 'Board Results',
-      stat2: 'Top',
-      stat2Label: 'Rankers',
-      stat3: '100%',
-      stat3Label: 'Success',
-      featureTitle: 'Student Success',
-      features: [
-        { icon: '<i class="fa-solid fa-trophy"></i>', title: 'Top Results', text: 'Students scoring 90%+ consistently.' },
-        { icon: '<i class="fa-solid fa-medal"></i>', title: 'Rank Holders', text: 'Top ranks in school and exams.' },
-        { icon: '<i class="fa-solid fa-star"></i>', title: 'Excellent Growth', text: 'Improvement in every student.' },
-        { icon: '<i class="fa-solid fa-graduation-cap"></i>', title: 'Success Stories', text: 'Real student achievements.' }
+      title1: 'Strong Start for',
+      title2: 'Classes 1 to 8',
+      title3: 'Build Basics Right',
+      desc: 'Foundation courses for young learners',
+
+      highlights: [
+        'Focus on Basics & Concepts',
+        'Fun & Interactive Learning',
+        'Regular Practice & Feedback',
       ],
-      image: '/banner4.png',
-      badgeTopLabel: 'Top Score',
-      badgeTopValue: '95%+',
-      badgeBottomLabel: 'Join Achievers',
-      badgeBottomValue: 'Enroll Now'
-    }
+
+      cta: 'Join Now',
+      image: '/22.png',
+      bg: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/bg9.jpg)',
+      btn:'/contact'
+    },
   ];
 
-  nextBanner(): void {
-    this.currentBanner = (this.currentBanner + 1) % this.banners.length;
-  }
-
-  prevBanner(): void {
-    this.currentBanner =
-      (this.currentBanner - 1 + this.banners.length) % this.banners.length;
-  }
-
-  goToBanner(index: number): void {
-    this.currentBanner = index;
-  }
-
-  startBannerAutoPlay(): void {
-    this.stopBannerAutoPlay();
-    this.bannerInterval = setInterval(() => {
-      this.nextBanner();
+  startAuto() {
+    setInterval(() => {
+      this.currentBanner = (this.currentBanner + 1) % this.banners.length;
     }, 4000);
   }
 
-  stopBannerAutoPlay(): void {
-    if (this.bannerInterval) {
-      clearInterval(this.bannerInterval);
-      this.bannerInterval = null;
-    }
+  goToBanner(index: number) {
+    this.currentBanner = index;
   }
-
   // ===================== top student ===========================
   topStudents = [
     {
@@ -257,7 +210,7 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
       score: '99.99%ile',
       exam: 'JEE Main',
       rank: '1',
-      image: '/1.png'
+      image: '/1.png',
     },
     {
       name: 'Sanjay Kumar',
@@ -265,7 +218,7 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
       score: '99.95%ile',
       exam: 'JEE Main',
       rank: '24',
-      image: '/1.png'
+      image: '/1.png',
     },
     {
       name: 'Priya Sharma',
@@ -273,7 +226,7 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
       score: '98.87%',
       exam: 'Boards',
       rank: 'Topper',
-      image: '/1.png'
+      image: '/1.png',
     },
     {
       name: 'Aman Verma',
@@ -281,7 +234,7 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
       score: '97.45%',
       exam: 'School Topper',
       rank: 'Top 5',
-      image: '/1.png'
+      image: '/1.png',
     },
 
     // 🔥 NEW 8 STUDENTS
@@ -292,7 +245,7 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
       score: '99.92%ile',
       exam: 'JEE Main',
       rank: '56',
-      image: '/1.png'
+      image: '/1.png',
     },
     {
       name: 'Neha Gupta',
@@ -300,7 +253,7 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
       score: '98.75%',
       exam: 'Boards',
       rank: 'School Rank 1',
-      image: '/1.png'
+      image: '/1.png',
     },
     {
       name: 'Rahul Mehta',
@@ -308,7 +261,7 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
       score: '99.10%ile',
       exam: 'NEET',
       rank: 'Top 100',
-      image: '/1.png'
+      image: '/1.png',
     },
     {
       name: 'Sneha Jain',
@@ -316,7 +269,7 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
       score: '96.80%',
       exam: 'School Exams',
       rank: 'Topper',
-      image: '/1.png'
+      image: '/1.png',
     },
   ];
   // ================= TESTIMONIAL SLIDER =================
@@ -328,25 +281,24 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
       name: 'Riya Sharma',
       role: 'Class 12 Student',
       text: 'Enhancers Academy helped me score 95% in boards.',
-      img: 'https://randomuser.me/api/portraits/women/44.jpg'
+      img: 'https://randomuser.me/api/portraits/women/44.jpg',
     },
     {
       name: 'Amit Verma',
       role: 'Parent',
       text: 'Great teachers and personal attention for every student.',
-      img: 'https://randomuser.me/api/portraits/men/32.jpg'
+      img: 'https://randomuser.me/api/portraits/men/32.jpg',
     },
     {
       name: 'Rahul Gupta',
       role: 'CUET Aspirant',
       text: 'Mock tests and guidance helped me crack CUET.',
-      img: 'https://randomuser.me/api/portraits/men/45.jpg'
-    }
+      img: 'https://randomuser.me/api/portraits/men/45.jpg',
+    },
   ];
 
   nextTestimonial(): void {
-    this.testimonialIndex =
-      (this.testimonialIndex + 1) % this.testimonials.length;
+    this.testimonialIndex = (this.testimonialIndex + 1) % this.testimonials.length;
   }
 
   prevTestimonial(): void {
@@ -394,7 +346,6 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
 
   // ================= LIFECYCLE =================
   async ngOnInit(): Promise<void> {
-
     if (isPlatformBrowser(this.platformId)) {
       const AOS = (await import('aos')).default;
 
@@ -405,16 +356,15 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
       });
     }
 
-    this.startBannerAutoPlay();
+    // this.startBannerAutoPlay();
     this.startTestimonialAuto();
     this.startTeacherAuto();
     this.startAutoSlide();
-    // this.stopTeacherAuto();
+    this.startAuto();
   }
 
-
   ngOnDestroy(): void {
-    this.stopBannerAutoPlay();
+    // this.stopBannerAutoPlay();
     this.stopTestimonialAuto();
     this.stopTeacherAuto();
     clearInterval(this.interval);
@@ -427,14 +377,15 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
     {
       name: 'Nitin Gupta',
       subject: 'Accountancy & Economics',
-      description: '10+ years of teaching experience with a strong focus on concept clarity and student growth.',
-      image: '/no-image.png'
+      description:
+        '10+ years of teaching experience with a strong focus on concept clarity and student growth.',
+      image: '/no-image.png',
     },
     {
       name: 'Ashutosh shukla',
       subject: 'Math',
       description: 'Simplifying concepts with practical examples for deeper understanding.',
-      image: '/no-image.png'
+      image: '/no-image.png',
     },
     // {
     //   name: 'Neha Gupta',
@@ -445,8 +396,9 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
     {
       name: 'Kiran Chawla',
       subject: 'All Subject',
-      description: 'Expert in teaching all subjects for Classes 1–5 with a focus on strong fundamentals.',
-      image: '/no-image.png'
+      description:
+        'Expert in teaching all subjects for Classes 1–5 with a focus on strong fundamentals.',
+      image: '/no-image.png',
     },
     // {
     //   name: 'Rohit Kumar',
@@ -470,64 +422,63 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
     clearInterval(this.teacherInterval);
   }
 
-
   courses = [
     {
       title: 'Classes I – VIII',
       slug: '/courses/class-1-8',
       desc: 'Strong foundation with all subjects.',
       icon: 'fa-solid fa-graduation-cap',
-      category: 'Academic'
+      category: 'Academic',
     },
     {
       title: 'Classes IX – X',
       slug: '/courses/class-9-10',
       desc: 'Maths, Science & English focus.',
       icon: 'fa-solid fa-book-open',
-      category: 'Academic'
+      category: 'Academic',
     },
     {
       title: 'XI – XII (Commerce)',
       slug: '/courses/class-11-12',
       desc: 'Accounts, Economics, Mathematics & Business studies.',
       icon: 'fa-solid fa-chart-line',
-      category: 'Academic'
+      category: 'Academic',
     },
     {
       title: 'XI – XII (Science)',
       slug: '/courses/class-11-12-commerce',
       desc: 'Physics, Chemistry, Biology & Maths (PCM).',
       icon: 'fa-solid fa-flask',
-      category: 'Academic'
+      category: 'Academic',
     },
     {
       title: 'Entrance Exams',
       slug: '/courses/cuet',
       desc: 'Preparation for NEET, CUET & JEE.',
       icon: 'fa-solid fa-bullseye',
-      category: 'Entrance'
+      category: 'Entrance',
     },
     {
       title: 'Olympiad Preparation',
       slug: '/courses/olympiad',
       desc: 'Maths & Science olympiad training.',
       icon: 'fa-solid fa-brain',
-      category: 'Entrance'
+      category: 'Entrance',
     },
     {
       title: 'Spoken English',
       slug: '/courses/spoken-english',
       desc: 'Improve communication & confidence.',
       icon: 'fa-solid fa-comments',
-      category: 'Skills'
+      category: 'Skills',
     },
     {
       title: 'Vedic Maths',
       slug: '/courses/vedic-maths',
       desc: 'Fast calculation techniques & tricks.',
       icon: 'fa-solid fa-calculator',
-      category: 'Skills'
-    }
+      category: 'Skills',
+    },
   ];
 
   // ===================------------roadmap ts ------=====================
@@ -535,28 +486,28 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
     {
       icon: 'fas fa-bullseye',
       title: 'Guidance',
-      desc: 'Start with proper planning and expert direction.'
+      desc: 'Start with proper planning and expert direction.',
     },
     {
       icon: 'fas fa-book-open',
       title: 'Study Material',
-      desc: 'Notes and worksheets for concept clarity.'
+      desc: 'Notes and worksheets for concept clarity.',
     },
     {
       icon: 'fas fa-chalkboard-teacher',
       title: 'Classes',
-      desc: 'Interactive sessions with doubt solving.'
+      desc: 'Interactive sessions with doubt solving.',
     },
     {
       icon: 'fas fa-pen',
       title: 'Tests',
-      desc: 'Regular tests to track progress.'
+      desc: 'Regular tests to track progress.',
     },
     {
       icon: 'fas fa-trophy',
       title: 'Results',
-      desc: 'Achieve success with confidence.'
-    }
+      desc: 'Achieve success with confidence.',
+    },
   ];
 
   currentIndex = 2;
@@ -598,53 +549,51 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
       subject: 'Accountancy & Economics',
       class: 'XI - XII',
       experience: '26 years',
-      image: '/nitin-gupta.png'
+      image: '/nitin-gupta.png',
     },
     {
       name: 'Kiran Chawla',
       subject: 'All Subjects',
       class: 'I - V',
       experience: '12 years',
-      image: '/kiran-chawla.png'
+      image: '/kiran-chawla.png',
     },
     {
       name: 'Kavin Ribeiro',
       subject: 'English & Social Science',
       class: 'VIII - XII',
       experience: '42 years',
-      image: '/kevin-ribeiro.png'
+      image: '/kevin-ribeiro.png',
     },
     {
       name: 'Ashutosh Shukla',
       subject: 'Physics & Math',
       class: 'IX - XII',
       experience: '8 years',
-      image: '/ashutosh-shukla1.png'
+      image: '/ashutosh-shukla1.png',
     },
     {
       name: 'Gaurav Arora',
       subject: 'Science & Biology',
       class: 'IX - XII',
       experience: '12 years',
-      image: '/guarv-arora.png'
-    }
+      image: '/guarv-arora.png',
+    },
   ];
 
   get visibleCards() {
+    // 📱 Mobile → only 1 card
+    if (window.innerWidth < 640) {
+      return [this.teacherCards[this.active]];
+    }
 
-  // 📱 Mobile → only 1 card
-  if (window.innerWidth < 640) {
-    return [this.teacherCards[this.active]];
+    // 💻 Desktop → 3 cards
+    return [
+      this.teacherCards[(this.active - 1 + this.teacherCards.length) % this.teacherCards.length],
+      this.teacherCards[this.active],
+      this.teacherCards[(this.active + 1) % this.teacherCards.length],
+    ];
   }
-
-  // 💻 Desktop → 3 cards
-  return [
-    this.teacherCards[(this.active - 1 + this.teacherCards.length) % this.teacherCards.length],
-    this.teacherCards[this.active],
-    this.teacherCards[(this.active + 1) % this.teacherCards.length]
-  ];
-}
-
 
   startAutoSlide() {
     this.stopAutoSlide(); // important (duplicate interval fix)
@@ -664,8 +613,7 @@ export class Home implements OnInit, OnDestroy, AfterViewInit {
   }
 
   teacherPrev() {
-    this.active =
-      (this.active - 1 + this.teacherCards.length) % this.teacherCards.length;
+    this.active = (this.active - 1 + this.teacherCards.length) % this.teacherCards.length;
   }
 
   goToSlide(index: number) {
